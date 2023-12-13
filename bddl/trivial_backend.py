@@ -1,6 +1,9 @@
 from bddl.logic_base import UnaryAtomicFormula, BinaryAtomicFormula
 from bddl.backend_abc import BDDLBackend
 from bddl.parsing import parse_domain
+import bddl.bddl_verification as ver
+import json
+import re
 
 
 *__, domain_predicates = parse_domain("omnigibson")
@@ -122,6 +125,11 @@ class TrivialSimulator(object):
             not nextto => not ontop
             TODO under? others? draped?
         """
+        with open(ver.PROPS_TO_SYNS_JSON, "r") as f:
+            props_to_syns = json.load(f)
+        with open(ver.SYNS_TO_PROPS_PARAMS_JSON, "r") as f:
+            syns_to_props_params = json.load(f)
+
         for literal in literals: 
             is_predicate = not(literal[0] == "not")
             predicate, *objects = literal[1] if (literal[0] == "not") else literal
@@ -129,6 +137,7 @@ class TrivialSimulator(object):
                 print(f"Skipping inroom literal {literal}")
                 continue
             self.predicate_to_setters[predicate](tuple(objects), is_predicate)
+
             # Entailed predicates 
             if is_predicate and (predicate == "filled"):
                 self.predicate_to_setters["contains"](tuple(objects), True)
@@ -136,12 +145,62 @@ class TrivialSimulator(object):
                 self.predicate_to_setters["filled"](tuple(objects), False)
             if is_predicate and (predicate == "ontop"):
                 self.predicate_to_setters["nextto"](tuple(objects), True)
+                self.predicate_to_setters["touching"](tuple(objects), True)
             if (not is_predicate) and (predicate == "nextto"):
                 self.predicate_to_setters["ontop"](tuple(objects), False)
+            
+            # Thermal effects
+            # If we encounter a hot vessel and a cookable inside it...
+            if is_predicate and (predicate == "hot"): 
+                # Any cookable ontop, inside, filled, or contained gets cooked
+                for ontop_obj1, ontop_obj2 in self.ontop: 
+                    ontop_syn1 = re.match(ver.OBJECT_CAT_AND_INST_RE, ontop_obj1).group()
+                    if (ontop_obj2 == objects[0]) and (ontop_syn1 in props_to_syns["cookable"]):
+                        self.predicate_to_setters["cooked"](tuple([ontop_obj1]), True)
+                for inside_obj1, inside_obj2 in self.inside: 
+                    inside_syn1 = re.match(ver.OBJECT_CAT_AND_INST_RE, inside_obj1).group()
+                    if (inside_obj2 == objects[0]) and (inside_syn1 in props_to_syns["cookable"]):
+                        self.predicate_to_setters["cooked"](tuple([inside_obj1]), True)
+                for filled_obj1, filled_obj2 in self.filled:
+                    filled_syn2 = re.match(ver.OBJECT_CAT_AND_INST_RE, filled_obj2).group()
+                    if (filled_obj1 == objects[0]) and (filled_syn2 in props_to_syns["cookable"]):
+                        self.predicate_to_setters["real"](tuple([filled_obj2]), False)
+                        # print(syns_to_props_params[filled_syn2])
+                        self.predicate_to_setters["real"](tuple([syns_to_props_params[filled_syn2]["cookable"]["substance_cooking_derivative_synset"]]), True)
+                for contained_obj1, contained_obj2 in self.contains:
+                    contained_syn2 = re.match(ver.OBJECT_CAT_AND_INST_RE, contained_obj2).group()
+                    if (contained_obj1 == objects[0]) and (contained_syn2 in props_to_syns["cookable"]):
+                        self.predicate_to_setters["real"](tuple([contained_obj2]), False)
+                        self.predicate_to_setters["real"](tuple([syns_to_props_params[contained_syn2]["cookable"]["substance_cooking_derivative_synset"]]), True)
+            # If we encounter a potential cooking placement of a cookable relative to a hot vessel...
+            if is_predicate and (predicate == "ontop"):
+                syn0 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[0]).group()
+                if (syn0 in props_to_syns["cookable"]) and (tuple([objects[1]]) in self.hot):
+                    self.predicate_to_setters["cooked"](tuple(objects[0]))
+            if is_predicate and (predicate == "inside"):
+                syn0 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[0]).group()
+                if (syn0 in props_to_syns["cookable"]) and (tuple([objects[1]]) in self.hot):
+                    self.predicate_to_setters["cooked"](tuple([objects[0]]), True)
+            if is_predicate and (predicate == "filled"):
+                syn1 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[1]).group()
+                if (syn1 in props_to_syns["cookable"]) and (tuple([objects[0]]) in self.hot):
+                    self.predicate_to_setters["cooked"](tuple([objects[1]]), True)
+            if is_predicate and (predicate == "contains"):
+                syn1 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[1]).group()
+                if (syn1 in props_to_syns["cookable"]) and (tuple([objects[0]]) in self.hot):
+                    self.predicate_to_setters["cooked"](tuple([objects[1]]), True)
+            
+
+            # TODO heating, melting
+            
+            # TODO slicing and dicing effects
+
+            # TODO transition recipes
+
 
     def set_cooked(self, objs, is_cooked):
         assert len(objs) == 1, f"`objs` has len other than 1: {objs}"
-        if is_cooked: 
+        if is_cooked:  
             self.cooked.add(objs)
         else: 
             self.cooked.discard(objs)
