@@ -176,7 +176,7 @@ class TrivialSimulator(object):
             if is_predicate and (predicate == "ontop"):
                 syn0 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[0]).group()
                 if (syn0 in props_to_syns["cookable"]) and (tuple([objects[1]]) in self.hot):
-                    self.predicate_to_setters["cooked"](tuple(objects[0]))
+                    self.predicate_to_setters["cooked"](tuple([objects[0]]), True)
             if is_predicate and (predicate == "inside"):
                 syn0 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[0]).group()
                 if (syn0 in props_to_syns["cookable"]) and (tuple([objects[1]]) in self.hot):
@@ -190,7 +190,8 @@ class TrivialSimulator(object):
                 if (syn1 in props_to_syns["cookable"]) and (tuple([objects[0]]) in self.hot):
                     self.predicate_to_setters["cooked"](tuple([objects[1]]), True)
             
-
+            # TODO when a new object is created, its positional predicates are the same with the same objects as the original 
+            
             # TODO heating, melting
             
             # TODO slicing and dicing effects
@@ -666,19 +667,8 @@ class TrivialHotPredicate(UnaryAtomicFormula):
         pass
 
 
-class TrivialHotPredicate(UnaryAtomicFormula):
-    STATE_NAME = "on_fire"
-
-    def _evaluate(self, obj):
-        print(self.STATE_NAME, obj.name, obj.get_on_fire())
-        return obj.get_on_fire()
-
-    def _sample(self, obj1, binary_state):
-        pass
-
-
 class TrivialEmptyPredicate(UnaryAtomicFormula):
-    STATE_NAME = "on_fire"
+    STATE_NAME = "empty"
 
     def _evaluate(self, obj):
         print(self.STATE_NAME, obj.name, obj.get_empty())
