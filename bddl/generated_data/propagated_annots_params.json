@@ -102,11 +102,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "acetone": [
+                "acetone.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -464,17 +464,6 @@
         },
         "moldyable": {},
         "nonSubstance": {},
-        "particleApplier": {
-            "method": 1,
-            "conditions": {
-                "air_freshener": [
-                    [
-                        2,
-                        true
-                    ]
-                ]
-            }
-        },
         "rigidBody": {},
         "rustable": {},
         "scratchable": {},
@@ -638,15 +627,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "allspice": [
+                "allspice.n.03": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -769,11 +758,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "ammonia_water": [
+                "ammonia_water.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -1823,7 +1812,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -3110,7 +3099,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -4602,7 +4591,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -5184,7 +5173,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -6087,7 +6076,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -6683,7 +6672,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -6797,9 +6786,9 @@
         "nonSubstance": {},
         "particleSource": {
             "conditions": {
-                "water": [
+                "water.n.06": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -7476,7 +7465,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -8063,7 +8052,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -8085,9 +8074,9 @@
         "nonSubstance": {},
         "particleSource": {
             "conditions": {
-                "water": [
+                "water.n.06": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -8699,7 +8688,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -9387,9 +9376,9 @@
         "nonSubstance": {},
         "particleSource": {
             "conditions": {
-                "water": [
+                "water.n.06": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -10340,7 +10329,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -10371,11 +10360,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "bleaching_agent": [
+                "bleaching_agent.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -11065,7 +11054,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -16062,7 +16051,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -16796,7 +16785,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -17700,7 +17689,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -20103,7 +20092,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -20156,7 +20145,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -21002,7 +20991,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -21336,15 +21325,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "cayenne": [
+                "cayenne.n.02": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -22594,7 +22583,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -23755,15 +23744,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "cinnamon": [
+                "cinnamon.n.03": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -25610,7 +25599,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -26057,11 +26046,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "conditioner": [
+                "conditioner.n.03": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -26088,11 +26077,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "conditioner": [
+                "conditioner.n.03": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -31230,15 +31219,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "coriander": [
+                "coriander.n.02": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -32035,7 +32024,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -32633,7 +32622,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -33214,7 +33203,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rope": {},
         "rustable": {},
@@ -33527,15 +33516,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "cream_of_tartar": [
+                "cream_of_tartar.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -34240,7 +34229,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -34513,15 +34502,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "cumin": [
+                "cumin.n.02": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -34713,15 +34702,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "curry_powder": [
+                "curry_powder.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -35314,7 +35303,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -35878,17 +35867,6 @@
         },
         "moldyable": {},
         "nonSubstance": {},
-        "particleApplier": {
-            "method": 1,
-            "conditions": {
-                "deodorant": [
-                    [
-                        2,
-                        true
-                    ]
-                ]
-            }
-        },
         "rigidBody": {},
         "rustable": {},
         "scratchable": {},
@@ -36087,11 +36065,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "detergent": [
+                "detergent.n.02": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -36787,7 +36765,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -40797,7 +40775,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -41491,7 +41469,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -42415,7 +42393,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -43106,7 +43084,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -43749,7 +43727,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -44336,7 +44314,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -44456,11 +44434,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "water": [
+                "water.n.06": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -45332,7 +45310,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -46184,7 +46162,7 @@
             },
             "default_visual_conditions": null,
             "default_physical_conditions": null,
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -47426,7 +47404,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -47524,11 +47502,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "fertilizer": [
+                "fertilizer.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -49666,7 +49644,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -50323,15 +50301,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "ginger": [
+                "ginger.n.02": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -51162,7 +51140,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -51894,7 +51872,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -60475,7 +60453,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -61329,7 +61307,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -63032,11 +63010,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "insectifuge": [
+                "insectifuge.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -63152,7 +63130,7 @@
             },
             "default_visual_conditions": null,
             "default_physical_conditions": null,
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -63194,11 +63172,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "isopropanol": [
+                "isopropyl_alcohol.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -63834,7 +63812,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -63926,11 +63904,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "jam": [
+                "jam.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -64876,7 +64854,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -65547,7 +65525,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -66606,7 +66584,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -67376,7 +67354,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -68008,7 +67986,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -69010,7 +68988,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -69057,15 +69035,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "lemon_pepper_seasoning": [
+                "lemon-pepper_seasoning.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -69856,7 +69834,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -70978,7 +70956,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -71559,7 +71537,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -72140,7 +72118,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -72186,7 +72164,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": null,
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -73104,7 +73082,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -73689,7 +73667,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -74800,7 +74778,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -75095,15 +75073,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "marjoram": [
+                "marjoram.n.02": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -75862,7 +75840,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -76575,7 +76553,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -77157,7 +77135,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -77736,7 +77714,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -79399,15 +79377,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "mustard_seed": [
+                "mustard_seed.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -80101,7 +80079,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -80749,7 +80727,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -81157,15 +81135,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "nutmeg": [
+                "nutmeg.n.02": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -81454,15 +81432,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "onion_powder": [
+                "onion_powder.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -82364,7 +82342,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -83425,7 +83403,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -84152,7 +84130,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -84757,7 +84735,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -84855,15 +84833,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "paprika": [
+                "paprika.n.02": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -84986,15 +84964,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "parmesan": [
+                "parmesan.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -85047,15 +85025,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "parsley": [
+                "parsley.n.02": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -86359,7 +86337,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -86425,15 +86403,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "black_pepper": [
+                "black_pepper.n.02": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -86460,11 +86438,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "black_pepper": [
+                "black_pepper.n.02": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -86706,11 +86684,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "pesticide": [
+                "pesticide.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -87327,7 +87305,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -88462,7 +88440,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -89210,7 +89188,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -89964,7 +89942,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -91100,7 +91078,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -93206,7 +93184,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -93935,7 +93913,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -94702,7 +94680,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -96105,7 +96083,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -96550,15 +96528,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "rosemary": [
+                "rosemary.n.02": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -96769,11 +96747,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "rubbing_alcohol": [
+                "rubbing_alcohol.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -97391,7 +97369,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -97646,15 +97624,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "saffron": [
+                "saffron.n.02": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -97695,15 +97673,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "sage": [
+                "sage.n.02": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -97909,15 +97887,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "salt": [
+                "salt.n.02": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -98607,7 +98585,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -98726,42 +98704,6 @@
     "sausage.n.01": {
         "freezable": {},
         "heatable": {}
-    },
-    "savory_spice__shaker.n.01": {
-        "disinfectable": {},
-        "dustyable": {},
-        "freezable": {},
-        "grassyable": {},
-        "heatable": {
-            "heat_temperature": 40.0
-        },
-        "moldyable": {},
-        "needsOrientation": {},
-        "nonSubstance": {},
-        "particleApplier": {
-            "method": 1,
-            "conditions": {
-                "savory_spice": [
-                    [
-                        2,
-                        true
-                    ],
-                    [
-                        3,
-                        true
-                    ]
-                ]
-            }
-        },
-        "rigidBody": {},
-        "rustable": {},
-        "scratchable": {},
-        "stainable": {},
-        "stickyable": {},
-        "tarnishable": {},
-        "toggleable": {},
-        "wetable": {},
-        "wrinkleable": {}
     },
     "saw.n.02": {
         "disinfectable": {},
@@ -99469,7 +99411,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -100360,7 +100302,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -100940,7 +100882,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -101026,11 +100968,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "sealant": [
+                "sealant.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -101352,15 +101294,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "sesame_seed": [
+                "sesame_seed.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -101506,11 +101448,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "shampoo": [
+                "shampoo.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -102123,7 +102065,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -102744,7 +102686,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -103332,7 +103274,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -104471,7 +104413,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -104820,9 +104762,9 @@
         },
         "particleSource": {
             "conditions": {
-                "water": [
+                "water.n.06": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -105613,7 +105555,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -106237,7 +106179,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -106835,9 +106777,9 @@
         "nonSubstance": {},
         "particleSource": {
             "conditions": {
-                "liquid_soap": [
+                "liquid_soap.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -107448,7 +107390,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -108125,7 +108067,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -109448,7 +109390,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -109575,11 +109517,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "spray_paint": [
+                "spray_paint.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -109742,9 +109684,9 @@
         "nonSubstance": {},
         "particleSource": {
             "conditions": {
-                "water": [
+                "water.n.06": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -110172,7 +110114,7 @@
             },
             "default_visual_conditions": null,
             "default_physical_conditions": null,
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -110918,7 +110860,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -112135,7 +112077,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -112921,7 +112863,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -113503,7 +113445,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -114104,7 +114046,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -115081,7 +115023,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -115899,7 +115841,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -116620,7 +116562,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -117262,7 +117204,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -117689,15 +117631,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "thyme": [
+                "thyme.n.02": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -118304,7 +118246,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -118902,7 +118844,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -119904,7 +119846,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rigidBody": {},
         "rustable": {},
@@ -121387,7 +121329,7 @@
                     true
                 ]
             ],
-            "method": 1
+            "method": "projection"
         },
         "rigidBody": {},
         "rustable": {},
@@ -122268,7 +122210,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -122967,7 +122909,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -123050,11 +122992,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "vinegar": [
+                "vinegar.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -123785,11 +123727,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "water": [
+                "water.n.06": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -123816,11 +123758,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "water": [
+                "water.n.06": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -123949,9 +123891,9 @@
         "nonSubstance": {},
         "particleSource": {
             "conditions": {
-                "water": [
+                "water.n.06": [
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -124267,18 +124209,17 @@
             "heat_temperature": 40.0
         },
         "moldyable": {},
-        "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "whipped_cream": [
+                "whipped_cream.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -124305,11 +124246,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "whipped_cream": [
+                "whipped_cream.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -125330,7 +125271,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -126214,7 +126155,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -126795,7 +126736,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
@@ -127214,15 +127155,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
-                "yeast": [
+                "yeast.n.01": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -127809,7 +127750,7 @@
             },
             "default_visual_conditions": [],
             "default_physical_conditions": [],
-            "method": 0
+            "method": "adjacency"
         },
         "rustable": {},
         "scratchable": {},
