@@ -134,7 +134,7 @@ class TrivialSimulator(object):
             is_predicate = not(literal[0] == "not")
             predicate, *objects = literal[1] if (literal[0] == "not") else literal
             if predicate == "inroom": 
-                print(f"Skipping inroom literal {literal}")
+                # print(f"Skipping inroom literal {literal}")
                 continue
             self.predicate_to_setters[predicate](tuple(objects), is_predicate)
 
@@ -148,6 +148,17 @@ class TrivialSimulator(object):
                 self.predicate_to_setters["touching"](tuple(objects), True)
             if (not is_predicate) and (predicate == "nextto"):
                 self.predicate_to_setters["ontop"](tuple(objects), False)
+            
+            if is_predicate and (predicate == "closed"):
+                self.predicate_to_setters["open"](tuple(objects), False)
+            if is_predicate and (predicate == "open"):
+                self.predicate_to_setters["closed"](tuple(objects), False)
+            if is_predicate and (predicate == "filled"):
+                self.predicate_to_setters["empty"](tuple([objects[0]]), False)
+            if is_predicate and (predicate == "folded"):
+                self.predicate_to_setters["unfolded"](tuple(objects), False)
+            if is_predicate and (predicate == "unfolded"):
+                self.predicate_to_setters["folded"](tuple(objects), False)
             
             # Thermal effects
             # If we encounter a hot vessel and a cookable inside it...
@@ -166,12 +177,18 @@ class TrivialSimulator(object):
                     if (filled_obj1 == objects[0]) and (filled_syn2 in props_to_syns["cookable"]):
                         self.predicate_to_setters["real"](tuple([filled_obj2]), False)
                         # print(syns_to_props_params[filled_syn2])
-                        self.predicate_to_setters["real"](tuple([syns_to_props_params[filled_syn2]["cookable"]["substance_cooking_derivative_synset"]]), True)
+                        cooking_derivative_obj2 = syns_to_props_params[filled_syn2]["cookable"]["substance_cooking_derivative_synset"] + "_1"
+                        self.predicate_to_setters["real"](tuple([cooking_derivative_obj2]), True)
+                        self.predicate_to_setters["filled"](tuple([filled_obj1, cooking_derivative_obj2]), True)
+                        self.predicate_to_setters["filled"](tuple([filled_obj1, filled_obj2]), False)
                 for contained_obj1, contained_obj2 in self.contains:
                     contained_syn2 = re.match(ver.OBJECT_CAT_AND_INST_RE, contained_obj2).group()
                     if (contained_obj1 == objects[0]) and (contained_syn2 in props_to_syns["cookable"]):
                         self.predicate_to_setters["real"](tuple([contained_obj2]), False)
-                        self.predicate_to_setters["real"](tuple([syns_to_props_params[contained_syn2]["cookable"]["substance_cooking_derivative_synset"]]), True)
+                        cooking_derivative_obj2 = syns_to_props_params[contained_syn2]["cookable"]["substance_cooking_derivative_synset"] + "_1"
+                        self.predicate_to_setters["real"](tuple([cooking_derivative_obj2]), True)
+                        self.predicate_to_setters["filled"](tuple([contained_obj1, cooking_derivative_obj2]), True)
+                        self.predicate_to_setters["filled"](tuple([contained_obj1, contained_obj2]), False)
             # If we encounter a potential cooking placement of a cookable relative to a hot vessel...
             if is_predicate and (predicate == "ontop"):
                 syn0 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[0]).group()
@@ -530,6 +547,9 @@ class TrivialGenericObject(object):
     def get_ontop(self, other):
         return self.simulator.get_ontop((self, other))
     
+    def get_filled(self, other):
+        return self.simulator.get_filled((self, other))
+    
     def get_covered(self, other):
         return self.simulator.get_covered((self, other))
 
@@ -572,7 +592,7 @@ class TrivialCookedPredicate(UnaryAtomicFormula):
     STATE_NAME = "cooked"
 
     def _evaluate(self, obj):
-        print(self.STATE_NAME, obj.name, obj.get_cooked())
+        # print(self.STATE_NAME, obj.name, obj.get_cooked())
         return obj.get_cooked()
 
     def _sample(self, obj1, binary_state):
@@ -583,7 +603,7 @@ class TrivialFrozenPredicate(UnaryAtomicFormula):
     STATE_NAME = "frozen"
 
     def _evaluate(self, obj):
-        print(self.STATE_NAME, obj.name, obj.get_frozen())
+        # print(self.STATE_NAME, obj.name, obj.get_frozen())
         return obj.get_frozen()
 
     def _sample(self, obj1, binary_state):
@@ -594,7 +614,7 @@ class TrivialOpenPredicate(UnaryAtomicFormula):
     STATE_NAME = "open"
 
     def _evaluate(self, obj):
-        print(self.STATE_NAME, obj.name, obj.get_open())
+        # print(self.STATE_NAME, obj.name, obj.get_open())
         return obj.get_open()
 
     def _sample(self, obj1, binary_state):
@@ -605,7 +625,7 @@ class TrivialFoldedPredicate(UnaryAtomicFormula):
     STATE_NAME = "folded"
 
     def _evaluate(self, obj):
-        print(self.STATE_NAME, obj.name, obj.get_folded())
+        # print(self.STATE_NAME, obj.name, obj.get_folded())
         return obj.get_folded()
 
     def _sample(self, obj1, binary_state):
@@ -616,7 +636,7 @@ class TrivialUnfoldedPredicate(UnaryAtomicFormula):
     STATE_NAME = "unfolded"
 
     def _evaluate(self, obj):
-        print(self.STATE_NAME, obj.name, obj.get_unfolded())
+        # print(self.STATE_NAME, obj.name, obj.get_unfolded())
         return obj.get_unfolded()
 
     def _sample(self, obj1, binary_state):
@@ -627,7 +647,7 @@ class TrivialToggledOnPredicate(UnaryAtomicFormula):
     STATE_NAME = "toggled_on"
 
     def _evaluate(self, obj):
-        print(self.STATE_NAME, obj.name, obj.get_toggled_on())
+        # print(self.STATE_NAME, obj.name, obj.get_toggled_on())
         return obj.get_toggled_on()
 
     def _sample(self, obj1, binary_state):
@@ -638,7 +658,7 @@ class TrivialClosedPredicate(UnaryAtomicFormula):
     STATE_NAME = "closed"
 
     def _evaluate(self, obj):
-        print(self.STATE_NAME, obj.name, obj.get_closed())
+        # print(self.STATE_NAME, obj.name, obj.get_closed())
         return obj.get_closed()
 
     def _sample(self, obj1, binary_state):
@@ -649,7 +669,7 @@ class TrivialOnFirePredicate(UnaryAtomicFormula):
     STATE_NAME = "on_fire"
 
     def _evaluate(self, obj):
-        print(self.STATE_NAME, obj.name, obj.get_on_fire())
+        # print(self.STATE_NAME, obj.name, obj.get_on_fire())
         return obj.get_on_fire()
 
     def _sample(self, obj1, binary_state):
@@ -660,7 +680,7 @@ class TrivialHotPredicate(UnaryAtomicFormula):
     STATE_NAME = "hot"
 
     def _evaluate(self, obj):
-        print(self.STATE_NAME, obj.name, obj.get_hot())
+        # print(self.STATE_NAME, obj.name, obj.get_hot())
         return obj.get_hot()
 
     def _sample(self, obj1, binary_state):
@@ -671,7 +691,7 @@ class TrivialEmptyPredicate(UnaryAtomicFormula):
     STATE_NAME = "empty"
 
     def _evaluate(self, obj):
-        print(self.STATE_NAME, obj.name, obj.get_empty())
+        # print(self.STATE_NAME, obj.name, obj.get_empty())
         return obj.get_empty()
 
     def _sample(self, obj1, binary_state):
@@ -682,7 +702,7 @@ class TrivialBrokenPredicate(UnaryAtomicFormula):
     STATE_NAME = "broken"
 
     def _evaluate(self, obj):
-        print(self.STATE_NAME, obj.name, obj.get_broken())
+        # print(self.STATE_NAME, obj.name, obj.get_broken())
         return obj.get_broken()
 
     def _sample(self, obj1, binary_state):
@@ -693,7 +713,7 @@ class TrivialAssembledPredicate(UnaryAtomicFormula):
     STATE_NAME = "assembled"
 
     def _evaluate(self, obj):
-        print(self.STATE_NAME, obj.name, obj.get_assembled())
+        # print(self.STATE_NAME, obj.name, obj.get_assembled())
         return obj.get_assembled()
 
     def _sample(self, obj1, binary_state):
@@ -704,7 +724,7 @@ class TrivialFuturePredicate(UnaryAtomicFormula):
     STATE_NAME = "future"
 
     def _evaluate(self, obj):
-        print(self.STATE_NAME, obj.name, obj.get_future())
+        # print(self.STATE_NAME, obj.name, obj.get_future())
         return obj.get_future()
 
     def _sample(self, obj1, binary_state):
@@ -715,7 +735,7 @@ class TrivialRealPredicate(UnaryAtomicFormula):
     STATE_NAME = "real"
 
     def _evaluate(self, obj):
-        print(self.STATE_NAME, obj.name, obj.get_real())
+        # print(self.STATE_NAME, obj.name, obj.get_real())
         return obj.get_real()
 
     def _sample(self, obj1, binary_state):
@@ -726,7 +746,7 @@ class TrivialCoveredPredicate(BinaryAtomicFormula):
     STATE_NAME = "covered"
 
     def _evaluate(self, obj1, obj2):
-        print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_covered(obj2))
+        # print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_covered(obj2))
         return obj1.get_covered(obj2)
 
     def _sample(self, obj1, obj2, binary_state):
@@ -737,7 +757,7 @@ class TrivialInsidePredicate(BinaryAtomicFormula):
     STATE_NAME = "inside"
 
     def _evaluate(self, obj1, obj2):
-        print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_inside(obj2))
+        # print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_inside(obj2))
         return obj1.get_inside(obj2)
 
     def _sample(self, obj1, obj2, binary_state):
@@ -748,7 +768,6 @@ class TrivialOnTopPredicate(BinaryAtomicFormula):
     STATE_NAME = "ontop"
 
     def _evaluate(self, obj1, obj2):
-        print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_ontop(obj2))
         return obj1.get_ontop(obj2)
 
     def _sample(self, obj1, obj2, binary_state):
@@ -756,11 +775,10 @@ class TrivialOnTopPredicate(BinaryAtomicFormula):
 
 
 class TrivialFilledPredicate(BinaryAtomicFormula):
-    STATE_NAME = "ontop"
+    STATE_NAME = "filled"
 
     def _evaluate(self, obj1, obj2):
-        print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_ontop(obj2))
-        return obj1.get_ontop(obj2)
+        return obj1.get_filled(obj2)
 
     def _sample(self, obj1, obj2, binary_state):
         pass
@@ -770,7 +788,7 @@ class TrivialSaturatedPredicate(BinaryAtomicFormula):
     STATE_NAME = "saturated"
 
     def _evaluate(self, obj1, obj2):
-        print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_saturated(obj2))
+        # print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_saturated(obj2))
         return obj1.get_saturated(obj2)
 
     def _sample(self, obj1, obj2, binary_state):
@@ -778,10 +796,10 @@ class TrivialSaturatedPredicate(BinaryAtomicFormula):
 
 
 class TrivialNextToPredicate(BinaryAtomicFormula):
-    STATE_NAME = "ontop"
+    STATE_NAME = "nextto"
 
     def _evaluate(self, obj1, obj2):
-        print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_nextto(obj2))
+        # print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_nextto(obj2))
         return obj1.get_nextto(obj2)
 
     def _sample(self, obj1, obj2, binary_state):
@@ -789,10 +807,10 @@ class TrivialNextToPredicate(BinaryAtomicFormula):
 
 
 class TrivialContainsPredicate(BinaryAtomicFormula):
-    STATE_NAME = "ontop"
+    STATE_NAME = "contains"
 
     def _evaluate(self, obj1, obj2):
-        print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_contains(obj2))
+        # print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_contains(obj2))
         return obj1.get_contains(obj2)
 
     def _sample(self, obj1, obj2, binary_state):
@@ -803,7 +821,7 @@ class TrivialUnderPredicate(BinaryAtomicFormula):
     STATE_NAME = "under"
 
     def _evaluate(self, obj1, obj2):
-        print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_under(obj2))
+        # print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_under(obj2))
         return obj1.get_under(obj2)
 
     def _sample(self, obj1, obj2, binary_state):
@@ -811,10 +829,10 @@ class TrivialUnderPredicate(BinaryAtomicFormula):
 
 
 class TrivialTouchingPredicate(BinaryAtomicFormula):
-    STATE_NAME = "ontop"
+    STATE_NAME = "touching"
 
     def _evaluate(self, obj1, obj2):
-        print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_touching(obj2))
+        # print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_touching(obj2))
         return obj1.get_touching(obj2)
 
     def _sample(self, obj1, obj2, binary_state):
@@ -822,10 +840,10 @@ class TrivialTouchingPredicate(BinaryAtomicFormula):
 
 
 class TrivialOverlaidPredicate(BinaryAtomicFormula):
-    STATE_NAME = "ontop"
+    STATE_NAME = "overlaid"
 
     def _evaluate(self, obj1, obj2):
-        print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_overlaid(obj2))
+        # print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_overlaid(obj2))
         return obj1.get_overlaid(obj2)
 
     def _sample(self, obj1, obj2, binary_state):
@@ -833,10 +851,10 @@ class TrivialOverlaidPredicate(BinaryAtomicFormula):
 
 
 class TrivialAttachedPredicate(BinaryAtomicFormula):
-    STATE_NAME = "ontop"
+    STATE_NAME = "attached"
 
     def _evaluate(self, obj1, obj2):
-        print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_attached(obj2))
+        # print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_attached(obj2))
         return obj1.get_attached(obj2)
 
     def _sample(self, obj1, obj2, binary_state):
@@ -847,7 +865,7 @@ class TrivialDrapedPredicate(BinaryAtomicFormula):
     STATE_NAME = "draped"
 
     def _evaluate(self, obj1, obj2):
-        print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_draped(obj2))
+        # print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_draped(obj2))
         return obj1.get_draped(obj2)
 
     def _sample(self, obj1, obj2, binary_state):
@@ -858,7 +876,7 @@ class TrivialInsourcePredicate(BinaryAtomicFormula):
     STATE_NAME = "insource"
 
     def _evaluate(self, obj1, obj2):
-        print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_insource(obj2))
+        # print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_insource(obj2))
         return obj1.get_insource(obj2)
 
     def _sample(self, obj1, obj2, binary_state):
@@ -869,7 +887,7 @@ class TrivialGraspedPredicate(BinaryAtomicFormula):
     STATE_NAME = "grasped"
 
     def _evaluate(self, obj1, obj2):
-        print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_grasped(obj2))
+        # print(self.STATE_NAME, obj1.name, obj2.name, obj1.get_grasped(obj2))
         return obj1.get_grasped(obj2)
 
     def _sample(self, obj1, obj2, binary_state):
