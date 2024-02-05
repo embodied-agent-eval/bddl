@@ -130,6 +130,7 @@ class TrivialSimulator(object):
         with open(ver.SYNS_TO_PROPS_PARAMS_JSON, "r") as f:
             syns_to_props_params = json.load(f)
 
+        # TODO maybe do this few a through times so that residual effects get a chance to fire
         for literal in literals: 
             is_predicate = not(literal[0] == "not")
             predicate, *objects = literal[1] if (literal[0] == "not") else literal
@@ -148,6 +149,10 @@ class TrivialSimulator(object):
                 self.predicate_to_setters["touching"](tuple(objects), True)
             if (not is_predicate) and (predicate == "nextto"):
                 self.predicate_to_setters["ontop"](tuple(objects), False)
+            if is_predicate and (predicate == "nextto"):
+                self.predicate_to_setters["nextto"](tuple(reversed(objects)), True)
+            if (not is_predicate) and (predicate == "nextto"):
+                self.predicate_to_setters["nextto"](tuple(reversed(objects)), False)
             
             if is_predicate and (predicate == "closed"):
                 self.predicate_to_setters["open"](tuple(objects), False)
@@ -163,7 +168,7 @@ class TrivialSimulator(object):
             # Thermal effects
             # If we encounter a hot vessel and a cookable inside it...
             if is_predicate and (predicate == "hot"): 
-                # Any cookable ontop, inside, filled, or contained gets cooked
+                # Any cookable ontop, inside, filled, contained, or covered gets cooked
                 for ontop_obj1, ontop_obj2 in self.ontop: 
                     ontop_syn1 = re.match(ver.OBJECT_CAT_AND_INST_RE, ontop_obj1).group()
                     if (ontop_obj2 == objects[0]) and (ontop_syn1 in props_to_syns["cookable"]):
@@ -189,27 +194,53 @@ class TrivialSimulator(object):
                         self.predicate_to_setters["real"](tuple([cooking_derivative_obj2]), True)
                         self.predicate_to_setters["filled"](tuple([contained_obj1, cooking_derivative_obj2]), True)
                         self.predicate_to_setters["filled"](tuple([contained_obj1, contained_obj2]), False)
-            # If we encounter a potential cooking placement of a cookable relative to a hot vessel...
-            if is_predicate and (predicate == "ontop"):
+
+            # If we encounter a nonSubstance touching or nextto a toggled_on heatsource, it should get hot 
+            if is_predicate and (predicate in ["touching", "nextto", "ontop", "inside", "overlaid", "draped"]):
                 syn0 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[0]).group()
-                if (syn0 in props_to_syns["cookable"]) and (tuple([objects[1]]) in self.hot):
-                    self.predicate_to_setters["cooked"](tuple([objects[0]]), True)
-            if is_predicate and (predicate == "inside"):
-                syn0 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[0]).group()
-                if (syn0 in props_to_syns["cookable"]) and (tuple([objects[1]]) in self.hot):
-                    self.predicate_to_setters["cooked"](tuple([objects[0]]), True)
-            if is_predicate and (predicate == "filled"):
                 syn1 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[1]).group()
-                if (syn1 in props_to_syns["cookable"]) and (tuple([objects[0]]) in self.hot):
-                    self.predicate_to_setters["cooked"](tuple([objects[1]]), True)
-            if is_predicate and (predicate == "contains"):
-                syn1 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[1]).group()
-                if (syn1 in props_to_syns["cookable"]) and (tuple([objects[0]]) in self.hot):
-                    self.predicate_to_setters["cooked"](tuple([objects[1]]), True)
+                if (syn0 not in props_to_syns["substance"]) and (syn1 in props_to_syns["heatSource"]):
+                    heatsource_params = syns_to_props_params[syn1]["heatSource"]
+                    # Check heat source requirements
+                    toggled_on_ok = (heatsource_params["requires_toggled_on"] == 0.) or ((heatsource_params["requires_toggled_on"] == 1.) and (tuple([objects[1]]) in self.toggled_on))
+                    closed_ok = (heatsource_params["requires_closed"] == 0.) or ((heatsource_params["requires_toggled_on"] == 1.) and ((tuple([objects[1]]) not in self.open) or (tuple([objects[1]]) in self.closed)))
+                    inside_ok = (heatsource_params["requires_inside"] == 0.) or ((heatsource_params["requires_inside"] == 1.) and (tuple(objects) in self.inside))
+                    if toggled_on_ok and closed_ok and inside_ok: 
+                        self.predicate_to_setters["hot"](tuple([objects[0]]), True)
             
+            # TODO need to flip for when the heatsource engages second (RIPPPPP, maybe just rely on explicitly claiming the thing is getting hot)
+
+            # If we encounter a potential cooking placement of a cookable relative to a hot vessel...
+            if is_predicate and (predicate in ["ontop", "inside"]):
+                syn0 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[0]).group()
+                if (syn0 in props_to_syns["cookable"]) and (tuple([objects[1]]) in self.hot):
+                    self.predicate_to_setters["cooked"](tuple([objects[0]]), True)
+            if is_predicate and (predicate in ["filled", "contains", "covered"]):
+                syn0 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[0]).group()
+                if (syn0 in props_to_syns["cookable"] and (tuple([objects[1]])) in self.hot):
+                    cookable_derivative = syns_to_props_params[syn0]["meltable"]["substance_cooking_derivative_synset"] + "_1"
+                    self.predicate_to_setters["real"](tuple([cookable_derivative]), True)
+                    self.predicate_to_setters[predicate](tuple([objects[1], cookable_derivative]), True)
+                    self.predicate_to_setters[predicate](objects, False)
+
+            # TODO need to flip for when I encounter something hot (basically I did this above)
+
+            # If we encounter a potential melting placement of a meltable relative to a hot vessel...
+            if is_predicate and (predicate in ["inside", "ontop"]):
+                syn0 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[0]).group()
+                if (syn0 in props_to_syns["meltable"]) and (tuple([objects[1]]) in self.hot):
+                    meltable_derivative = syns_to_props_params[syn0]["meltable"]["meltable_derivative_synset"] + "_1"
+                    self.predicate_to_setters["real"](tuple([meltable_derivative]), True)
+                    self.predicate_to_setters["real"](tuple([objects[0]]), False)
+                    self.predicate_to_setters["contains"](tuple([objects[1], meltable_derivative]), True)
+                    self.predicate_to_setters[predicate](objects, False)
+
+            # TODO need to flip for when I encounter something hot 
+
+
             # TODO when a new object is created, its positional predicates are the same with the same objects as the original 
             
-            # TODO heating, melting
+            # TODO freezing
             
             # TODO slicing and dicing effects
 
