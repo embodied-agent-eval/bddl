@@ -11,6 +11,7 @@
         (on_fire ?obj1)
         (future ?obj1)
         (real ?obj1)
+        (empty ?obj1)
         (saturated ?obj1 ?obj2)
         (covered ?obj1 ?obj2)
         (filled ?obj1 ?obj2)

@@ -292,6 +292,8 @@ def check_synset_predicate_alignment(atom, syns_to_props):
         assert "assembleable" in syns_to_props[objects[0]], f"Inapplicable assembled: {atom}"
     if pred == "broken": 
         assert "breakable" in syns_to_props[objects[0]], f"Inapplicable broken: {atom}"
+    if pred == "empty": 
+        assert ("fillable" in syns_to_props[objects[0]])
     
     # Binaries
     if pred == "saturated":
