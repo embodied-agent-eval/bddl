@@ -309,7 +309,8 @@ def check_synset_predicate_alignment(atom, syns_to_props):
     if pred == "under":
         assert ("nonSubstance" in syns_to_props[objects[0]]) and ("rigidBody" in syns_to_props[objects[1]]), f"Inapplicable under: {atom}"
     if pred == "touching": 
-        assert ("rigidBody" in syns_to_props[objects[0]]) and ("rigidBody" in syns_to_props[objects[1]]), f"Inapplicable touching: {atom}"
+        assert any(("rigidBody" in syns_to_props[obj]) for obj in objects) and all(("substance" not in syns_to_props[obj]) for obj in objects), f"Inapplicable touching: {atom}"
+        # assert ("rigidBody" in syns_to_props[objects[0]]) and ("rigidBody" in syns_to_props[objects[1]]), f"Inapplicable touching: {atom}"
     if pred == "inside": 
         assert ("nonSubstance" in syns_to_props[objects[0]]) and ("nonSubstance" in syns_to_props[objects[1]]), f"Inapplicable inside: {atom}"
     if pred == "overlaid": 
