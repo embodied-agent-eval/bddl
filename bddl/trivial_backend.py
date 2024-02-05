@@ -2,6 +2,7 @@ from bddl.logic_base import UnaryAtomicFormula, BinaryAtomicFormula
 from bddl.backend_abc import BDDLBackend
 from bddl.parsing import parse_domain
 import bddl.bddl_verification as ver
+import copy
 import json
 import re
 
@@ -129,7 +130,7 @@ class TrivialSimulator(object):
             props_to_syns = json.load(f)
         with open(ver.SYNS_TO_PROPS_PARAMS_JSON, "r") as f:
             syns_to_props_params = json.load(f)
-
+        
         # TODO maybe do this few a through times so that residual effects get a chance to fire
         for literal in literals: 
             is_predicate = not(literal[0] == "not")
@@ -138,6 +139,11 @@ class TrivialSimulator(object):
                 # print(f"Skipping inroom literal {literal}")
                 continue
             self.predicate_to_setters[predicate](tuple(objects), is_predicate)
+
+            # Start by setting elements as real unless they are in a future or explicit not-real statement
+            if not (is_predicate and (predicate == "future")) and not ((not is_predicate) and (predicate == "real")):
+                for obj in objects:
+                    self.predicate_to_setters["real"](tuple([obj]), True)
 
             # Entailed predicates 
             if is_predicate and (predicate == "filled"):
@@ -165,16 +171,37 @@ class TrivialSimulator(object):
             if is_predicate and (predicate == "unfolded"):
                 self.predicate_to_setters["folded"](tuple(objects), False)
             
+            # Transitive insides/not-insides
+            if predicate == "inside":
+                item, item_its_inside = objects
+                for test_item_inside_it, test_item in copy.deepcopy(self.inside): 
+                    if test_item == item:
+                        # False if item is not inside item_its_inside, True if item is inside item_its_inside
+                        self.predicate_to_setters["inside"](tuple([test_item_inside_it, item_its_inside]), is_predicate)
+            
             # Thermal effects
             # If we encounter a hot vessel and a cookable inside it...
             if is_predicate and (predicate == "hot"): 
-                # Any cookable ontop, inside, filled, contained, or covered gets cooked
+                # Any cookable ontop, inside, filled, contained, or covered gets cooked; any meltable accordingly gets melted.
+                # If both - melting happens first. 
                 for ontop_obj1, ontop_obj2 in self.ontop: 
                     ontop_syn1 = re.match(ver.OBJECT_CAT_AND_INST_RE, ontop_obj1).group()
-                    if (ontop_obj2 == objects[0]) and (ontop_syn1 in props_to_syns["cookable"]):
+                    if (ontop_obj2 == objects[0]) and (ontop_syn1 in props_to_syns["meltable"]):
+                        meltable_derivative_obj1 = syns_to_props_params[ontop_syn1]["meltable"]["meltable_derivative_synset"] + "_1"
+                        self.predicate_to_setters["real"](tuple([meltable_derivative_obj1]), True)
+                        self.predicate_to_setters["real"](tuple([ontop_obj1]), False)
+                        self.predicate_to_setters["contains"](tuple([ontop_obj2, ontop_obj1]), True)
+                        self.predicate_to_setters["ontop"](tuple([ontop_obj1, ontop_obj2]), False)
+                    elif (ontop_obj2 == objects[0]) and (ontop_syn1 in props_to_syns["cookable"]):
                         self.predicate_to_setters["cooked"](tuple([ontop_obj1]), True)
                 for inside_obj1, inside_obj2 in self.inside: 
                     inside_syn1 = re.match(ver.OBJECT_CAT_AND_INST_RE, inside_obj1).group()
+                    if (inside_obj2 == objects[0]) and (inside_syn1 in props_to_syns["meltable"]):
+                        meltable_derivative_obj1 = syns_to_props_params[inside_syn1]["meltable"]["meltable_derivative_synset"] + "_1"
+                        self.predicate_to_setters["real"](tuple([meltable_derivative_obj1]), True)
+                        self.predicate_to_setters["real"](tuple([inside_obj1]), False)
+                        self.predicate_to_setters["contains"](tuple([inside_obj2, inside_obj1]), True)
+                        self.predicate_to_setters["ontop"](tuple([inside_obj1, inside_obj2]), False)
                     if (inside_obj2 == objects[0]) and (inside_syn1 in props_to_syns["cookable"]):
                         self.predicate_to_setters["cooked"](tuple([inside_obj1]), True)
                 for filled_obj1, filled_obj2 in self.filled:
@@ -218,12 +245,10 @@ class TrivialSimulator(object):
             if is_predicate and (predicate in ["filled", "contains", "covered"]):
                 syn0 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[0]).group()
                 if (syn0 in props_to_syns["cookable"] and (tuple([objects[1]])) in self.hot):
-                    cookable_derivative = syns_to_props_params[syn0]["meltable"]["substance_cooking_derivative_synset"] + "_1"
+                    cookable_derivative = syns_to_props_params[syn0]["cookable"]["substance_cooking_derivative_synset"] + "_1"
                     self.predicate_to_setters["real"](tuple([cookable_derivative]), True)
                     self.predicate_to_setters[predicate](tuple([objects[1], cookable_derivative]), True)
-                    self.predicate_to_setters[predicate](objects, False)
-
-            # TODO need to flip for when I encounter something hot (basically I did this above)
+                    self.predicate_to_setters[predicate](tuple(objects), False)
 
             # If we encounter a potential melting placement of a meltable relative to a hot vessel...
             if is_predicate and (predicate in ["inside", "ontop"]):
@@ -233,9 +258,7 @@ class TrivialSimulator(object):
                     self.predicate_to_setters["real"](tuple([meltable_derivative]), True)
                     self.predicate_to_setters["real"](tuple([objects[0]]), False)
                     self.predicate_to_setters["contains"](tuple([objects[1], meltable_derivative]), True)
-                    self.predicate_to_setters[predicate](objects, False)
-
-            # TODO need to flip for when I encounter something hot 
+                    self.predicate_to_setters[predicate](tuple(objects), False)
 
 
             # TODO when a new object is created, its positional predicates are the same with the same objects as the original 
