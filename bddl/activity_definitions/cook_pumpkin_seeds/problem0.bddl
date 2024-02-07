@@ -8,6 +8,7 @@
     	pumpkin_seed__bag.n.01_1 - pumpkin_seed__bag.n.01
     	chopping_board.n.01_1 - chopping_board.n.01
     	salt.n.02_1 - salt.n.02
+        cooked__salt.n.01_1 - cooked__salt.n.01
     	salt__shaker.n.01_1 - salt__shaker.n.01
     	cookie_sheet.n.01_1 - cookie_sheet.n.01
     	cabinet.n.01_1 - cabinet.n.01
@@ -34,14 +35,21 @@
         (inroom floor.n.01_1 kitchen) 
         (ontop agent.n.01_1 floor.n.01_1)
         (future cooked__pumpkin_seed.n.01_1)
+        (future cooked__salt.n.01_1)
     )
     
     (:goal 
         (and 
             (real ?cooked__pumpkin_seed.n.01_1)
-            (covered ?cookie_sheet.n.01_1 ?cooked__pumpkin_seed.n.01_1) 
-            (covered ?cookie_sheet.n.01_1 ?salt.n.02_1) 
-            (hot ?oven.n.01_1)
+            (or 
+                (real ?cooked__salt.n.01_1)
+                (real ?salt.n.02_1)
+            )
+            (contains ?cookie_sheet.n.01_1 ?cooked__pumpkin_seed.n.01_1) 
+            (or
+                (contains ?cookie_sheet.n.01_1 ?salt.n.02_1)
+                (contains ?cookie_sheet.n.01_1 ?cooked__salt.n.01_1)
+            )
         )
     )
 )

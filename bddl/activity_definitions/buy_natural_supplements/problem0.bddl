@@ -35,7 +35,7 @@
             (ontop ?sack.n.01_1 ?checkout.n.03_1) 
             (forall 
                 (?bottle__of__supplements.n.01 - bottle__of__supplements.n.01) 
-                (ontop ?bottle__of__supplements.n.01 ?sack.n.01_1)
+                (inside ?bottle__of__supplements.n.01 ?sack.n.01_1)
     
             ) 
             (forall 

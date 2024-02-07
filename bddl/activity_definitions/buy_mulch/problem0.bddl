@@ -34,7 +34,7 @@
         (and 
             (forall 
                 (?money.n.01 - money.n.01) 
-                (inside ?money.n.01 ?cash_register.n.01_1)
+                (nextto ?money.n.01 ?cash_register.n.01_1)
             ) 
             (forall 
                 (?bag__of__mulch.n.01 - bag__of__mulch.n.01) 
