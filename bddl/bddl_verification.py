@@ -275,7 +275,10 @@ def check_synset_predicate_alignment(atom, syns_to_props):
 
     # Unaries
     if pred == "cooked": 
-        assert "cookable" in syns_to_props[objects[0]], f"Inapplicable cooked: {atom}"
+        if ("substance" in syns_to_props[objects[0]]) and ("cookable" in syns_to_props[objects[0]]):
+            raise AssertionError(f"Inapplicable cooked predicate applied to cookable substance (needs to be cooked version of substance, i.e. new object): {atom}")
+        else:
+            assert "cookable" in syns_to_props[objects[0]], f"Inapplicable cooked: {atom}"
     if pred == "frozen": 
         assert "freezable" in syns_to_props[objects[0]], f"Inapplicable frozen: {atom}"
     if pred == "closed" or pred == "open":
@@ -302,7 +305,7 @@ def check_synset_predicate_alignment(atom, syns_to_props):
         assert ("nonSubstance" in syns_to_props[objects[0]]) and ("substance" in syns_to_props[objects[1]]), f"Inapplicable covered: {atom}"
     if pred == "filled":
         assert ("fillable" in syns_to_props[objects[0]]) and ("physicalSubstance" in syns_to_props[objects[1]]), f"Inapplicable filled/empty: {atom}"
-    if pred == "contains" or pred == "empty":
+    if pred == "contains":
         assert ("fillable" in syns_to_props[objects[0]]) and ("substance" in syns_to_props[objects[1]]), f"Inapplicable contains: {atom}"
     if pred == "ontop":
         assert ("nonSubstance" in syns_to_props[objects[0]]) and ("nonSubstance" in syns_to_props[objects[1]]), f"Inapplicable ontop: {atom}"
