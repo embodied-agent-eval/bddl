@@ -181,9 +181,17 @@ class NQuantifier(Expression):
             self.get_ground_options()
             
     def evaluate(self):
-        self.child_values = [child.evaluate() for child in self.children]
+        # self.child_values = [child.evaluate() for child in self.children]
+        self.child_values = []
+        for child in self.children:
+            print(child.body)
+            print(child.evaluate())
+            self.child_values.append(child.evaluate())
         assert all([val is not None for val in self.child_values]), "child_values has NoneTypes"
-        return sum(self.child_values) == self.N
+        print("N:", self.N)
+        print("Result:", sum(self.child_values) == self.N)
+        print()
+        return sum(self.child_values) >= self.N
 
     def get_ground_options(self):
         # Accept just a few possible options
