@@ -5,15 +5,18 @@
         stain.n.01_1 - stain.n.01
         dust.n.01_1 - dust.n.01
      	gym_shoe.n.01_1 gym_shoe.n.01_2 gym_shoe.n.01_3 gym_shoe.n.01_4 - gym_shoe.n.01
-            countertop.n.01_1 - countertop.n.01
-            bar_soap.n.01_1 - bar_soap.n.01
-            cabinet.n.01_1 - cabinet.n.01
-            towel.n.01_1 - towel.n.01
-            scrub_brush.n.01_1 - scrub_brush.n.01
-            sink.n.01_1 - sink.n.01
-            floor.n.01_1 floor.n.01_2 - floor.n.01
-            table.n.02_1 - table.n.02
-            agent.n.01_1 - agent.n.01
+        countertop.n.01_1 - countertop.n.01
+        bar_soap.n.01_1 - bar_soap.n.01
+        cabinet.n.01_1 - cabinet.n.01
+        towel.n.01_1 - towel.n.01
+        scrub_brush.n.01_1 - scrub_brush.n.01
+        sink.n.01_1 - sink.n.01
+        water.n.06_1 - water.n.06
+        liquid_soap.n.01_1 - liquid_soap.n.01
+        liquid_soap__bottle.n.01_1 - liquid_soap__bottle.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        table.n.02_1 - table.n.02
+        agent.n.01_1 - agent.n.01
     )
     
     (:init 
@@ -34,6 +37,9 @@
         (not 
             (covered scrub_brush.n.01_1 stain.n.01_1)
         ) 
+        (filled liquid_soap__bottle.n.01_1 liquid_soap.n.01_1)
+        (ontop liquid_soap__bottle.n.01_1 countertop.n.01_1)
+        (insource sink.n.01_1 water.n.06_1)
         (inroom sink.n.01_1 kitchen) 
         (inroom countertop.n.01_1 kitchen) 
         (inroom cabinet.n.01_1 kitchen) 

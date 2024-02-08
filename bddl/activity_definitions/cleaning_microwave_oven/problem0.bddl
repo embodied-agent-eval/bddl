@@ -11,6 +11,9 @@
     	floor.n.01_1 - floor.n.01
     	cabinet.n.01_1 - cabinet.n.01
     	sink.n.01_1 - sink.n.01
+        water.n.06_1 - water.n.06
+        liquid_soap.n.01_1 - liquid_soap.n.01
+        liquid_soap__bottle.n.01_1 - liquid_soap__bottle.n.01
     	agent.n.01_1 - agent.n.01
     )
     
@@ -19,6 +22,9 @@
         (covered microwave.n.02_1 stain.n.01_1) 
         (ontop rag.n.01_1 countertop.n.01_1) 
         (ontop ashcan.n.01_1 floor.n.01_1) 
+        (filled liquid_soap__bottle.n.01_1 liquid_soap.n.01_1)
+        (ontop liquid_soap__bottle.n.01_1 countertop.n.01_1)
+        (insource sink.n.01_1 water.n.06_1)
         (inroom microwave.n.02_1 kitchen) 
         (inroom cabinet.n.01_1 kitchen) 
         (inroom countertop.n.01_1 kitchen) 
