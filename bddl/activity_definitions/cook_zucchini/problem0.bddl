@@ -7,6 +7,7 @@
         zucchini.n.02_1 - zucchini.n.02
         cooked__diced__zucchini.n.01_1 - cooked__diced__zucchini.n.01
         olive_oil.n.01_1 - olive_oil.n.01
+        cooked__olive_oil.n.01_1 - cooked__olive_oil.n.01
         olive_oil__bottle.n.01_1 - olive_oil__bottle.n.01
         carving_knife.n.01_1 - carving_knife.n.01
         chopping_board.n.01_1 - chopping_board.n.01
@@ -25,6 +26,7 @@
         (ontop olive_oil__bottle.n.01_1 countertop.n.01_1)
         (ontop chopping_board.n.01_1 countertop.n.01_1)
         (ontop carving_knife.n.01_1 chopping_board.n.01_1)
+        (future cooked__olive_oil.n.01_1)
         (inroom floor.n.01_1 kitchen) 
         (inroom grill.n.02_1 kitchen) 
         (inroom countertop.n.01_1 kitchen) 
@@ -34,9 +36,16 @@
     
     (:goal 
         (and 
+            (or
+                (real ?olive_oil.n.01_1)
+                (real ?cooked__olive_oil.n.01_1)
+            )
             (real ?cooked__diced__zucchini.n.01_1)
             (contains ?frying_pan.n.01_1 ?cooked__diced__zucchini.n.01_1)
-            (contains ?frying_pan.n.01_1 ?olive_oil.n.01_1)
+            (or
+                (contains ?frying_pan.n.01_1 ?olive_oil.n.01_1)
+                (contains ?frying_pan.n.01_1 ?cooked__olive_oil.n.01_1)
+            )
         )
     )
 )

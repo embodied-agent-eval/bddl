@@ -50,7 +50,7 @@
                         (?french_toast.n.01 - french_toast.n.01)
                         (ontop ?french_toast.n.01 ?plate.n.04)
                     )
-                    (inside ?electric_refrigerator.n.01_1 ?plate.n.04)
+                    (inside ?plate.n.04 ?electric_refrigerator.n.01_1)
                 )
             )
             (or 

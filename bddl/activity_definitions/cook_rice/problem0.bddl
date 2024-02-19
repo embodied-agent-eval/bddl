@@ -9,6 +9,7 @@
         crock_pot.n.01_1 - crock_pot.n.01
         butter.n.01_1 - butter.n.01
         melted__butter.n.01_1 - melted__butter.n.01
+        cooked__melted__butter.n.01_1 - cooked__melted__butter.n.01
         electric_refrigerator.n.01_1 - electric_refrigerator.n.01
         water.n.06_1 - water.n.06
         sink.n.01_1 - sink.n.01
@@ -30,14 +31,21 @@
         (inroom electric_refrigerator.n.01_1 kitchen) 
         (future melted__butter.n.01_1)
         (future cooked__brown_rice.n.01_1)
+        (future cooked__melted__butter.n.01_1)
         (ontop agent.n.01_1 floor.n.01_1)
     )
     
     (:goal 
         (and 
-            (real ?melted__butter.n.01_1)
+            (or
+                (real ?melted__butter.n.01_1)
+                (real ?cooked__melted__butter.n.01_1)
+            )
             (real ?cooked__brown_rice.n.01_1)
-            (contains ?crock_pot.n.01_1 ?melted__butter.n.01_1)
+            (or
+                (contains ?crock_pot.n.01_1 ?melted__butter.n.01_1)
+                (contains ?crock_pot.n.01_1 ?cooked__melted__butter.n.01_1)
+            )
             (filled ?crock_pot.n.01_1 ?cooked__brown_rice.n.01_1)
         )
     )

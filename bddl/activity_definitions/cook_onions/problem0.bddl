@@ -11,6 +11,7 @@
         spatula.n.01_1 - spatula.n.01
         olive_oil__bottle.n.01_1 - olive_oil__bottle.n.01
         olive_oil.n.01_1 - olive_oil.n.01
+        cooked__olive_oil.n.01_1 - cooked__olive_oil.n.01
         carving_knife.n.01_1 - carving_knife.n.01
         sink.n.01_1 - sink.n.01
         floor.n.01_1 - floor.n.01
@@ -32,6 +33,7 @@
         (inside olive_oil__bottle.n.01_1 cabinet.n.01_1) 
         (filled olive_oil__bottle.n.01_1 olive_oil.n.01_1) 
         (ontop carving_knife.n.01_1 chopping_board.n.01_1) 
+        (future cooked__olive_oil.n.01_1)
         (inroom sink.n.01_1 kitchen) 
         (inroom cabinet.n.01_1 kitchen) 
         (inroom stove.n.01_1 kitchen) 
@@ -43,8 +45,15 @@
     (:goal 
         (and 
             (real ?cooked__diced__vidalia_onion.n.01_1)
+            (or 
+                (real ?cooked__olive_oil.n.01_1)
+                (real ?olive_oil.n.01_1)
+            )
             (contains ?frying_pan.n.01_1 ?cooked__diced__vidalia_onion.n.01_1)
-            (contains ?frying_pan.n.01_1 ?olive_oil.n.01_1)
+            (or 
+                (contains ?frying_pan.n.01_1 ?olive_oil.n.01_1)
+                (contains ?frying_pan.n.01_1 ?cooked__olive_oil.n.01_1)
+            )
         )
     )
 )

@@ -6,6 +6,7 @@
         bratwurst.n.01_1 bratwurst.n.01_2 - bratwurst.n.01
         frying_pan.n.01_1 - frying_pan.n.01
         olive_oil.n.01_1 - olive_oil.n.01
+        cooked__olive_oil.n.01_1 - cooked__olive_oil.n.01
         olive_oil__bottle.n.01_1 - olive_oil__bottle.n.01
         electric_refrigerator.n.01_1 - electric_refrigerator.n.01
         countertop.n.01_1 - countertop.n.01
@@ -25,6 +26,7 @@
         (ontop frying_pan.n.01_1 countertop.n.01_1) 
         (filled olive_oil__bottle.n.01_1 olive_oil.n.01_1) 
         (ontop olive_oil__bottle.n.01_1 countertop.n.01_1)
+        (future cooked__olive_oil.n.01_1)
         (inroom electric_refrigerator.n.01_1 kitchen) 
         (inroom countertop.n.01_1 kitchen) 
         (inroom floor.n.01_1 kitchen) 
@@ -34,6 +36,10 @@
     
     (:goal 
         (and 
+            (or
+                (real ?olive_oil.n.01_1)
+                (real ?cooked__olive_oil.n.01_1)
+            )
             (forall 
                 (?bratwurst.n.01 - bratwurst.n.01)
                 (and 
@@ -41,7 +47,10 @@
                     (cooked ?bratwurst.n.01)
                 )
             )
-            (contains ?frying_pan.n.01_1 ?olive_oil.n.01_1)
+            (or
+                (contains ?frying_pan.n.01_1 ?olive_oil.n.01_1)
+                (contains ?frying_pan.n.01_1 ?cooked__olive_oil.n.01_1)
+            )
         )
     )
 )

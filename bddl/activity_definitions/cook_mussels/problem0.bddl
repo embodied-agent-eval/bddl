@@ -9,6 +9,7 @@
         salt.n.02_1 - salt.n.02
         marjoram.n.02_1 - marjoram.n.02
         marjoram__shaker.n.01_1 - marjoram__shaker.n.01
+        cooked__marjoram.n.01_1 - cooked__marjoram.n.01
         salt__shaker.n.01_1 - salt__shaker.n.01
         plate.n.04_1 - plate.n.04
         carving_knife.n.01_1 - carving_knife.n.01
@@ -84,6 +85,7 @@
         (inside plate.n.04_1 shelf.n.01_1) 
         (inside chopping_board.n.01_1 shelf.n.01_1) 
         (future seawater.n.01_1)
+        (future cooked__marjoram.n.01_1)
         (inroom sink.n.01_1 kitchen) 
         (inroom electric_refrigerator.n.01_1 kitchen) 
         (inroom stove.n.01_1 kitchen) 
@@ -95,6 +97,10 @@
     
     (:goal 
         (and 
+            (or
+                (real ?marjoram.n.02_1)
+                (real ?cooked__marjoram.n.01_1)
+            )
             (real ?cooked__diced__beefsteak_tomato.n.01_1)
             (forall 
                 (?mussel.n.01 - mussel.n.01)
@@ -106,7 +112,10 @@
             (contains ?stockpot.n.01_1 ?cooked__diced__beefsteak_tomato.n.01_1)
             (real ?seawater.n.01_1)
             (contains ?stockpot.n.01_1 ?seawater.n.01_1)
-            (contains ?stockpot.n.01_1 ?marjoram.n.02_1)
+            (or
+                (contains ?stockpot.n.01_1 ?marjoram.n.02_1)
+                (contains ?stockpot.n.01_1 ?cooked__marjoram.n.01_1)
+            )
         )
     )
 )

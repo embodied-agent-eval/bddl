@@ -7,8 +7,10 @@
         bowl.n.01_1 - bowl.n.01
         clam.n.03_1 clam.n.03_2 clam.n.03_3 - clam.n.03
         salt.n.02_1 - salt.n.02
+        cooked__salt.n.01_1 - cooked__salt.n.01
         salt__shaker.n.01_1 - salt__shaker.n.01
         lemon_juice.n.01_1 - lemon_juice.n.01
+        cooked__lemon_juice.n.01_1 - cooked__lemon_juice.n.01
         lemon_juice__bottle.n.01_1 - lemon_juice__bottle.n.01
         countertop.n.01_1 - countertop.n.01
         electric_refrigerator.n.01_1 - electric_refrigerator.n.01
@@ -35,6 +37,8 @@
         (ontop salt__shaker.n.01_1 countertop.n.01_1)
         (filled lemon_juice__bottle.n.01_1 lemon_juice.n.01_1)
         (inside lemon_juice__bottle.n.01_1 electric_refrigerator.n.01_1)
+        (future cooked__lemon_juice.n.01_1)
+        (future cooked__salt.n.01_1)
         (inroom stove.n.01_1 kitchen) 
         (inroom electric_refrigerator.n.01_1 kitchen) 
         (inroom countertop.n.01_1 kitchen) 
@@ -44,12 +48,26 @@
     
     (:goal 
         (and 
+            (or
+                (real ?cooked__salt.n.01_1)
+                (real ?salt.n.02_1)
+            )
+            (or
+                (real ?cooked__lemon_juice.n.01_1)
+                (real ?lemon_juice.n.01_1)
+            )
             (forall 
                 (?clam.n.03 - clam.n.03)
                 (and
                     (cooked ?clam.n.03)
-                    (covered ?clam.n.03 ?salt.n.02_1)
-                    (covered ?clam.n.03 ?lemon_juice.n.01_1)
+                    (or
+                        (covered ?clam.n.03 ?salt.n.02_1)
+                        (covered ?clam.n.03 ?cooked__salt.n.01_1)
+                    )
+                    (or
+                        (covered ?clam.n.03 ?lemon_juice.n.01_1)
+                        (covered ?clam.n.03 ?cooked__lemon_juice.n.01_1)
+                    )
                 )
             )
         )
