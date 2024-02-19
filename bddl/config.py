@@ -14,7 +14,7 @@ READABLE_PREDICATE_NAMES = {
 
 def get_definition_filename(behavior_activity, instance, domain=False):
     if domain:
-        return os.path.join(ACTIVITY_CONFIGS_PATH, 'domain_igibson.bddl')
+        return os.path.join(ACTIVITY_CONFIGS_PATH, 'domain_omnigibson.bddl')
     else:
         return os.path.join(ACTIVITY_CONFIGS_PATH, behavior_activity, f"problem{instance}.bddl")
 
