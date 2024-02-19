@@ -318,9 +318,9 @@ class KnowledgeBaseProcessor():
         for transition_data in self.tqdm(transitions):
             rule_name = transition_data["rule_name"]
             transition = TransitionRule.create(name=rule_name)
-            inputs = set(transition_data["input_objects"].keys())
+            inputs = set(transition_data["input_synsets"].keys())
             assert inputs, f"Transition {transition.name} has no inputs!"
-            outputs = set(transition_data["output_objects"].keys())
+            outputs = set(transition_data["output_synsets"].keys())
             assert outputs, f"Transition {transition.name} has no outputs!"
             assert inputs & outputs == set(), f"Inputs and outputs of {transition.name} overlap!"
             for synset_name in inputs:
@@ -332,7 +332,7 @@ class KnowledgeBaseProcessor():
 
     def generate_synset_state(self):
         synsets = []
-        substances = {s.name for s in Synset.all_objects() for prop in s.properties if prop.name == "substance"}
+        substances = {s.name for s in Synset.all_objects() if "substance" in s.property_names}
         for synset in self.tqdm(Synset.all_objects()):
             if synset.name == "entity.n.01": synset.state = STATE_MATCHED   # root synset is always legal
             elif synset.name in substances:

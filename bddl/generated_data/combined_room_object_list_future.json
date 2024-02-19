@@ -1,5 +1,5 @@
 {
-    "success": false,
+    "success": true,
     "scenes": {
         "Beechwood_0_garden": {
             "garden_0": {
@@ -161,7 +161,7 @@
                 "door-lvgliq": 3
             },
             "storage_room_1": {
-                "floors-tzoowa": 1,
+                "floors-tzoowa": 2,
                 "ceilings-xcwbsa": 2,
                 "electric_switch-wseglt": 1
             },
@@ -756,8 +756,8 @@
                 "straight_chair-eospnr": 3,
                 "picture-szpupz": 1,
                 "window-ulnafj": 2,
-                "ceilings-gjwnre": 1,
-                "floors-kwnype": 1,
+                "ceilings-gjwnre": 2,
+                "floors-kwnype": 2,
                 "electric_switch-wseglt": 1
             },
             "living_room_0": {
@@ -772,8 +772,8 @@
                 "picture-gwricv": 1,
                 "picture-weqggl": 1,
                 "picture-yrgaal": 1,
-                "ceilings-vubcbl": 1,
-                "floors-lwmene": 1,
+                "ceilings-vubcbl": 2,
+                "floors-lwmene": 2,
                 "electric_switch-wseglt": 1
             },
             "storage_room_1": {
@@ -781,8 +781,8 @@
                 "door-ktydvs": 1,
                 "picture-szpupz": 1,
                 "shelf-vgzdul": 1,
-                "floors-ssjixw": 1,
-                "ceilings-ndlpeo": 1,
+                "floors-ssjixw": 2,
+                "ceilings-ndlpeo": 2,
                 "electric_switch-wseglt": 1
             },
             "storage_room_0": {
@@ -794,15 +794,15 @@
                 "sink-ksecxq": 1,
                 "washer-omeuop": 1,
                 "window-ulnafj": 1,
-                "floors-qrzmkt": 1,
-                "ceilings-dslvvl": 1,
+                "floors-qrzmkt": 2,
+                "ceilings-dslvvl": 2,
                 "electric_switch-wseglt": 3
             },
             "corridor_0": {
                 "door-ktydvs": 1,
                 "door-lvgliq": 1,
-                "floors-kqgjaj": 1,
-                "ceilings-rnaypg": 1,
+                "floors-kqgjaj": 2,
+                "ceilings-rnaypg": 2,
                 "electric_switch-wseglt": 2
             },
             "bathroom_0": {
@@ -812,37 +812,8 @@
                 "shower-invgma": 1,
                 "sink-ksecxq": 1,
                 "toilet-wusctd": 1,
-                "floors-qrzmkt": 1,
                 "floors-zvyodb": 2,
-                "floors-bryjan": 1,
-                "floors-ssjixw": 1,
-                "floors-kqgjaj": 1,
-                "ceilings-dashlx": 1,
-                "ceilings-rnaypg": 1,
-                "ceilings-dslvvl": 1,
-                "ceilings-ndlpeo": 1,
-                "ceilings-vubcbl": 1,
                 "ceilings-eanlkl": 2,
-                "walls-xkdbsb": 1,
-                "walls-bntgiu": 1,
-                "walls-pmfadr": 1,
-                "walls-gmdnub": 1,
-                "walls-gtaxam": 1,
-                "walls-pivmuk": 1,
-                "walls-nmzbqa": 1,
-                "walls-hnqegn": 1,
-                "walls-ysxqfc": 1,
-                "walls-jvltxt": 1,
-                "walls-umjlad": 1,
-                "walls-fsaxgs": 1,
-                "walls-uishdq": 1,
-                "walls-llgahv": 1,
-                "walls-hsudbq": 1,
-                "walls-zbggqd": 1,
-                "walls-qisxmx": 1,
-                "ceilings-gjwnre": 1,
-                "floors-lwmene": 1,
-                "floors-kwnype": 1,
                 "electric_switch-wseglt": 1
             },
             "garage_0": {
@@ -851,8 +822,8 @@
                 "shelf-njwsoa": 1,
                 "picture-yrgaal": 1,
                 "window-ulnafj": 1,
-                "floors-bryjan": 1,
-                "ceilings-dashlx": 1,
+                "floors-bryjan": 2,
+                "ceilings-dashlx": 2,
                 "electric_switch-wseglt": 1
             }
         },
@@ -1027,19 +998,18 @@
                 "floor_lamp-smfygn": 1,
                 "garden_light-xqmqmi": 13,
                 "wall_mounted_light-trxlgu": 1,
-                "fence-wjaouk": 1,
                 "pillow-bgqjtg": 1,
                 "wineglass-exasdr": 1,
                 "mug-jgethp": 1,
-                "car-shexol": 1,
+                "car-gewjwh": 1,
                 "grill-tusmtd": 1,
                 "gate-jnzgyw": 1,
                 "gate-bzotkq": 1,
                 "armchair-thfelc": 2,
                 "sofa-llsxsg": 1,
                 "pillow-hegzyu": 1,
-                "driveway-ulegfe": 1,
-                "lawn-mgxskp": 1,
+                "driveway-ulegfe": 2,
+                "lawn-mgxskp": 2,
                 "bush-hnzfgt": 4,
                 "bush-cwsigt": 8,
                 "bush-lfyqkj": 9,
@@ -1078,7 +1048,6 @@
                 "piano-bnxcvw": 1,
                 "shelf-owvfik": 3,
                 "straight_chair-amgwaw": 1,
-                "window-ulnafj": 1,
                 "floors-jrdgxz": 2,
                 "ceilings-ootyyo": 2,
                 "electric_switch-wseglt": 1
@@ -1089,7 +1058,7 @@
                 "dryer-zlmnfg": 1,
                 "trash_can-wklill": 1,
                 "washer-omeuop": 1,
-                "window-ulnafj": 2,
+                "window-ulnafj": 3,
                 "floors-kzcgnc": 2,
                 "ceilings-ugpmqg": 2,
                 "electric_switch-wseglt": 1
@@ -1122,7 +1091,7 @@
                 "picture-yrgaal": 1,
                 "sofa-mnfbbh": 1,
                 "window-ulnafj": 2,
-                "floors-vaeoco": 1,
+                "floors-vaeoco": 2,
                 "ceilings-pcavmp": 2,
                 "electric_switch-wseglt": 1
             },
@@ -1838,37 +1807,6 @@
             }
         },
         "Rs_garden": {
-            "living_room_0": {
-                "background-eydaus": 1,
-                "driveway-nnhykp": 1,
-                "lawn-zijpqt": 1,
-                "window-ithrgo": 2,
-                "carpet-ctclvd": 1,
-                "countertop-tpuwys": 1,
-                "bottom_cabinet-bamfsz": 1,
-                "bottom_cabinet-jhymlr": 1,
-                "breakfast_table-skczfi": 2,
-                "coffee_table-fqluyq": 1,
-                "floor_lamp-vdxlda": 1,
-                "laptop-nvulcs": 1,
-                "loudspeaker-bmpdyv": 1,
-                "pot_plant-jatssq": 2,
-                "pot_plant-udqjui": 1,
-                "shelf-njwsoa": 2,
-                "shelf-owvfik": 1,
-                "sofa-mnfbbh": 1,
-                "standing_tv-udotid": 1,
-                "stool-ycfbsd": 1,
-                "straight_chair-amgwaw": 3,
-                "straight_chair-eospnr": 2,
-                "swivel_chair-qtqitn": 1,
-                "table_lamp-xbfgjc": 1,
-                "picture-hhxttu": 1,
-                "picture-jpfyrq": 1,
-                "floors-vqsmpk": 2,
-                "ceilings-nchffa": 2,
-                "electric_switch-wseglt": 2
-            },
             "garden_0": {
                 "armchair-thhqkc": 2,
                 "carpet-iepqvq": 1,
@@ -1896,8 +1834,8 @@
                 "cup-uobdoq": 4,
                 "plate-eozsdg": 1,
                 "pot_plant-irffta": 4,
-                "driveway-nnhykp": 1,
-                "lawn-zijpqt": 1,
+                "driveway-nnhykp": 2,
+                "lawn-zijpqt": 2,
                 "tree-wtyipq": 31,
                 "tree-dyymaq": 1,
                 "bush-frqici": 1,
@@ -1936,6 +1874,34 @@
                 "floors-tzonuv": 2,
                 "ceilings-tsfxuu": 2,
                 "electric_switch-wseglt": 1
+            },
+            "living_room_0": {
+                "window-ithrgo": 2,
+                "carpet-ctclvd": 1,
+                "countertop-tpuwys": 1,
+                "bottom_cabinet-bamfsz": 1,
+                "bottom_cabinet-jhymlr": 1,
+                "breakfast_table-skczfi": 2,
+                "coffee_table-fqluyq": 1,
+                "floor_lamp-vdxlda": 1,
+                "laptop-nvulcs": 1,
+                "loudspeaker-bmpdyv": 1,
+                "pot_plant-jatssq": 2,
+                "pot_plant-udqjui": 1,
+                "shelf-njwsoa": 2,
+                "shelf-owvfik": 1,
+                "sofa-mnfbbh": 1,
+                "standing_tv-udotid": 1,
+                "stool-ycfbsd": 1,
+                "straight_chair-amgwaw": 3,
+                "straight_chair-eospnr": 2,
+                "swivel_chair-qtqitn": 1,
+                "table_lamp-xbfgjc": 1,
+                "picture-hhxttu": 1,
+                "picture-jpfyrq": 1,
+                "floors-vqsmpk": 2,
+                "ceilings-nchffa": 2,
+                "electric_switch-wseglt": 2
             },
             "bedroom_0": {
                 "window-ulnafj": 1,
@@ -2043,8 +2009,7 @@
                 "rock-kmiazp": 2,
                 "garden_plant-itktex": 17,
                 "garden_plant-kyitvo": 9,
-                "garden_plant-ypzhey": 7,
-                "background-miopfw": 1,
+                "background-miopfw": 2,
                 "floors-gkfwyg": 1,
                 "armchair-ouqlrc": 8,
                 "pillow-dayain": 8,
@@ -2075,7 +2040,6 @@
                 "bush-hobkxy": 6,
                 "bush-ysfopl": 4,
                 "rock-kmzdov": 3,
-                "rock-jnmfib": 1,
                 "rock-aqgqkc": 1,
                 "rock-zzvigh": 1,
                 "rock-gptwey": 1,
@@ -2087,12 +2051,11 @@
                 "rock-qaepnw": 4,
                 "rock-wxvbzg": 4,
                 "rock-bpwpcd": 3,
-                "bush-ajmihp": 2,
                 "rock-lwndzg": 4,
                 "rock-ibmosd": 3,
                 "car-xxsgpq": 1,
-                "lawn-qaedpx": 1,
-                "driveway-bswjlv": 1,
+                "lawn-qaedpx": 2,
+                "driveway-bswjlv": 2,
                 "bush-hnzfgt": 14,
                 "bush-cwsigt": 28,
                 "bush-kjakgd": 4,
@@ -2441,8 +2404,8 @@
                 "shower-invgma": 1,
                 "sink-ksecxq": 2,
                 "window-ithrgo": 1,
-                "floors-kjptjl": 1,
-                "ceilings-uqrmaj": 1,
+                "floors-kjptjl": 2,
+                "ceilings-uqrmaj": 2,
                 "electric_switch-wseglt": 1
             },
             "bedroom_2": {
@@ -2456,8 +2419,8 @@
                 "picture-cltbty": 1,
                 "picture-fhkzlm": 1,
                 "window-ulnafj": 2,
-                "floors-eldjou": 1,
-                "ceilings-taqajg": 1,
+                "floors-eldjou": 2,
+                "ceilings-taqajg": 2,
                 "electric_switch-wseglt": 1
             },
             "bedroom_1": {
@@ -2471,8 +2434,8 @@
                 "picture-rciuob": 1,
                 "picture-zsirgc": 1,
                 "window-ulnafj": 2,
-                "floors-yxiuet": 1,
-                "ceilings-qpqfcx": 1,
+                "floors-yxiuet": 2,
+                "ceilings-qpqfcx": 2,
                 "electric_switch-wseglt": 1
             },
             "bedroom_0": {
@@ -2487,8 +2450,8 @@
                 "table_lamp-xbfgjc": 2,
                 "mirror-pevdqu": 1,
                 "window-ulnafj": 3,
-                "floors-sfyruj": 1,
-                "ceilings-gwhnjk": 1,
+                "floors-sfyruj": 2,
+                "ceilings-gwhnjk": 2,
                 "electric_switch-wseglt": 1
             },
             "utility_room_0": {
@@ -2498,8 +2461,8 @@
                 "sink-ksecxq": 1,
                 "top_cabinet-fqhdne": 2,
                 "washer-omeuop": 1,
-                "floors-mzywvs": 1,
-                "ceilings-rtefmk": 1,
+                "floors-mzywvs": 2,
+                "ceilings-rtefmk": 2,
                 "electric_switch-wseglt": 1
             },
             "playroom_0": {
@@ -2511,8 +2474,8 @@
                 "straight_chair-psoizi": 4,
                 "picture-yrgaal": 1,
                 "window-ulnafj": 3,
-                "floors-skvhfo": 1,
-                "ceilings-fasuse": 1,
+                "floors-skvhfo": 2,
+                "ceilings-fasuse": 2,
                 "electric_switch-wseglt": 1
             },
             "private_office_0": {
@@ -2525,8 +2488,8 @@
             "corridor_0": {
                 "door-ktydvs": 2,
                 "door-lvgliq": 4,
-                "floors-byoazk": 1,
-                "ceilings-mjpcrf": 1,
+                "floors-byoazk": 2,
+                "ceilings-mjpcrf": 2,
                 "electric_switch-wseglt": 2
             },
             "exercise_room_0": {
@@ -2534,8 +2497,8 @@
                 "picture-tlwjpv": 1,
                 "treadmill-ackppx": 2,
                 "window-ulnafj": 1,
-                "floors-gmuspq": 1,
-                "ceilings-eewgbi": 1,
+                "floors-gmuspq": 2,
+                "ceilings-eewgbi": 2,
                 "electric_switch-wseglt": 1
             },
             "bathroom_1": {
@@ -2548,40 +2511,40 @@
                 "sink-xiybkb": 2,
                 "toilet-kfmkbm": 1,
                 "towel_rack-kqrmrh": 1,
-                "floors-hhvngm": 1,
-                "floors-sfpzcj": 1,
-                "ceilings-tcvtrs": 1,
-                "ceilings-mrbukh": 1,
+                "floors-hhvngm": 2,
+                "floors-sfpzcj": 2,
+                "ceilings-tcvtrs": 2,
+                "ceilings-mrbukh": 2,
                 "electric_switch-wseglt": 1
             },
             "storage_room_0": {
-                "floors-qgdckc": 1,
-                "ceilings-qjjlzt": 1,
+                "floors-qgdckc": 2,
+                "ceilings-qjjlzt": 2,
                 "electric_switch-wseglt": 1
             },
             "closet_1": {
-                "floors-wywwii": 1,
-                "ceilings-xbqebs": 1,
+                "floors-wywwii": 2,
+                "ceilings-xbqebs": 2,
                 "electric_switch-wseglt": 1
             },
             "storage_room_1": {
-                "floors-jdcmwf": 1,
-                "ceilings-xlrktm": 1,
+                "floors-jdcmwf": 2,
+                "ceilings-xlrktm": 2,
                 "electric_switch-wseglt": 1
             },
             "storage_room_2": {
-                "floors-kjaffs": 1,
-                "ceilings-aaonre": 1,
+                "floors-kjaffs": 2,
+                "ceilings-aaonre": 2,
                 "electric_switch-wseglt": 1
             },
             "storage_room_3": {
-                "floors-wgqunv": 1,
-                "ceilings-rgasdu": 1,
+                "floors-wgqunv": 2,
+                "ceilings-rgasdu": 2,
                 "electric_switch-wseglt": 1
             },
             "closet_0": {
-                "floors-bkqcyy": 1,
-                "ceilings-gnpckf": 1
+                "floors-bkqcyy": 2,
+                "ceilings-gnpckf": 2
             }
         },
         "gates_bedroom": {
@@ -2600,8 +2563,15 @@
                 "nightstand-uudzva": 1,
                 "bed-jpuihb": 1,
                 "coffee_table-fhqimf": 1,
-                "curtain-asdfgh": 1,
-                "tea_bottle-iladfg": 2
+                "walls-eviihi": 2,
+                "ceilings-yownri": 1,
+                "floors-lwmjzl": 2,
+                "trash_bin-jlawet": 1,
+                "cup-fsfsas": 2,
+                "tea_bottle-iladfg": 2,
+                "walls-vprdxh": 2,
+                "walls-nhnlvx": 2,
+                "walls-wficnk": 2
             }
         },
         "grocery_store_asian": {
@@ -2809,13 +2779,13 @@
                 "toilet-udiezm": 5,
                 "toilet_paper_dispenser-awuosg": 5,
                 "handle-apdvez": 1,
+                "walls-hvqsio": 2,
                 "floors-mlogeo": 2,
                 "ceilings-sctusv": 2,
                 "walls-ybneja": 2,
                 "walls-olpgua": 2,
                 "walls-rwfind": 2,
-                "walls-ajkcwv": 2,
-                "faucet-lqfzkv": 5
+                "walls-ajkcwv": 2
             }
         },
         "grocery_store_cafe": {
@@ -3000,7 +2970,6 @@
                 "walls-rdivcc": 2,
                 "walls-crohyh": 2,
                 "walls-byqfbc": 2,
-                "walls-sitqlq": 2,
                 "walls-ykwakt": 2,
                 "walls-yifxvw": 2,
                 "walls-fvrxbt": 2,
@@ -3137,7 +3106,7 @@
                 "drink_dispenser-zgvhru": 1,
                 "drink_dispenser-midfat": 1,
                 "paper_cup-guobeq": 1,
-                "walls-ifljlu": 1,
+                "walls-ifljlu": 2,
                 "bag_of_bread-yehtiv": 4,
                 "bag_of_bread-wjbnfu": 5,
                 "bag_of_bread-sfupqo": 5,
@@ -3416,7 +3385,8 @@
                 "square_light-tgtowc": 6,
                 "walls-qntavt": 2,
                 "walls-zuvvoh": 2,
-                "walls-enjbmy": 2
+                "walls-enjbmy": 2,
+                "ceilings-ggrrst": 2
             }
         },
         "hall_glass_ceiling": {
@@ -3456,13 +3426,13 @@
                 "toilet-udiezm": 5,
                 "toilet_paper_dispenser-awuosg": 5,
                 "handle-apdvez": 1,
+                "walls-hvqsio": 2,
                 "floors-mlogeo": 2,
                 "ceilings-sctusv": 2,
                 "walls-ybneja": 2,
                 "walls-olpgua": 2,
                 "walls-rwfind": 2,
-                "walls-ajkcwv": 2,
-                "faucet-lqfzkv": 5
+                "walls-ajkcwv": 2
             }
         },
         "hall_train_station": {
@@ -3520,7 +3490,8 @@
                 "square_light-tgtowc": 6,
                 "walls-qntavt": 2,
                 "walls-zuvvoh": 2,
-                "walls-enjbmy": 2
+                "walls-enjbmy": 2,
+                "ceilings-ggrrst": 2
             }
         },
         "hotel_gym_spa": {
@@ -3917,7 +3888,7 @@
                 "wall_mounted_tv-dxyfxf": 1,
                 "hardback-ucicpd": 1,
                 "hardback-axvnml": 1,
-                "door-vudhlc": 2,
+                "door-vudhlc": 3,
                 "electric_switch-strbnw": 2,
                 "floors-rhwsaa": 2
             },
@@ -3952,7 +3923,6 @@
                 "tray-mkdcha": 1,
                 "table_knife-nvwmkx": 18,
                 "room_light-ltnnrc": 2,
-                "door-vudhlc": 1,
                 "oven-ffitak": 1,
                 "stove-mdanhg": 1,
                 "sink-egwapq": 1,
@@ -5106,7 +5076,7 @@
                 "shelf-hibwic": 1,
                 "floors-fpnxmg": 2
             },
-            "empty_room_2": {
+            "empty_room_1": {
                 "door-fstpos": 1
             }
         },
@@ -5186,7 +5156,7 @@
                 "ceilings-gpnify": 2,
                 "floors-xmgdee": 2,
                 "elevator_door-yazaic": 6,
-                "downlight-hpkvem": 15,
+                "downlight-hpkvem": 22,
                 "square_light-odlphz": 4,
                 "door-gfrgkk": 1,
                 "door-xqxiyb": 1,
@@ -5242,7 +5212,7 @@
             },
             "lobby_0": {
                 "wall_mounted_tv-rifpjo": 1,
-                "downlight-hpkvem": 3,
+                "downlight-hpkvem": 6,
                 "floors-ydhbul": 2,
                 "ceilings-cxkvpr": 2
             },
@@ -5387,18 +5357,18 @@
                 "toilet-udiezm": 5,
                 "toilet_paper_dispenser-awuosg": 5,
                 "handle-apdvez": 1,
+                "walls-hvqsio": 2,
                 "floors-mlogeo": 2,
                 "ceilings-sctusv": 2,
                 "walls-ybneja": 2,
                 "walls-olpgua": 2,
                 "walls-rwfind": 2,
-                "walls-ajkcwv": 2,
-                "faucet-lqfzkv": 5
+                "walls-ajkcwv": 2
             }
         },
         "office_cubicles_right": {
             "corridor_0": {
-                "ceilings-lezgrj": 1,
+                "ceilings-lezgrj": 2,
                 "floors-naavhr": 2,
                 "elevator_door-yazaic": 6,
                 "downlight-hpkvem": 23,
@@ -5429,7 +5399,7 @@
                 "monitor-kmltvq": 1,
                 "downlight-hpkvem": 1,
                 "floors-schwxn": 2,
-                "ceilings-vhsxcg": 1
+                "ceilings-vhsxcg": 2
             },
             "private_office_2": {
                 "projection_screen-zsquya": 2,
@@ -5443,7 +5413,7 @@
                 "door-pwoerr": 1,
                 "downlight-hpkvem": 1,
                 "floors-furgou": 2,
-                "ceilings-bkqhio": 1
+                "ceilings-bkqhio": 2
             },
             "private_office_3": {
                 "projection_screen-ubdmvn": 1,
@@ -5457,7 +5427,7 @@
                 "monitor-kmltvq": 1,
                 "downlight-hpkvem": 1,
                 "floors-curkiw": 2,
-                "ceilings-vsoozg": 1
+                "ceilings-vsoozg": 2
             },
             "conference_hall_0": {
                 "projection_screen-zsquya": 4,
@@ -5465,7 +5435,7 @@
                 "door-ggcyib": 1,
                 "downlight-hpkvem": 6,
                 "floors-vxanqe": 2,
-                "ceilings-unwrsb": 1
+                "ceilings-unwrsb": 2
             },
             "meeting_room_0": {
                 "projection_screen-zsquya": 2,
@@ -5477,7 +5447,7 @@
                 "door-ggcyib": 1,
                 "downlight-hpkvem": 2,
                 "floors-lmgvcb": 2,
-                "ceilings-vonsdl": 1
+                "ceilings-vonsdl": 2
             },
             "shared_office_0": {
                 "square_light-odlphz": 12,
@@ -5539,13 +5509,13 @@
                 "toilet-udiezm": 5,
                 "toilet_paper_dispenser-awuosg": 5,
                 "handle-apdvez": 1,
+                "walls-hvqsio": 2,
                 "floors-mlogeo": 2,
                 "ceilings-sctusv": 2,
                 "walls-ybneja": 2,
                 "walls-olpgua": 2,
                 "walls-rwfind": 2,
-                "walls-ajkcwv": 2,
-                "faucet-lqfzkv": 5
+                "walls-ajkcwv": 2
             }
         },
         "office_large": {
@@ -5611,7 +5581,6 @@
                 "cup-nbhcgu": 6,
                 "cup-xjdyon": 2,
                 "coffee_maker-artpwc": 2,
-                "water_glass-qbejli": 1,
                 "jug-gjgwvi": 2,
                 "breakfast_table-yclkbw": 1,
                 "sink-yyntym": 1,
@@ -5911,7 +5880,6 @@
                 "walls-rdivcc": 2,
                 "walls-crohyh": 2,
                 "walls-byqfbc": 2,
-                "walls-sitqlq": 2,
                 "walls-ykwakt": 2,
                 "walls-yifxvw": 2,
                 "walls-fvrxbt": 2,
@@ -6008,13 +5976,13 @@
                 "toilet-udiezm": 5,
                 "toilet_paper_dispenser-awuosg": 5,
                 "handle-apdvez": 1,
+                "walls-hvqsio": 2,
                 "floors-mlogeo": 2,
                 "ceilings-sctusv": 2,
                 "walls-ybneja": 2,
                 "walls-olpgua": 2,
                 "walls-rwfind": 2,
-                "walls-ajkcwv": 2,
-                "faucet-lqfzkv": 5
+                "walls-ajkcwv": 2
             }
         },
         "restaurant_asian": {
@@ -6147,7 +6115,8 @@
                 "square_light-tgtowc": 6,
                 "walls-qntavt": 2,
                 "walls-zuvvoh": 2,
-                "walls-enjbmy": 2
+                "walls-enjbmy": 2,
+                "ceilings-ggrrst": 2
             },
             "kitchen_0": {
                 "stove-ykretu": 1,
@@ -6380,7 +6349,6 @@
                 "walls-rdivcc": 2,
                 "walls-crohyh": 2,
                 "walls-byqfbc": 2,
-                "walls-sitqlq": 2,
                 "walls-ykwakt": 2,
                 "walls-yifxvw": 2,
                 "walls-fvrxbt": 2,
@@ -6426,7 +6394,7 @@
                 "bowl-cypjlv": 1,
                 "ramekin-eawgwj": 2,
                 "water_glass-igyuko": 17,
-                "dishwasher-xvchpe": 1,
+                "dishwasher-xvchpe": 2,
                 "cup-ibhhfj": 1,
                 "chopping_board-ozrzrr": 1,
                 "carving_knife-zaihmr": 2,
@@ -6463,9 +6431,9 @@
                 "jar-vyfehw": 1,
                 "tomato_paste-sqqdzb": 4,
                 "canned_corn-pddtfk": 5,
-                "wall_mounted_shelf-notszn": 14,
+                "wall_mounted_shelf-notszn": 15,
                 "hanger-fclnmc": 1,
-                "fridge-vwylob": 1,
+                "fridge-vwylob": 2,
                 "dish_rack-rniujn": 1,
                 "saucepot-sthkfz": 1,
                 "saucepot-urqzec": 1,
@@ -6483,7 +6451,7 @@
                 "saucepot-chjetk": 1,
                 "frying_pan-vycozd": 1,
                 "stockpot-dcleem": 3,
-                "oven-cgtaer": 1,
+                "oven-cgtaer": 2,
                 "bowl-kdkrov": 1,
                 "bottom_cabinet-jhymlr": 1,
                 "metal_bottom_cabinet-bbjuqu": 1,
@@ -6556,7 +6524,7 @@
                 "sign-vvjtkv": 3,
                 "sign-mexzmk": 1,
                 "sign-axhlim": 1,
-                "downlight-ldapja": 30,
+                "downlight-ldapja": 34,
                 "door-esgehq": 1,
                 "window-oszzno": 1,
                 "window-djqiqc": 1,
@@ -6653,14 +6621,14 @@
                 "door-jkisfk": 1,
                 "room_light-ijvlre": 8,
                 "ceiling_fan-xtmacj": 3,
-                "bench-xwphjd": 8,
-                "floors-wvljsb": 2
+                "bench-xwphjd": 8
             },
             "corridor_0": {
                 "walls-vnnkzu": 2,
                 "walls-jdilmn": 2,
                 "ceilings-xxzyhh": 2,
-                "floors-fcxkki": 2
+                "floors-fcxkki": 2,
+                "floors-nzvhdf": 2
             },
             "kitchen_0": {
                 "stove-ykretu": 1,
@@ -6794,8 +6762,7 @@
                 "door-frusok": 1,
                 "room_divider-oufvle": 1,
                 "window_blind-rfdlor": 4,
-                "painting-pwklyc": 2,
-                "walls-vcravt": 1
+                "painting-pwklyc": 2
             },
             "lobby_0": {
                 "sofa-wjytsn": 1,
@@ -6814,19 +6781,20 @@
                 "door-mdglvs": 1,
                 "water_glass-ktuvuo": 1,
                 "downlight-jrrugm": 6,
-                "walls-vcravt": 1,
                 "floors-wtwwvl": 2,
                 "ceilings-zspxep": 2
             },
             "corridor_0": {
                 "walls-eervot": 2,
                 "walls-ezsfkl": 2,
-                "ceilings-qrqqqc": 2
+                "ceilings-qrqqqc": 2,
+                "floors-gkynpc": 2
             },
             "corridor_1": {
                 "walls-vsfiox": 2,
                 "walls-tczwqu": 2,
-                "ceilings-pqelnr": 2
+                "ceilings-pqelnr": 2,
+                "floors-qrvcrf": 2
             },
             "bathroom_0": {
                 "walls-kfkuxu": 2,
@@ -6868,7 +6836,6 @@
                 "walls-rdivcc": 2,
                 "walls-crohyh": 2,
                 "walls-byqfbc": 2,
-                "walls-sitqlq": 2,
                 "walls-ykwakt": 2,
                 "walls-yifxvw": 2,
                 "walls-fvrxbt": 2,
@@ -6914,7 +6881,7 @@
                 "bowl-cypjlv": 1,
                 "ramekin-eawgwj": 2,
                 "water_glass-igyuko": 17,
-                "dishwasher-xvchpe": 1,
+                "dishwasher-xvchpe": 2,
                 "cup-ibhhfj": 1,
                 "chopping_board-ozrzrr": 1,
                 "carving_knife-zaihmr": 2,
@@ -6951,9 +6918,9 @@
                 "jar-vyfehw": 1,
                 "tomato_paste-sqqdzb": 4,
                 "canned_corn-pddtfk": 5,
-                "wall_mounted_shelf-notszn": 14,
+                "wall_mounted_shelf-notszn": 15,
                 "hanger-fclnmc": 1,
-                "fridge-vwylob": 1,
+                "fridge-vwylob": 2,
                 "dish_rack-rniujn": 1,
                 "saucepot-sthkfz": 1,
                 "saucepot-urqzec": 1,
@@ -6971,7 +6938,7 @@
                 "saucepot-chjetk": 1,
                 "frying_pan-vycozd": 1,
                 "stockpot-dcleem": 3,
-                "oven-cgtaer": 1,
+                "oven-cgtaer": 2,
                 "bowl-kdkrov": 1,
                 "bottom_cabinet-jhymlr": 1,
                 "metal_bottom_cabinet-bbjuqu": 1,
@@ -7096,7 +7063,6 @@
                 "sink-ekkwsy": 2
             },
             "corridor_0": {
-                "walls-sazvet": 1,
                 "walls-chjfxn": 2,
                 "walls-pnmump": 2,
                 "floors-tdgvhq": 2,
@@ -7124,13 +7090,13 @@
                 "toilet-udiezm": 5,
                 "toilet_paper_dispenser-awuosg": 5,
                 "handle-apdvez": 1,
+                "walls-hvqsio": 2,
                 "floors-mlogeo": 2,
                 "ceilings-sctusv": 2,
                 "walls-ybneja": 2,
                 "walls-olpgua": 2,
                 "walls-rwfind": 2,
-                "walls-ajkcwv": 2,
-                "faucet-lqfzkv": 5
+                "walls-ajkcwv": 2
             },
             "kitchen_0": {
                 "boiler-lbcxwi": 1,
@@ -7172,7 +7138,7 @@
                 "bowl-cypjlv": 1,
                 "ramekin-eawgwj": 2,
                 "water_glass-igyuko": 17,
-                "dishwasher-xvchpe": 1,
+                "dishwasher-xvchpe": 2,
                 "cup-ibhhfj": 1,
                 "chopping_board-ozrzrr": 1,
                 "carving_knife-zaihmr": 2,
@@ -7209,9 +7175,9 @@
                 "jar-vyfehw": 1,
                 "tomato_paste-sqqdzb": 4,
                 "canned_corn-pddtfk": 5,
-                "wall_mounted_shelf-notszn": 14,
+                "wall_mounted_shelf-notszn": 15,
                 "hanger-fclnmc": 1,
-                "fridge-vwylob": 1,
+                "fridge-vwylob": 2,
                 "dish_rack-rniujn": 1,
                 "saucepot-sthkfz": 1,
                 "saucepot-urqzec": 1,
@@ -7229,7 +7195,7 @@
                 "saucepot-chjetk": 1,
                 "frying_pan-vycozd": 1,
                 "stockpot-dcleem": 3,
-                "oven-cgtaer": 1,
+                "oven-cgtaer": 2,
                 "bowl-kdkrov": 1,
                 "bottom_cabinet-jhymlr": 1,
                 "metal_bottom_cabinet-bbjuqu": 1,
@@ -7300,7 +7266,7 @@
                 "trophy_case-khxpgc": 2,
                 "door-xxipyh": 3,
                 "ceilings-ykfapk": 2,
-                "floors-rzbksf": 1,
+                "floors-rzbksf": 2,
                 "ceilings-nxtdrt": 2,
                 "ceilings-jlvuea": 2
             },
@@ -7511,7 +7477,7 @@
                 "picture-zywgbh": 1,
                 "picture-ydfgju": 1,
                 "picture-wttqrk": 1,
-                "square_light-qebtel": 26,
+                "square_light-qebtel": 30,
                 "trophy-rpprcc": 2,
                 "trophy-shnohg": 1,
                 "trophy-ldbalq": 1,
@@ -7657,7 +7623,7 @@
                 "door-xxipyh": 3,
                 "ceilings-kjvgnu": 2,
                 "ceilings-solfrt": 2,
-                "floors-bijmgk": 1,
+                "floors-bijmgk": 2,
                 "ceilings-coxqnv": 2,
                 "ceilings-fidwbv": 2
             },
@@ -8083,12 +8049,5 @@
     },
     "error_skipped_files": [],
     "error_not_approved_rooms": {},
-    "error_non_contiguous_rooms": {
-        "house_single_floor": {
-            "empty_room": [
-                0,
-                2
-            ]
-        }
-    }
+    "error_non_contiguous_rooms": {}
 }

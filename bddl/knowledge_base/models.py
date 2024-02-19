@@ -52,8 +52,6 @@ ROOM_TYPE_CHOICES = [
 ]
 
 
-
-
 @dataclass(eq=False, order=False)
 class Property(Model):
     name : str
@@ -127,6 +125,7 @@ class Scene(Model):
         pk = 'name'
         ordering = ['name']
 
+
 @dataclass(eq=False, order=False)
 class Category(Model):
     name : str
@@ -153,6 +152,17 @@ class Category(Model):
         if not self.synset:
             return set()
         return {anc.name for anc in self.synset.ancestors} | {self.synset.name}
+
+    @classmethod
+    def view_mapped_to_substance_synset(cls):
+        """Categories Incorrectly Mapped to Substance Synsets"""
+        return [x for x in cls.all_objects() if x.category.synset.state == STATE_SUBSTANCE]
+    
+    @classmethod
+    def view_mapped_to_non_leaf_synsets(cls):
+        """Categories Mapped to Non-Leaf Synsets"""
+        return [x for x in cls.all_objects() if len(x.synset.children) > 0]
+
 
 @dataclass(eq=False, order=False)
 class Object(Model):
@@ -198,6 +208,16 @@ class Object(Model):
     
     def fully_supports_synset(self, synset) -> bool:       
         return synset.required_meta_links.issubset({x.name for x in self.meta_links})
+    
+    @cached_property
+    def missing_meta_links(self) -> List[str]:
+        return sorted(self.category.synset.required_meta_links - {x.name for x in self.meta_links})
+
+    @classmethod
+    def view_objects_with_missing_meta_links(cls):
+        """Objects with Missing Meta Links"""
+        return [o for o in cls.all_objects() if not o.fully_supports_synset(o.category.synset)]
+
 
 @dataclass(eq=False, order=False)
 class Synset(Model):
@@ -236,6 +256,10 @@ class Synset(Model):
         ordering = ['name']
 
     @cached_property
+    def property_names(self):
+        return {prop.name for prop in self.properties}
+
+    @cached_property
     def direct_matching_objects(self) -> Set[Object]:
         matched_objs = set()
         for category in self.categories:
@@ -266,45 +290,42 @@ class Synset(Model):
     @cached_property
     def required_meta_links(self) -> Set[str]:
         properties = {prop.name: json.loads(prop.parameters) for prop in self.properties}
-        predicates = {pred.name.lower() for pred in self.used_in_predicates}
 
         if 'substance' in properties:
             return set()  # substances don't need any meta links
         
-        # TODO: Remove this
-        # If we are not task relevant, we don't need any meta links
-        if not self.n_task_required:
-            return set()
-
         required_links = set()
 
-        # If we are a heatSource or togglesource, we need to have certain links
+        # If we are a heatSource or coldSource, we need to have certain links
         for property in ['heatSource', 'coldSource']:
             if property in properties:
-                if 'requires_toggled_on' in properties[property] and properties[property]['requires_toggled_on']:
-                    required_links.add('togglebutton')
+                if 'requires_inside' in properties[property] and properties[property]['requires_inside']:
+                    continue
+                required_links.add('heatsource')
 
-                if 'requires_inside' not in properties[property] or not properties[property]['requires_inside']:
-                    required_links.add('heatSource')
-
-        if self.is_used_as_fillable and 'fillable' in properties:
+        if 'fillable' in properties:
             required_links.add('fillable')
 
-        if 'toggledon' in predicates and 'toggleable' in properties:
+        if 'toggleable' in properties:
             required_links.add('togglebutton')
 
-        # TODO: Enable this.
-        # if 'particleSink' in properties:
-        #     required_links.add('fluidSink')
-
         particle_pairs = [
+            ('particleSink', 'fluidsink'),
             ('particleSource', 'fluidsource'),
             ('particleApplier', 'particleapplier'),
             ('particleRemover', 'particleremover'),
         ]
         for property, meta_link in particle_pairs:
-            if property in properties and 'method' in properties[property] and properties[property]['method'] == 1:  # only the projection method (1) needs this
+            if property in properties:
+                if 'method' in properties[property] and properties[property]['method'] != 1: # not projection
+                    continue
                 required_links.add(meta_link)
+
+        if 'slicer' in properties:
+            required_links.add('slicer')
+
+        if 'sliceable' in properties:
+            required_links.add('subpart')
 
         return required_links
     
@@ -383,6 +404,141 @@ class Synset(Model):
         
         return _is_produceable_from(self, synsets, set())
 
+    @cached_property
+    def is_derivative(self):
+        derivative_words = ["cooked__", "half__", "diced__"]
+        return any(self.name.startswith(dw) for dw in derivative_words)
+        
+    @cached_property
+    def derivative_parent(self):
+        # Check if the synset is a derivative
+        if not self.is_derivative:
+            return None
+
+        # Get the parent name
+        parent_name = self.name.split(".n.")[0].split("__", 1)[-1]
+        if self.name.startswith("diced__"):
+            parent_name = "half__" + parent_name
+
+        # Otherwise make a set of candidates
+        parent_should_be_substance = self.name.startswith("cooked__")
+        parent_should_have_properties = set()
+
+        if self.name.startswith("diced__") or self.name.startswith("half__"):
+            parent_should_have_properties.add("sliceable")
+        elif self.name.startswith("cooked__"):
+            parent_should_have_properties.add("cookable")
+
+        parent_candidates = [
+            s for s in Synset.all_objects()
+            if (s.state == STATE_SUBSTANCE) == parent_should_be_substance and
+            s.name.split(".n.")[0] == parent_name and
+            len(parent_should_have_properties - s.property_names) == 0
+        ]
+
+        assert len(parent_candidates) <= 1, f"Multiple candidates for parent of {self.name}: {parent_candidates}"
+
+        # Return the parent if it exists
+        return parent_candidates[0] if parent_candidates else None
+    
+    @cached_property
+    def derivative_root(self):
+        if not self.derivative_parent:
+            return None
+        
+        parent_root = self.derivative_parent.derivative_root
+        return parent_root if parent_root else self.derivative_parent
+    
+    @cached_property
+    def derivative_children(self):
+        return {s for s in Synset.all_objects() if s.derivative_parent == self}
+    
+    @cached_property
+    def derivative_ancestors(self):
+        if not self.derivative_parent:
+            return {self}
+        return {self, self.derivative_parent} | set(self.derivative_parent.derivative_ancestors)
+
+    @cached_property
+    def derivative_descendants(self):
+        descendants = {self}.update(self.derivative_children)
+        for child in self.derivative_children:
+            descendants.update(child.derivative_descendants)
+        return descendants
+
+    @classmethod
+    def view_substance_mismatch(cls):
+        """Synsets that are used in predicates that don't match their substance state"""
+        return [
+            s for s in cls.all_objects()
+            if (
+                (s.state == STATE_SUBSTANCE and s.is_used_as_non_substance) or 
+                (not s.state == STATE_SUBSTANCE and s.is_used_as_substance) or 
+                (s.is_used_as_substance and s.is_used_as_non_substance)
+            )]
+
+    @classmethod
+    def view_object_unsupported_properties(cls):
+        """Leaf synsets that do not have at least one object that supports all of annotated properties."""
+        # TODO: joint count
+        return [
+            s for s in cls.all_objects()
+            if len(s.matching_objects) > 0 and len(s.children) == 0 and not s.has_fully_supporting_object
+        ]
+    
+    @classmethod
+    def view_unnecessary(cls):
+        """Objectless synsets that are not used in any task or required by any property"""
+        transition_relevant_synsets = {
+            anc
+            for t in Task.all_objects()
+            for transition in t.relevant_transitions
+            for s in list(transition.output_synsets) + list(transition.input_synsets)
+            for anc in s.ancestors
+        }
+        return [
+            s for s in cls.all_objects()
+            if all(
+                not sp.task_relevant and
+                sp not in transition_relevant_synsets and
+                len(sp.matching_objects) == 0 and
+                len(sp.children) == 0
+                for sp in s.derivative_ancestors
+            )
+        ]
+    
+    @classmethod
+    def view_bad_derivative(cls):
+        """Derivative synsets that exist even though the original synset is missing the expected property"""
+        return [s for s in cls.all_objects() if s.is_derivative and not s.derivative_parent]
+    
+    @classmethod
+    def view_missing_derivative(cls):
+        """Synsets that are missing a derivative synset that is expected to exist from property annotations"""
+        # TODO: reimplement using new derivative fields
+        sliceables = [
+            s for s in cls.all_objects()
+            if "sliceable" in s.property_names and s.state != STATE_SUBSTANCE
+        ]
+        missing_half = [
+            s for s in sliceables
+            if not cls.get("half__" + s.name.split(".n.")[0] + ".n.01")
+        ]
+        missing_diced = [
+            s for s in sliceables
+            if not cls.get("diced__" + s.name.split(".n.")[0] + ".n.01")
+        ]
+
+        cookable_substances = [
+            s for s in cls.all_objects()
+            if "cookable" in s.property_names and s.state == STATE_SUBSTANCE
+        ]
+        missing_cooked = [
+            s for s in cookable_substances
+            if not cls.get("cooked__" + s.name)
+        ]
+
+        return sorted(missing_half + missing_diced + missing_cooked)
 
 @dataclass(eq=False, order=False)
 class TransitionRule(Model):
@@ -460,10 +616,10 @@ class Task(Model):
         return any(pred.name == "future" for pred in self.uses_predicates)
     
     def uses_visual_substance(self):
-        return any(prop.name == "visualSubstance" for synset in self.synsets for prop in synset.properties)
+        return any("visualSubstance" in synset.property_names for synset in self.synsets)
 
     def uses_physical_substance(self):
-        return any(prop.name == "physicalSubstance" for synset in self.synsets for prop in synset.properties)
+        return any("physicalSubstance" in synset.property_names for synset in self.synsets)
 
     def uses_attachment(self):
         return any(pred.name in ['assembled', 'attached'] for pred in self.uses_predicates)
@@ -616,6 +772,16 @@ class Task(Model):
         '''Get whether the goal is reachable from the initial state'''
         return len(self.unreachable_goal_synsets) == 0
 
+    @classmethod
+    def view_transition_failure(cls):
+        """Transition Failure Tasks"""
+        return [x for x in cls.all_objects() if not x.goal_is_reachable]
+    
+    @classmethod
+    def view_non_scene_matched(cls):
+        """Non-Scene-Matched Tasks"""
+        return [x for x in cls.all_objects() if x.scene_state == STATE_UNMATCHED]
+
 
 @dataclass(eq=False, order=False)
 class RoomRequirement(Model):
@@ -700,6 +866,7 @@ class Room(Model):
                 if synset_node not in M:
                     missing_synsets[synset.name] += 1
             return ', '.join([f'{count} {synset}' for synset, count in missing_synsets.items()])
+
 
 @dataclass(eq=False, order=False)
 class RoomObject(Model):

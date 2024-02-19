@@ -3,6 +3,8 @@ import os
 import pandas as pd
 import pathlib
 
+from bddl.data_generation.process_prop_param_annots import LEAF_SYNSETS_SET
+
 
 TRANSITION_MAP_DIR = pathlib.Path(__file__).parents[1] / "generated_data" / "transition_map" / "tm_jsons"
 
@@ -13,10 +15,10 @@ def generate_slicing_rules(syns_to_param_props, props_to_syns):
     Form: 
     {
         "rule_name": <non-unique string>,
-        "input_objects": {
+        "input_synsets": {
             <sliceable>: 1 
         },
-        "output_objects": {
+        "output_synsets": {
             <sliceable_derivative_synset>: 2
         }
     }
@@ -33,10 +35,10 @@ def generate_slicing_rules(syns_to_param_props, props_to_syns):
 
         rule = {
             "rule_name": f"{sliceable}-slicing",
-            "input_objects": {
+            "input_synsets": {
                 sliceable: 1
             },
-            "output_objects": {
+            "output_synsets": {
                 sliceable_derivative_synset: 2
             }
         }
@@ -53,7 +55,7 @@ def generate_dicing_rules(syns_to_param_props, props_to_syns):
     Form: 
     {
         "rule_name": <unique string name>,
-        "input_objects": {
+        "input_synsets": {
             <diceable>: 1 
         },
         "input_states": {
@@ -64,7 +66,7 @@ def generate_dicing_rules(syns_to_param_props, props_to_syns):
                 ]
             ]
         }
-        "output_objects": {
+        "output_synsets": {
             <cooked_diceable_derivative_synset> if cooked else <uncooked_diceable_derivative_synset>: 1
         }
     }
@@ -82,7 +84,7 @@ def generate_dicing_rules(syns_to_param_props, props_to_syns):
 
         uncooked_rule = {
             "rule_name": f"uncooked-{diceable}-dicing",
-            "input_objects": {
+            "input_synsets": {
                 diceable: 1
             },
             "input_states": {
@@ -93,7 +95,7 @@ def generate_dicing_rules(syns_to_param_props, props_to_syns):
                     ]
                 ]
             },
-            "output_objects": {
+            "output_synsets": {
                 uncooked_diceable_derivative_synset: 1
             }
         }
@@ -106,7 +108,7 @@ def generate_dicing_rules(syns_to_param_props, props_to_syns):
 
             cooked_rule = {
                 "rule_name": f"cooked-{diceable}-dicing",
-                "input_objects": {
+                "input_synsets": {
                     diceable: 1
                 },
                 "input_states": {
@@ -117,7 +119,7 @@ def generate_dicing_rules(syns_to_param_props, props_to_syns):
                         ]
                     ]
                 },
-                "output_objects": {
+                "output_synsets": {
                     cooked_diceable_derivative_synset: 1
                 }
             }
@@ -133,10 +135,10 @@ def generate_substance_cooking_rules(syns_to_param_props, props_to_syns):
     Form: 
     {
         "rule_name": <non-unique string>,
-        "input_objects": {
-            <cookable,substance>: 1
+        "input_synsets": {
+            <cookable_substance>: 1
         },
-        "output_objects": {
+        "output_synsets": {
             <substance_cooking_derivative_synset>: 1
         }
     }
@@ -146,7 +148,7 @@ def generate_substance_cooking_rules(syns_to_param_props, props_to_syns):
     """
 
     rules = []
-    cookable_substances = set(props_to_syns["cookable"]).intersection(set(props_to_syns["substance"]))
+    cookable_substances = set(props_to_syns["cookable"]).intersection(set(props_to_syns["substance"])).difference(set(props_to_syns["waterCook"]))
     for cookable_substance in cookable_substances: 
         assert "substance_cooking_derivative_synset" in syns_to_param_props[cookable_substance]["cookable"], f"Synset {cookable_substance} has no substance cooking derivative synset. Add one in the parameter annotations or handle otherwise."
         assert syns_to_param_props[cookable_substance]["cookable"]["substance_cooking_derivative_synset"] in syns_to_param_props, f"Synset {cookable_substance} has substance cooking derivative synset {syns_to_param_props[cookable_substance]['substance_cooking_derivative_synset']} that is not a valid synset. Please check."
@@ -154,10 +156,53 @@ def generate_substance_cooking_rules(syns_to_param_props, props_to_syns):
 
         rule = {
             "rule_name": f"{cookable_substance}-cooking",
-            "input_objects": {
+            "input_synsets": {
                 cookable_substance: 1
             },
-            "output_objects": {
+            "output_synsets": {
+                substance_cooking_derivative_synset: 1
+            }
+        }
+        rules.append(rule)
+    
+    rules.sort(key=lambda x: x["rule_name"])
+    return rules 
+
+
+def generate_substance_watercooking_rules(syns_to_param_props, props_to_syns):
+    """
+    Generates transition rules for dicing of diceable objects.
+    Form: 
+    {
+        "rule_name": <non-unique string>,
+        "input_synsets": {
+            <watercookable_substance>: 1,
+            water.n.06_1: 1
+        },
+        "output_synsets": {
+            <substance_cooking_derivative_synset>: 1
+        }
+    }
+    Assumptions not listed in rule: 
+    TODO is the below accurate? 
+    - Cookable substance must be filling a fillable and the fillable must be hot for the rule to fire
+    """
+
+    rules = []
+    watercookable_substances = set(props_to_syns["waterCook"])
+    for watercookable_substance in watercookable_substances: 
+        assert "cookable" in syns_to_param_props[watercookable_substance], f"Synset {watercookable_substance} has no cookable property annotation."
+        assert "substance_cooking_derivative_synset" in syns_to_param_props[watercookable_substance]["cookable"], f"Synset {watercookable_substance} has no substance cooking derivative synset. Add one in the parameter annotations or handle otherwise."
+        assert syns_to_param_props[watercookable_substance]["cookable"]["substance_cooking_derivative_synset"] in syns_to_param_props, f"Synset {watercookable_substance} has substance cooking derivative synset {syns_to_param_props[watercookable_substance]['substance_cooking_derivative_synset']} that is not a valid synset. Please check."
+        substance_cooking_derivative_synset = syns_to_param_props[watercookable_substance]["cookable"]["substance_cooking_derivative_synset"]
+
+        rule = {
+            "rule_name": f"{watercookable_substance}-cooking",
+            "input_synsets": {
+                watercookable_substance: 1,
+                "cooked__water.n.01": 1
+            },
+            "output_synsets": {
                 substance_cooking_derivative_synset: 1
             }
         }
@@ -173,10 +218,10 @@ def generate_melting_rules(syns_to_param_props, props_to_syns):
     Form: 
     {
         "rule_name": <unique string name>,
-        "input_objects": {
+        "input_synsets": {
             <meltable>: 1
         },
-        "output_objects": {
+        "output_synsets": {
             <meltable_derivative_synset>: 1
         }
     }
@@ -190,10 +235,10 @@ def generate_melting_rules(syns_to_param_props, props_to_syns):
 
         rule = {
             "rule_name": f"{meltable}-melting",
-            "input_objects": {
+            "input_synsets": {
                 meltable: 1
             },
-            "output_objects": {
+            "output_synsets": {
                 meltable_derivative_synset: 1
             }
         }
@@ -210,11 +255,11 @@ def generate_washer_particleremover_rules(props_to_syns):
     Form: 
     {
         "rule_name": <particleRemover>-washer-saturate-cover,
-        "input_objects": {},
+        "input_synsets": {},
         "washed_item": {
             <particleRemover>: 1,
         },
-        "output_objects": {
+        "output_synsets": {
             "water.n.06": 1
         }
     }
@@ -227,11 +272,11 @@ def generate_washer_particleremover_rules(props_to_syns):
     for particleRemover in particleRemovers: 
         rule = {
             "rule_name": f"{particleRemover}-washer-saturate-cover",
-            "input_objects": {},
+            "input_synsets": {},
             "washed_item": {
                 particleRemover: 1
             },
-            "output_objects": {
+            "output_synsets": {
                 "water.n.06": 1
             }
         }
@@ -247,11 +292,11 @@ def generate_washer_nonparticleremover_rules(props_to_syns):
     Form: 
     {
         "rule_name": <nonSubstance,non-particleRemover>-washer-cover,
-        "input_objects": {},
+        "input_synsets": {},
         "washed_item": {
             <non-particleRemover,nonSubstance>: 1
         },
-        "output_objects": {
+        "output_synsets": {
             "water.n.06": 1
         }
     }
@@ -267,11 +312,11 @@ def generate_washer_nonparticleremover_rules(props_to_syns):
     for syn in nonparticleremover_nonsubstances: 
         rule = {
             "rule_name": f"{syn}-washer-cover",
-            "input_objects": {},
+            "input_synsets": {},
             "washed_item": {
                 syn: 1
             },
-            "output_objects": {
+            "output_synsets": {
                 "water.n.06": 1
             }
         }
@@ -282,9 +327,13 @@ def generate_washer_nonparticleremover_rules(props_to_syns):
 
 def create_get_save_implicit_transition_rules(syns_to_param_props, props_to_syns):
     print("Creating implicit transition rule jsons...")
+    # Constrain to leaf synsets
+    for prop in props_to_syns:
+        props_to_syns[prop] = set(props_to_syns[prop]) & LEAF_SYNSETS_SET
     slicing_rules = generate_slicing_rules(syns_to_param_props, props_to_syns)
     dicing_rules = generate_dicing_rules(syns_to_param_props, props_to_syns)
     substance_cooking_rules = generate_substance_cooking_rules(syns_to_param_props, props_to_syns)
+    substance_watercooking_rules = generate_substance_watercooking_rules(syns_to_param_props, props_to_syns)
     melting_rules = generate_melting_rules(syns_to_param_props, props_to_syns)
     washer_particleremover_rules = generate_washer_particleremover_rules(props_to_syns)
     washer_nonparticleremover_rules = generate_washer_nonparticleremover_rules(props_to_syns)
@@ -295,6 +344,8 @@ def create_get_save_implicit_transition_rules(syns_to_param_props, props_to_syns
         json.dump(dicing_rules, f, indent=4)
     with open(os.path.join(TRANSITION_MAP_DIR, "substance_cooking.json"), "w") as f:
         json.dump(substance_cooking_rules, f, indent=4)
+    with open(os.path.join(TRANSITION_MAP_DIR, "substance_watercooking.json"), "w") as f:
+        json.dump(substance_watercooking_rules, f, indent=4) 
     with open(os.path.join(TRANSITION_MAP_DIR, "melting.json"), "w") as f:
         json.dump(melting_rules, f, indent=4)
     with open(os.path.join(TRANSITION_MAP_DIR, "washer_particleremover.json"), "w") as f:

@@ -116,21 +116,13 @@ ROOMS = set([
     "lobby"
 ])
 PLACEMENTS = set([
-    # "connected",
-    "ontop", 
+    "ontop",
     "inside", 
     "under", 
-    "filled", 
-    "covered", 
-    "overlaid", 
-    "saturated", 
-    "inroom", 
-    "insource", 
-    # "hung", 
+    "overlaid",
     "future",
     "attached",
     "draped",
-    "contains"
 ])
 SUBSTANCE_PLACEMENTS = set(["saturated", "filled", "covered", "insource", "contains"])
 FUTURE_PREDICATE = "future"
@@ -279,45 +271,55 @@ def check_synset_predicate_alignment(atom, syns_to_props):
             raise AssertionError(f"Inapplicable cooked predicate applied to cookable substance (needs to be cooked version of substance, i.e. new object): {atom}")
         else:
             assert "cookable" in syns_to_props[objects[0]], f"Inapplicable cooked: {atom}"
-    if pred == "frozen": 
+    if pred == "frozen":
+        assert "nonSubstance" in syns_to_props[objects[0]], f"Inapplicable frozen: {atom}"
         assert "freezable" in syns_to_props[objects[0]], f"Inapplicable frozen: {atom}"
     if pred == "closed" or pred == "open":
+        assert "rigidBody" in syns_to_props[objects[0]], f"Inapplicable closed/open: {atom}"
         assert "openable" in syns_to_props[objects[0]], f"Inapplicable closed/open: {atom}"
     if pred == "folded" or pred == "unfolded":
+        # cloth or rope is drapeable
         assert "drapeable" in syns_to_props[objects[0]], f"Inapplicable folded/unfolded: {atom}"
     if pred == "toggled_on":
+        assert "rigidBody" in syns_to_props[objects[0]], f"Inapplicable toggled_on: {atom}"
         assert "toggleable" in syns_to_props[objects[0]], f"Inapplicable toggled_on: {atom}"
-    if pred == "hot": 
+    if pred == "hot":
+        assert "nonSubstance" in syns_to_props[objects[0]], f"Inapplicable hot: {atom}"
         assert "heatable" in syns_to_props[objects[0]], f"Inapplicable hot: {atom}"
-    if pred == "on_fire": 
+    if pred == "on_fire":
+        assert "nonSubstance" in syns_to_props[objects[0]], f"Inapplicable on_fire: {atom}"
         assert "flammable" in syns_to_props[objects[0]], f"Inapplicable on_fire: {atom}"
-    if pred == "assembled": 
+    if pred == "assembled":
+        assert "rigidBody" in syns_to_props[objects[0]], f"Inapplicable assembled: {atom}"
         assert "assembleable" in syns_to_props[objects[0]], f"Inapplicable assembled: {atom}"
-    if pred == "broken": 
+    if pred == "broken":
+        assert "rigidBody" in syns_to_props[objects[0]], f"Inapplicable broken: {atom}"
         assert "breakable" in syns_to_props[objects[0]], f"Inapplicable broken: {atom}"
     if pred == "empty": 
         assert ("fillable" in syns_to_props[objects[0]])
     
     # Binaries
     if pred == "saturated":
-        assert ("particleRemover" in syns_to_props[objects[0]]) and ("substance" in syns_to_props[objects[1]]), f"Inapplicable saturated: {atom}"
+        assert ("nonSubstance" in syns_to_props[objects[0]]) and ("particleRemover" in syns_to_props[objects[0]]) and ("substance" in syns_to_props[objects[1]]), f"Inapplicable saturated: {atom}"
     if pred == "covered":
         assert ("nonSubstance" in syns_to_props[objects[0]]) and ("substance" in syns_to_props[objects[1]]), f"Inapplicable covered: {atom}"
+        if "drapeable" in syns_to_props[objects[0]]:
+            assert "visualSubstance" in syns_to_props[objects[1]], f"Inapplicable covered: {atom}"
     if pred == "filled":
-        assert ("fillable" in syns_to_props[objects[0]]) and ("physicalSubstance" in syns_to_props[objects[1]]), f"Inapplicable filled/empty: {atom}"
-    if pred == "contains":
-        assert ("fillable" in syns_to_props[objects[0]]) and ("substance" in syns_to_props[objects[1]]), f"Inapplicable contains: {atom}"
+        assert ("rigidBody" in syns_to_props[objects[0]]) and ("fillable" in syns_to_props[objects[0]]) and ("physicalSubstance" in syns_to_props[objects[1]]), f"Inapplicable filled/empty: {atom}"
+    if pred == "contains" or pred == "empty":
+        assert ("rigidBody" in syns_to_props[objects[0]]) and ("fillable" in syns_to_props[objects[0]]) and ("substance" in syns_to_props[objects[1]]), f"Inapplicable contains: {atom}"
     if pred == "ontop":
-        assert ("nonSubstance" in syns_to_props[objects[0]]) and ("nonSubstance" in syns_to_props[objects[1]]), f"Inapplicable ontop: {atom}"
+        assert ("nonSubstance" in syns_to_props[objects[0]]) and ("rigidBody" in syns_to_props[objects[1]] or "softBody" in syns_to_props[objects[1]]), f"Inapplicable ontop: {atom}"
     if pred == "nextto":
         assert ("nonSubstance" in syns_to_props[objects[0]]) and ("nonSubstance" in syns_to_props[objects[1]]), f"Inapplicable nextto: {atom}"
     if pred == "under":
-        assert ("nonSubstance" in syns_to_props[objects[0]]) and ("rigidBody" in syns_to_props[objects[1]]), f"Inapplicable under: {atom}"
+        assert ("nonSubstance" in syns_to_props[objects[0]]) and ("rigidBody" in syns_to_props[objects[1]] or "softBody" in syns_to_props[objects[1]]), f"Inapplicable under: {atom}"
     if pred == "touching": 
         assert any(("rigidBody" in syns_to_props[obj]) for obj in objects) and all(("substance" not in syns_to_props[obj]) for obj in objects), f"Inapplicable touching: {atom}"
         # assert ("rigidBody" in syns_to_props[objects[0]]) and ("rigidBody" in syns_to_props[objects[1]]), f"Inapplicable touching: {atom}"
     if pred == "inside": 
-        assert ("nonSubstance" in syns_to_props[objects[0]]) and ("nonSubstance" in syns_to_props[objects[1]]), f"Inapplicable inside: {atom}"
+        assert ("nonSubstance" in syns_to_props[objects[0]]) and ("rigidBody" in syns_to_props[objects[1]] or "softBody" in syns_to_props[objects[1]]), f"Inapplicable inside: {atom}"
     if pred == "overlaid": 
         assert ("drapeable" in syns_to_props[objects[0]]) and ("rigidBody" in syns_to_props[objects[1]]), f"Inapplicable overlaid: {atom}"
     if pred == "attached":
@@ -337,7 +339,7 @@ def check_clashing_transition_rules():
         for rule in submap: 
             # Get relevant parameters
             rule_name = rule.get("rule_name", "No name")
-            input_objects = rule.get("input_objects", {})
+            input_objects = rule.get("input_synsets", {})
             input_states = rule.get("input_states", {})
             input_states = input_states if input_states is not None else {}
             if submap_name == "heat_cook": 
@@ -346,7 +348,7 @@ def check_clashing_transition_rules():
                 equipment = set([list(rule["machine"].keys())[0]])
             else:
                 equipment = set()       # Equivalence will pass trivially when checked, because this rule already clashes
-            output_objects = rule.get("output_objects", {})
+            output_objects = rule.get("output_synsets", {})
             output_states = rule.get("output_states", {})
             output_states = output_states if output_states is not None else {}
 
@@ -478,24 +480,52 @@ def all_objects_placed(init):
     insts = _get_instances_in_init(init)
     insts = set([inst for inst in insts if ["future", inst] not in init])
 
-    # Make sure everything not set to `future` is placed relative to a ROOM
-    placed_insts = set()
-    old_placed_insts = set()
-    saturated = False 
-    while not saturated:
-        for inst in insts:                 
-            if inst in placed_insts:
+    in_room_check = True
+    last_placed = None
+    while True:
+        newly_placed = set()
+        for literal in init:
+            # Skip not literals
+            if literal[0] == "not":
                 continue
-            for literal in init: 
-                formula = literal[1] if literal[0] == "not" else literal 
-                # NOTE only uncomment below line suffix when dealing with situations where substance and object have been flipped
-                if (formula[0] == FUTURE_PREDICATE and formula[1] == inst) or ((formula[0] in PLACEMENTS) and (formula[1] == inst) and ((formula[2] in ROOMS) or (formula[2] in placed_insts))) or ((formula[0] in SUBSTANCE_PLACEMENTS) and (formula[1] in placed_insts) and (formula[2] == inst)):
-                    placed_insts.add(inst)
-        saturated = old_placed_insts == placed_insts 
-        old_placed_insts = copy.deepcopy(placed_insts)
-    assert not placed_insts.difference(insts), "There are somehow placed insts that are not in the overall set of insts."
-    assert placed_insts == insts, f"Unplaced object instances: {insts.difference(placed_insts)}"
+            formula = literal
+            # Skip future literals
+            if formula[0] == "future":
+                continue
+            inst = None
+            substance_placement = False
+            if in_room_check:
+                # For the first round, check for inroom
+                if (formula[0] == "inroom") and (formula[2] in ROOMS):
+                    inst = formula[1]
+            else:
+                # For the following rounds, check for placements w.r.t last placed objects
+                if (formula[0] in PLACEMENTS) and (formula[2] in last_placed):
+                    inst = formula[1]
+                # Or substasnce placements w.r.t last placed objects
+                elif (formula[0] in SUBSTANCE_PLACEMENTS) and (formula[1] in last_placed):
+                    inst = formula[2]
+                    substance_placement = True
 
+            if inst is not None:
+                # If it's not a substance placement, we make sure it's only placed once (e.g. we should not place the
+                # same eapple on table1 and on table2). If it's a substance placement, it's fine (e.g. we can do stain
+                # covering table1 and table2)
+                if not substance_placement:
+                    assert inst not in newly_placed, f"Object {inst} is placed twice"
+                newly_placed.add(inst)
+
+        # If no new objects were placed, we're done
+        if len(newly_placed) == 0:
+            break
+
+        # Otherwise, we remove the newly placed objects from the list of objects to place and continue
+        insts -= newly_placed
+        last_placed = newly_placed
+        in_room_check = False
+
+    # If there are any objects left, they are unplaced
+    assert len(insts) == 0, f"Unplaced object instances: {insts}"
 
 def no_invalid_synsets(objects, init, goal, syns_to_props):
     instances, categories = _get_objects_from_object_list(objects)
@@ -719,6 +749,9 @@ def no_duplicate_rule_names():
     json_paths = glob.glob(os.path.join(TRANSITION_MAP_DIR, "*.json"))
     data = []
     for jp in json_paths:
+        # Washer rule is a special case
+        if "washer" in jp:
+            continue
         with open(jp) as f:
             data.append(json.load(f))
     transitions = [rule for rules in data for rule in rules]
