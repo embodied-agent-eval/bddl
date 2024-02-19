@@ -153,6 +153,8 @@ class TrivialSimulator(object):
             if is_predicate and (predicate == "ontop"):
                 self.predicate_to_setters["nextto"](tuple(objects), True)
                 self.predicate_to_setters["touching"](tuple(objects), True)
+            if is_predicate and (predicate == "inside"):
+                self.predicate_to_setters["nextto"](tuple(objects), True)
             if (not is_predicate) and (predicate == "nextto"):
                 self.predicate_to_setters["ontop"](tuple(objects), False)
             if is_predicate and (predicate == "nextto"):
@@ -179,50 +181,84 @@ class TrivialSimulator(object):
                         # False if item is not inside item_its_inside, True if item is inside item_its_inside
                         self.predicate_to_setters["inside"](tuple([test_item_inside_it, item_its_inside]), is_predicate)
             
+            # If A is inside B and B gets filled with or contains C, A is covered in C (if types check)
+            if is_predicate and (predicate in ["filled", "contains"]):
+                filled_obj, filling_obj = objects
+                # inside pred --> inside_obj is a nonSubstance.
+                # particleRemovers can be saturated tho.
+                for inside_obj, outside_obj in self.inside:
+                    if outside_obj == filled_obj:
+                        inside_syn = re.match(ver.OBJECT_CAT_AND_INST_RE, inside_obj).group()
+                        if ("rigidBody" in syns_to_props_params[inside_syn]) or ("softBody" in syns_to_props_params[inside_syn]):
+                            self.predicate_to_setters["covered"](tuple([inside_obj, filling_obj]), True)
+                        if "particleRemover" in syns_to_props_params[inside_syn]:
+                            self.predicate_to_setters["saturated"](tuple([inside_obj, filling_obj]), True)
+            
+            if is_predicate and (predicate == "inside"):
+                inside_obj, outside_obj = objects 
+                for filled_obj, filling_obj in self.filled.union(self.contains):
+                    if outside_obj == filled_obj:
+                        inside_syn = re.match(ver.OBJECT_CAT_AND_INST_RE, inside_obj).group()
+                        if ("rigidBody" in syns_to_props_params[inside_syn]) or ("softBody" in syns_to_props_params[inside_syn]):
+                            self.predicate_to_setters["covered"](tuple([inside_obj, filling_obj]), True)
+                        if "particleRemover" in syns_to_props_params[inside_syn]:
+                            self.predicate_to_setters["saturated"](tuple([inside_obj, filling_obj]), True)
+
+            # Empty --> not filled with anything
+            if is_predicate and (predicate == "empty"):
+                empty_obj = objects[0]
+                for filled_obj1, filled_obj2 in copy.deepcopy(self.filled):
+                    if filled_obj1 == empty_obj:
+                        self.filled.discard((filled_obj1, filled_obj2))
+                for contains_obj1, contains_obj2 in copy.deepcopy(self.contains):
+                    if contains_obj1 == empty_obj:
+                        self.contains.discard((contains_obj1, contains_obj2))
+            
             # Thermal effects
             # If we encounter a hot vessel and a cookable inside it...
             if is_predicate and (predicate == "hot"): 
                 # Any cookable ontop, inside, filled, contained, or covered gets cooked; any meltable accordingly gets melted.
                 # If both - melting happens first. 
-                for ontop_obj1, ontop_obj2 in self.ontop: 
+                for ontop_obj1, ontop_obj2 in copy.deepcopy(self.ontop): 
                     ontop_syn1 = re.match(ver.OBJECT_CAT_AND_INST_RE, ontop_obj1).group()
                     if (ontop_obj2 == objects[0]) and (ontop_syn1 in props_to_syns["meltable"]):
                         meltable_derivative_obj1 = syns_to_props_params[ontop_syn1]["meltable"]["meltable_derivative_synset"] + "_1"
                         self.predicate_to_setters["real"](tuple([meltable_derivative_obj1]), True)
                         self.predicate_to_setters["real"](tuple([ontop_obj1]), False)
-                        self.predicate_to_setters["contains"](tuple([ontop_obj2, ontop_obj1]), True)
+                        self.predicate_to_setters["contains"](tuple([ontop_obj2, meltable_derivative_obj1]), True)
                         self.predicate_to_setters["ontop"](tuple([ontop_obj1, ontop_obj2]), False)
                     elif (ontop_obj2 == objects[0]) and (ontop_syn1 in props_to_syns["cookable"]):
                         self.predicate_to_setters["cooked"](tuple([ontop_obj1]), True)
-                for inside_obj1, inside_obj2 in self.inside: 
+                for inside_obj1, inside_obj2 in copy.deepcopy(self.inside): 
                     inside_syn1 = re.match(ver.OBJECT_CAT_AND_INST_RE, inside_obj1).group()
                     if (inside_obj2 == objects[0]) and (inside_syn1 in props_to_syns["meltable"]):
                         meltable_derivative_obj1 = syns_to_props_params[inside_syn1]["meltable"]["meltable_derivative_synset"] + "_1"
                         self.predicate_to_setters["real"](tuple([meltable_derivative_obj1]), True)
                         self.predicate_to_setters["real"](tuple([inside_obj1]), False)
-                        self.predicate_to_setters["contains"](tuple([inside_obj2, inside_obj1]), True)
-                        self.predicate_to_setters["ontop"](tuple([inside_obj1, inside_obj2]), False)
+                        self.predicate_to_setters["contains"](tuple([inside_obj2, meltable_derivative_obj1]), True)
+                        self.predicate_to_setters["inside"](tuple([inside_obj1, inside_obj2]), False)
                     if (inside_obj2 == objects[0]) and (inside_syn1 in props_to_syns["cookable"]):
                         self.predicate_to_setters["cooked"](tuple([inside_obj1]), True)
                 for filled_obj1, filled_obj2 in self.filled:
                     filled_syn2 = re.match(ver.OBJECT_CAT_AND_INST_RE, filled_obj2).group()
                     if (filled_obj1 == objects[0]) and (filled_syn2 in props_to_syns["cookable"]):
                         self.predicate_to_setters["real"](tuple([filled_obj2]), False)
-                        # print(syns_to_props_params[filled_syn2])
                         cooking_derivative_obj2 = syns_to_props_params[filled_syn2]["cookable"]["substance_cooking_derivative_synset"] + "_1"
                         self.predicate_to_setters["real"](tuple([cooking_derivative_obj2]), True)
                         self.predicate_to_setters["filled"](tuple([filled_obj1, cooking_derivative_obj2]), True)
                         self.predicate_to_setters["filled"](tuple([filled_obj1, filled_obj2]), False)
+                        self.predicate_to_setters["contains"](tuple([filled_obj1, cooking_derivative_obj2]), True)
+                        self.predicate_to_setters["contains"](tuple([filled_obj1, filled_obj2]), False)
                 for contained_obj1, contained_obj2 in self.contains:
                     contained_syn2 = re.match(ver.OBJECT_CAT_AND_INST_RE, contained_obj2).group()
                     if (contained_obj1 == objects[0]) and (contained_syn2 in props_to_syns["cookable"]):
                         self.predicate_to_setters["real"](tuple([contained_obj2]), False)
                         cooking_derivative_obj2 = syns_to_props_params[contained_syn2]["cookable"]["substance_cooking_derivative_synset"] + "_1"
                         self.predicate_to_setters["real"](tuple([cooking_derivative_obj2]), True)
-                        self.predicate_to_setters["filled"](tuple([contained_obj1, cooking_derivative_obj2]), True)
-                        self.predicate_to_setters["filled"](tuple([contained_obj1, contained_obj2]), False)
+                        self.predicate_to_setters["contains"](tuple([contained_obj1, cooking_derivative_obj2]), True)
+                        self.predicate_to_setters["contains"](tuple([contained_obj1, contained_obj2]), False)
 
-            # If we encounter a nonSubstance touching or nextto a toggled_on heatsource, it should get hot 
+            # If we encounter a nonSubstance touching or nextto a toggled_on heatsource, it should get hot and unfrozen
             if is_predicate and (predicate in ["touching", "nextto", "ontop", "inside", "overlaid", "draped"]):
                 syn0 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[0]).group()
                 syn1 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[1]).group()
@@ -233,7 +269,17 @@ class TrivialSimulator(object):
                     closed_ok = (heatsource_params["requires_closed"] == 0.) or ((heatsource_params["requires_toggled_on"] == 1.) and ((tuple([objects[1]]) not in self.open) or (tuple([objects[1]]) in self.closed)))
                     inside_ok = (heatsource_params["requires_inside"] == 0.) or ((heatsource_params["requires_inside"] == 1.) and (tuple(objects) in self.inside))
                     if toggled_on_ok and closed_ok and inside_ok: 
+                        self.predicate_to_setters["frozen"](tuple([objects[0]]), False)
                         self.predicate_to_setters["hot"](tuple([objects[0]]), True)
+            
+            # Freezing for electric refrigerator
+            if (not is_predicate) and (predicate == "open"):
+                for inside_obj0, inside_obj1 in self.inside:
+                    inside_syn0 = re.match(ver.OBJECT_CAT_AND_INST_RE, inside_obj0).group()
+                    inside_syn1 = re.match(ver.OBJECT_CAT_AND_INST_RE, inside_obj1).group()
+                    if inside_syn1 == "electric_refrigerator.n.01":
+                        # We know the fridge is closed since that's when this is triggered, the object is inside it since that's what we're looking at, and toggled_on isn't a requirement
+                        self.predicate_to_setters["frozen"](tuple([inside_obj0]), True)
             
             # TODO need to flip for when the heatsource engages second (RIPPPPP, maybe just rely on explicitly claiming the thing is getting hot)
 
@@ -243,11 +289,11 @@ class TrivialSimulator(object):
                 if (syn0 in props_to_syns["cookable"]) and (tuple([objects[1]]) in self.hot):
                     self.predicate_to_setters["cooked"](tuple([objects[0]]), True)
             if is_predicate and (predicate in ["filled", "contains", "covered"]):
-                syn0 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[0]).group()
-                if (syn0 in props_to_syns["cookable"] and (tuple([objects[1]])) in self.hot):
-                    cookable_derivative = syns_to_props_params[syn0]["cookable"]["substance_cooking_derivative_synset"] + "_1"
+                syn1 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[1]).group()
+                if (syn1 in props_to_syns["cookable"] and (tuple([objects[0]])) in self.hot):
+                    cookable_derivative = syns_to_props_params[syn1]["cookable"]["substance_cooking_derivative_synset"] + "_1"
                     self.predicate_to_setters["real"](tuple([cookable_derivative]), True)
-                    self.predicate_to_setters[predicate](tuple([objects[1], cookable_derivative]), True)
+                    self.predicate_to_setters[predicate](tuple([objects[0], cookable_derivative]), True)
                     self.predicate_to_setters[predicate](tuple(objects), False)
 
             # If we encounter a potential melting placement of a meltable relative to a hot vessel...
@@ -260,16 +306,46 @@ class TrivialSimulator(object):
                     self.predicate_to_setters["contains"](tuple([objects[1], meltable_derivative]), True)
                     self.predicate_to_setters[predicate](tuple(objects), False)
 
+            # Washer-dryer
+            if is_predicate and (predicate == "toggled_on") and ("washer.n.03" in objects[0]):
+                for inside_obj0, inside_obj1 in self.inside:
+                    if "washer.n.03" not in inside_obj1:
+                        continue
+                    inside_syn0, inside_syn1 = re.match(ver.OBJECT_CAT_AND_INST_RE, inside_obj0).group(), re.match(ver.OBJECT_CAT_AND_INST_RE, inside_obj1).group()
+                    # Water on
+                    self.predicate_to_setters["covered"](tuple([inside_obj0, "water.n.06_1"]), True)
+                    if "particleRemover" in syns_to_props_params[inside_syn0]:
+                        self.predicate_to_setters["saturated"](tuple([inside_obj0, "water.n.06_1"]), True)
+                    
+                    # Stain off based on what else is in there
+                    for covered_obj, covering_obj in copy.deepcopy(self.covered):
+                        covered_syn, covering_syn = re.match(ver.OBJECT_CAT_AND_INST_RE, covered_obj).group(), re.match(ver.OBJECT_CAT_AND_INST_RE, covering_obj).group()
+                        conditions = syns_to_props_params["rag.n.01"]["particleRemover"]["conditions"]
+                        spec_conditions = conditions[covering_syn]
+                        can_clean = False
+                        if not spec_conditions: 
+                            can_clean = True
+                        for __, cleansing_syn in spec_conditions:
+                            if (tuple([inside_obj1, cleansing_syn + "_1"]) in self.contains) or (tuple([inside_obj1, cleansing_syn + "_1"]) in self.filled):
+                                self.predicate_to_setters["covered"](tuple([covered_obj, covering_obj]), False)
+                                if "particleRemover" in syns_to_props_params[covered_syn]:
+                                    self.predicate_to_setters["saturated"](tuple([covered_obj, covering_obj]), False)
+            
+            if is_predicate and (predicate == "toggled_on") and ("clothes_dryer.n.01" in objects[0]):
+                for inside_obj0, inside_obj1 in self.inside:
+                    inside_syn0, inside_syn1 = re.match(ver.OBJECT_CAT_AND_INST_RE, inside_obj0).group(), re.match(ver.OBJECT_CAT_AND_INST_RE, inside_obj1).group()
+                    self.predicate_to_setters["covered"](tuple([inside_obj0, "water.n.06_1"]), False)
+                    if "particleRemover" in syns_to_props_params[inside_syn0]:
+                        self.predicate_to_setters["saturated"](tuple([inside_obj0, "water.n.06_1"]), False)
+
+            # TODO coldSource
 
             # TODO when a new object is created, its positional predicates are the same with the same objects as the original 
-            
-            # TODO freezing
             
             # TODO slicing and dicing effects
 
             # TODO transition recipes
-
-
+        
     def set_cooked(self, objs, is_cooked):
         assert len(objs) == 1, f"`objs` has len other than 1: {objs}"
         if is_cooked:  
