@@ -30,7 +30,6 @@
     (:goal 
         (and 
             (ontop ?board_game.n.01_1 ?conference_table.n.01_1)
-            (ontop ?board_game.n.01_1 ?conference_table.n.01_1)
             (ontop ?coffee_maker.n.01_1 ?conference_table.n.01_1)
             (attached ?poster.n.01_1 ?wall.n.01_1)
         )

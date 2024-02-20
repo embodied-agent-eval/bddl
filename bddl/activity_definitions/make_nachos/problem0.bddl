@@ -6,6 +6,7 @@
         carving_knife.n.01_1 - carving_knife.n.01
         grated_cheese.n.01_1 - grated_cheese.n.01
         melted__grated_cheese.n.01_1 - melted__grated_cheese.n.01
+        cooked__melted__grated_cheese.n.01_1 - cooked__melted__grated_cheese.n.01
         beefsteak_tomato.n.01_1 - beefsteak_tomato.n.01
         diced__beefsteak_tomato.n.01_1 - diced__beefsteak_tomato.n.01
         cooked__diced__beefsteak_tomato.n.01_1 - cooked__diced__beefsteak_tomato.n.01
@@ -13,6 +14,7 @@
         paprika.n.02_1 - paprika.n.02
         cooked__paprika.n.01_1 - cooked__paprika.n.01
         paprika__shaker.n.01_1 - paprika__shaker.n.01
+        cooked__diced__avocado.n.01_1 - cooked__diced__avocado.n.01
         green_onion.n.01_1 - green_onion.n.01
         diced__green_onion.n.01_1 - diced__green_onion.n.01
         cooked__diced__green_onion.n.01_1 - cooked__diced__green_onion.n.01
@@ -62,6 +64,7 @@
         (inroom cabinet.n.01_1 kitchen) 
         (ontop cookie_sheet.n.01_1 countertop.n.01_1) 
         (future melted__grated_cheese.n.01_1) 
+        (future cooked__melted__grated_cheese.n.01_1) 
         (future diced__beefsteak_tomato.n.01_1) 
         (future cooked__diced__beefsteak_tomato.n.01_1) 
         (future diced__green_onion.n.01_1) 
@@ -69,13 +72,17 @@
         (future cooked__paprika.n.01_1) 
         (future cooked__salsa.n.01_1) 
         (future diced__avocado.n.01_1) 
+        (future cooked__diced__avocado.n.01_1) 
         (inroom floor.n.01_1 kitchen) 
         (ontop agent.n.01_1 floor.n.01_1)
     )
     
     (:goal 
         (and 
-            (real ?melted__grated_cheese.n.01_1) 
+            (or
+                (real ?cooked__melted__grated_cheese.n.01_1) 
+                (real ?melted__grated_cheese.n.01_1) 
+            )
             (or 
                 (real ?diced__beefsteak_tomato.n.01_1) 
                 (real ?cooked__diced__beefsteak_tomato.n.01_1)
@@ -85,6 +92,10 @@
                 (real ?cooked__diced__green_onion.n.01_1)
             ) 
             (or 
+                (real ?diced__avocado.n.01_1) 
+                (real ?cooked__diced__avocado.n.01_1)
+            ) 
+            (or 
                 (real ?cooked__paprika.n.01_1) 
                 (real ?paprika.n.02_1)
             ) 
@@ -92,11 +103,13 @@
                 (real ?cooked__salsa.n.01_1) 
                 (real ?salsa.n.01_1)
             ) 
-            (real ?diced__avocado.n.01_1) 
             (forall 
                 (?tortilla_chip.n.01 - tortilla_chip.n.01) 
                 (and 
-                    (covered ?tortilla_chip.n.01 ?melted__grated_cheese.n.01_1) 
+                    (or
+                        (covered ?tortilla_chip.n.01 ?cooked__melted__grated_cheese.n.01_1) 
+                        (covered ?tortilla_chip.n.01 ?melted__grated_cheese.n.01_1) 
+                    )
                     (or 
                         (covered ?tortilla_chip.n.01 ?diced__beefsteak_tomato.n.01_1) 
                         (covered ?tortilla_chip.n.01 ?cooked__diced__beefsteak_tomato.n.01_1)
@@ -116,7 +129,6 @@
                     (covered ?tortilla_chip.n.01_1 ?diced__avocado.n.01_1)
                 )
             )
-            (ontop ?tortilla_chip.n.01_1 ?cookie_sheet.n.01_1)
         )
     )
 )
