@@ -133,12 +133,25 @@ class TrivialSimulator(object):
         
         # TODO maybe do this few a through times so that residual effects get a chance to fire
         for literal in literals: 
+            if literal == ["covered", "french_toast.n.01_1", "maple_syrup.n.01_1"]:
+                printing = True 
+            else:
+                printing = False
+
             is_predicate = not(literal[0] == "not")
             predicate, *objects = literal[1] if (literal[0] == "not") else literal
+            if printing:
+                print(predicate)
+                print(objects)
+                print("is predicate:", is_predicate)
+                print()
             if predicate == "inroom": 
                 # print(f"Skipping inroom literal {literal}")
                 continue
             self.predicate_to_setters[predicate](tuple(objects), is_predicate)
+
+            if printing:
+                print(("french_toast.n.01_1", "maple_syrup.n.01_1") in self.covered)
 
             # Start by setting elements as real unless they are in a future or explicit not-real statement
             if not (is_predicate and (predicate == "future")) and not ((not is_predicate) and (predicate == "real")):
@@ -193,6 +206,9 @@ class TrivialSimulator(object):
                             self.predicate_to_setters["covered"](tuple([inside_obj, filling_obj]), True)
                         if "particleRemover" in syns_to_props_params[inside_syn]:
                             self.predicate_to_setters["saturated"](tuple([inside_obj, filling_obj]), True)
+
+            if printing:
+                print("line 211", ("french_toast.n.01_1", "maple_syrup.n.01_1") in self.covered)
             
             if is_predicate and (predicate == "inside"):
                 inside_obj, outside_obj = objects 
@@ -213,7 +229,10 @@ class TrivialSimulator(object):
                 for contains_obj1, contains_obj2 in copy.deepcopy(self.contains):
                     if contains_obj1 == empty_obj:
                         self.contains.discard((contains_obj1, contains_obj2))
-            
+
+            if printing:
+                print("line 234", ("french_toast.n.01_1", "maple_syrup.n.01_1") in self.covered)
+
             # Thermal effects
             # If we encounter a hot vessel and a cookable inside it...
             if is_predicate and (predicate == "hot"): 
@@ -258,6 +277,9 @@ class TrivialSimulator(object):
                         self.predicate_to_setters["contains"](tuple([contained_obj1, cooking_derivative_obj2]), True)
                         self.predicate_to_setters["contains"](tuple([contained_obj1, contained_obj2]), False)
 
+            if printing:
+                print("line 281", ("french_toast.n.01_1", "maple_syrup.n.01_1") in self.covered)
+            
             # If we encounter a nonSubstance touching or nextto a toggled_on heatsource, it should get hot and unfrozen
             if is_predicate and (predicate in ["touching", "nextto", "ontop", "inside", "overlaid", "draped"]):
                 syn0 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[0]).group()
@@ -283,6 +305,11 @@ class TrivialSimulator(object):
             
             # TODO need to flip for when the heatsource engages second (RIPPPPP, maybe just rely on explicitly claiming the thing is getting hot)
 
+            if printing:
+                print("line 309", ("french_toast.n.01_1", "maple_syrup.n.01_1") in self.covered)
+                from pprint import pprint
+                pprint(self.covered)
+
             # If we encounter a potential cooking placement of a cookable relative to a hot vessel...
             if is_predicate and (predicate in ["ontop", "inside"]):
                 syn0 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[0]).group()
@@ -296,6 +323,11 @@ class TrivialSimulator(object):
                     self.predicate_to_setters[predicate](tuple([objects[0], cookable_derivative]), True)
                     self.predicate_to_setters[predicate](tuple(objects), False)
 
+            if printing:
+                print("line 322", ("french_toast.n.01_1", "maple_syrup.n.01_1") in self.covered)
+                from pprint import pprint
+                pprint(self.covered)
+
             # If we encounter a potential melting placement of a meltable relative to a hot vessel...
             if is_predicate and (predicate in ["inside", "ontop"]):
                 syn0 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[0]).group()
@@ -305,6 +337,9 @@ class TrivialSimulator(object):
                     self.predicate_to_setters["real"](tuple([objects[0]]), False)
                     self.predicate_to_setters["contains"](tuple([objects[1], meltable_derivative]), True)
                     self.predicate_to_setters[predicate](tuple(objects), False)
+
+            if printing:
+                print("line 332", ("french_toast.n.01_1", "maple_syrup.n.01_1") in self.covered)
 
             # Washer-dryer
             if is_predicate and (predicate == "toggled_on") and ("washer.n.03" in objects[0]):
@@ -343,8 +378,55 @@ class TrivialSimulator(object):
             # TODO when a new object is created, its positional predicates are the same with the same objects as the original 
             
             # TODO slicing and dicing effects
+            if is_predicate and (predicate == "touching"):
+                syn0, syn1 = re.match(ver.OBJECT_CAT_AND_INST_RE, objects[0]).group(), re.match(ver.OBJECT_CAT_AND_INST_RE, objects[1]).group() 
+                if "slicer" in syns_to_props_params[syn0]:
+                    if "sliceable" in syns_to_props_params[syn1]:
+                        sliced_synset = syns_to_props_params[syn1]["sliceable"]["sliceable_derivative_synset"]
+                        existing_sliceds = set([obj for obj in self.real if sliced_synset in obj])
+                        existing_indices = [int(existing_sliced.split("_")[0]) for existing_sliced in existing_sliceds]
+                        if existing_indices:
+                            new_index1 = max(existing_indices) + 1
+                        else:
+                            new_index1 = 1
+                        new_index2 = new_index1 + 1
+                        self.predicate_to_setters["real"](tuple([objects[1]]), False)
+                        self.predicate_to_setters["real"](tuple([f"{sliced_synset}_{new_index1}"]), True)
+                        self.predicate_to_setters["real"](tuple([f"{sliced_synset}_{new_index2}"]), True)
+                    elif "diceable" in syns_to_props_params[syn1]:
+                        if syn1 in self.cooked:
+                            diced_synset = syns_to_props_params[syn1]["diceable"]["cooked_diceable_derivative_synset"]
+                        else:
+                            diced_synset = syns_to_props_params[syn1]["diceable"]["uncooked_diceable_derivative_synset"]
+                        self.predicate_to_setters["real"](tuple([objects[1]]), False)
+                        self.predicate_to_setters["real"](tuple([f"{diced_synset}_1"]), True)
+                elif "slicer" in syns_to_props_params[syn1]:
+                    if "sliceable" in syns_to_props_params[syn0]:
+                        sliced_synset = syns_to_props_params[syn0]["sliceable"]["sliceable_derivative_synset"]
+                        existing_sliceds = set([obj for obj in self.real if sliced_synset in obj])
+                        existing_indices = [int(existing_sliced.split("_")[0]) for existing_sliced in existing_sliceds]
+                        if existing_indices:
+                            new_index1 = max(existing_indices) + 1
+                        else:
+                            new_index1 = 1
+                        new_index2 = new_index1 + 1
+                        self.predicate_to_setters["real"](tuple([objects[0]]), False)
+                        self.predicate_to_setters["real"](tuple([f"{sliced_synset}_{new_index1}"]), True)
+                        self.predicate_to_setters["real"](tuple([f"{sliced_synset}_{new_index2}"]), True)
+                    elif "diceable" in syns_to_props_params[syn0]:
+                        if syn0 in self.cooked:
+                            diced_synset = syns_to_props_params[syn0]["diceable"]["cooked_diceable_derivative_synset"]
+                        else:
+                            diced_synset = syns_to_props_params[syn0]["diceable"]["uncooked_diceable_derivative_synset"]
+                        self.predicate_to_setters["real"](tuple([objects[0]]), False)
+                        self.predicate_to_setters["real"](tuple([f"{diced_synset}_1"]), True)
 
             # TODO transition recipes
+            if printing:
+                print(("french_toast.n.01_1", "maple_syrup.n.01_1") in self.covered)
+            
+            # from pprint import pprint;
+            # pprint(self.covered)
         
     def set_cooked(self, objs, is_cooked):
         assert len(objs) == 1, f"`objs` has len other than 1: {objs}"
