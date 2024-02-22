@@ -186,13 +186,16 @@ class TrivialSimulator(object):
             if is_predicate and (predicate == "unfolded"):
                 self.predicate_to_setters["folded"](tuple(objects), False)
             
-            # Transitive insides/not-insides
+            # Transitive insides/not-insides + ontop-to-insides
             if predicate == "inside":
                 item, item_its_inside = objects
                 for test_item_inside_it, test_item in copy.deepcopy(self.inside): 
                     if test_item == item:
                         # False if item is not inside item_its_inside, True if item is inside item_its_inside
                         self.predicate_to_setters["inside"](tuple([test_item_inside_it, item_its_inside]), is_predicate)
+                for test_item_ontopof_it, test_item in self.ontop:
+                    if test_item == item:
+                        self.predicate_to_setters["inside"](tuple([test_item_ontopof_it, item_its_inside]), is_predicate)
             
             # If A is inside B and B gets filled with or contains C, A is covered in C (if types check)
             if is_predicate and (predicate in ["filled", "contains"]):
@@ -393,6 +396,17 @@ class TrivialSimulator(object):
                         self.predicate_to_setters["real"](tuple([objects[1]]), False)
                         self.predicate_to_setters["real"](tuple([f"{sliced_synset}_{new_index1}"]), True)
                         self.predicate_to_setters["real"](tuple([f"{sliced_synset}_{new_index2}"]), True)
+                        # Placement of new object - inside or ontop
+                        for inside_obj0, inside_obj1 in copy.deepcopy(self.inside):
+                            if inside_obj0 == objects[1]:
+                                self.predicate_to_setters["inside"](tuple([f"{sliced_synset}_{new_index1}", inside_obj1]), True)
+                                self.predicate_to_setters["inside"](tuple([f"{sliced_synset}_{new_index2}", inside_obj1]), True)
+                                self.predicate_to_setters["inside"](tuple([objects[1], inside_obj1]), False)
+                        for ontop_obj0, ontop_obj1 in copy.deepcopy(self.ontop):
+                            if ontop_obj0 == objects[1]:
+                                self.predicate_to_setters["ontop"](tuple([f"{sliced_synset}_{new_index1}", ontop_obj1]), True)
+                                self.predicate_to_setters["ontop"](tuple([f"{sliced_synset}_{new_index2}", ontop_obj1]), True)
+                                self.predicate_to_setters["ontop"](tuple([objects[1], ontop_obj1]), False)
                     elif "diceable" in syns_to_props_params[syn1]:
                         if syn1 in self.cooked:
                             diced_synset = syns_to_props_params[syn1]["diceable"]["cooked_diceable_derivative_synset"]
@@ -400,6 +414,17 @@ class TrivialSimulator(object):
                             diced_synset = syns_to_props_params[syn1]["diceable"]["uncooked_diceable_derivative_synset"]
                         self.predicate_to_setters["real"](tuple([objects[1]]), False)
                         self.predicate_to_setters["real"](tuple([f"{diced_synset}_1"]), True)
+                        # Placement of new object - contains, covered
+                        for inside_obj0, inside_obj1 in copy.deepcopy(self.inside):
+                            if inside_obj0 == objects[1]:
+                                self.predicate_to_setters["contains"](tuple([inside_obj1, f"{diced_synset}_1"]), True)  # NOTE this should be conditional on whether the ontop object is fillable
+                                self.predicate_to_setters["covered"](tuple([inside_obj1, f"{diced_synset}_1"]), True)   # ?
+                                self.predicate_to_setters["inside"](tuple([objects[1], inside_obj1]), False)
+                        for ontop_obj0, ontop_obj1 in copy.deepcopy(self.ontop):
+                            if ontop_obj0 == objects[1]:
+                                self.predicate_to_setters["contains"](tuple([ontop_obj1, f"{diced_synset}_1"]), True)   # NOTE this should be conditional on whether the ontop object is fillable
+                                self.predicate_to_setters["covered"](tuple([ontop_obj1, f"{diced_synset}_1"]), True)
+                                self.predicate_to_setters["ontop"](tuple([objects[1], ontop_obj1]), False)
                 elif "slicer" in syns_to_props_params[syn1]:
                     if "sliceable" in syns_to_props_params[syn0]:
                         sliced_synset = syns_to_props_params[syn0]["sliceable"]["sliceable_derivative_synset"]
@@ -413,6 +438,17 @@ class TrivialSimulator(object):
                         self.predicate_to_setters["real"](tuple([objects[0]]), False)
                         self.predicate_to_setters["real"](tuple([f"{sliced_synset}_{new_index1}"]), True)
                         self.predicate_to_setters["real"](tuple([f"{sliced_synset}_{new_index2}"]), True)
+                        # Placement of new object - inside or ontop
+                        for inside_obj0, inside_obj1 in copy.deepcopy(self.inside):
+                            if inside_obj0 == objects[0]:
+                                self.predicate_to_setters["inside"](tuple([f"{sliced_synset}_{new_index1}", inside_obj1]), True)
+                                self.predicate_to_setters["inside"](tuple([f"{sliced_synset}_{new_index2}", inside_obj1]), True)
+                                self.predicate_to_setters["inside"](tuple([objects[0], inside_obj1]), False)
+                        for ontop_obj0, ontop_obj1 in copy.deepcopy(self.ontop):
+                            if ontop_obj0 == objects[0]:
+                                self.predicate_to_setters["ontop"](tuple([f"{sliced_synset}_{new_index1}", ontop_obj1]), True)
+                                self.predicate_to_setters["ontop"](tuple([f"{sliced_synset}_{new_index2}", ontop_obj1]), True)
+                                self.predicate_to_setters["ontop"](tuple([objects[0], ontop_obj1]), False)
                     elif "diceable" in syns_to_props_params[syn0]:
                         if syn0 in self.cooked:
                             diced_synset = syns_to_props_params[syn0]["diceable"]["cooked_diceable_derivative_synset"]
@@ -420,10 +456,24 @@ class TrivialSimulator(object):
                             diced_synset = syns_to_props_params[syn0]["diceable"]["uncooked_diceable_derivative_synset"]
                         self.predicate_to_setters["real"](tuple([objects[0]]), False)
                         self.predicate_to_setters["real"](tuple([f"{diced_synset}_1"]), True)
-
+                        # Placement of new object - contains, covered
+                        for inside_obj0, inside_obj1 in copy.deepcopy(self.inside):
+                            if inside_obj0 == objects[0]:
+                                self.predicate_to_setters["contains"](tuple([inside_obj1, f"{diced_synset}_1"]), True)  # NOTE this should be conditional on whether the ontop object is fillable
+                                self.predicate_to_setters["covered"](tuple([inside_obj1, f"{diced_synset}_1"]), True)   # ?
+                                self.predicate_to_setters["inside"](tuple([objects[0], inside_obj1]), False)
+                        for ontop_obj0, ontop_obj1 in copy.deepcopy(self.ontop):
+                            if ontop_obj0 == objects[0]:
+                                self.predicate_to_setters["contains"](tuple([ontop_obj1, f"{diced_synset}_1"]), True)   # NOTE this should be conditional on whether the ontop object is fillable
+                                self.predicate_to_setters["covered"](tuple([ontop_obj1, f"{diced_synset}_1"]), True)
+                                self.predicate_to_setters["ontop"](tuple([objects[0], ontop_obj1]), False)
+                
             # TODO transition recipes
             if printing:
                 print(("french_toast.n.01_1", "maple_syrup.n.01_1") in self.covered)
+            
+        # from pprint import pprint
+        # pprint(self.cooked)
             
             # from pprint import pprint;
             # pprint(self.covered)
@@ -563,6 +613,7 @@ class TrivialSimulator(object):
         if is_real: 
             self.real.add(objs)
         else: 
+            # TODO remove it from everything else, since it's not longer real. More generally, entailed predicates might need to go into these?
             self.real.discard(objs)
     
     def get_real(self, objs):
