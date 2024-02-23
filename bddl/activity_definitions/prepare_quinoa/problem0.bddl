@@ -32,7 +32,7 @@
     (:goal 
         (and 
             (real ?cooked__quinoa.n.01_1)
-            (filled ?saucepan.n.01_1 ?cooked__quinoa.n.01_1)
+            (contains ?saucepan.n.01_1 ?cooked__quinoa.n.01_1)
         )
     )
 )

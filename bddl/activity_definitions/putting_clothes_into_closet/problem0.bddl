@@ -31,10 +31,70 @@
     
     (:goal 
         (and 
-            (draped ?jacket.n.01_1 ?hanger.n.02_1)
-            (draped ?polo_shirt.n.01_1 ?hanger.n.02_1) 
-            (draped ?dress.n.01_1 ?hanger.n.02_1) 
-            (draped ?jersey.n.03_1 ?hanger.n.02_1) 
+            (exists
+                (?hanger.n.02 - hanger.n.02)
+                (and
+                    (draped ?jacket.n.01_1 ?hanger.n.02)
+                    (not
+                        (draped ?polo_shirt.n.01_1 ?hanger.n.02)
+                    )
+                    (not
+                        (draped ?jersey.n.03_1 ?hanger.n.02)
+                    )
+                    (not
+                        (draped ?dress.n.01_1 ?hanger.n.02)
+                    )
+                )
+            )
+            (exists
+                (?hanger.n.02 - hanger.n.02)
+                (and
+                    (draped ?polo_shirt.n.01_1 ?hanger.n.02)
+                    (not
+                        (draped ?jacket.n.01_1 ?hanger.n.02)
+                    )
+                    (not
+                        (draped ?jersey.n.03_1 ?hanger.n.02)
+                    )
+                    (not
+                        (draped ?dress.n.01_1 ?hanger.n.02)
+                    )
+                )
+            )
+            (exists
+                (?hanger.n.02 - hanger.n.02)
+                (and
+                    (draped ?jersey.n.03_1 ?hanger.n.02)
+                    (not
+                        (draped ?polo_shirt.n.01_1 ?hanger.n.02)
+                    )
+                    (not
+                        (draped ?jacket.n.01_1 ?hanger.n.02)
+                    )
+                    (not
+                        (draped ?dress.n.01_1 ?hanger.n.02)
+                    )
+                )
+            )
+            (exists
+                (?hanger.n.02 - hanger.n.02)
+                (and
+                    (draped ?dress.n.01_1 ?hanger.n.02)
+                    (not
+                        (draped ?polo_shirt.n.01_1 ?hanger.n.02)
+                    )
+                    (not
+                        (draped ?jersey.n.03_1 ?hanger.n.02)
+                    )
+                    (not
+                        (draped ?jacket.n.01_1 ?hanger.n.02)
+                    )
+                )
+            )
+            (forall
+                (?hanger.n.02 - hanger.n.02)
+                (attached ?hanger.n.02 wardrobe.n.01_1)
+            )
         )
     )
 )

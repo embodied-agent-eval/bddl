@@ -13,8 +13,10 @@
         half__feta.n.01_1 half__feta.n.01_2 - half__feta.n.01
         feta__box.n.01_1 - feta__box.n.01
         salt.n.02_1 - salt.n.02
+        cooked__salt.n.01_1 - cooked__salt.n.01
         egg.n.02_1 egg.n.02_2 - egg.n.02
         olive_oil.n.01_1 - olive_oil.n.01
+        cooked__olive_oil.n.01_1 - cooked__olive_oil.n.01
         olive_oil__bottle.n.01_1 - olive_oil__bottle.n.01
         chopping_board.n.01_1 - chopping_board.n.01
         carving_knife.n.01_1 - carving_knife.n.01
@@ -55,6 +57,8 @@
         (future half__potato.n.01_1)
         (future half__potato.n.01_2)
         (future cooked__diced__bell_pepper.n.01_1)
+        (future cooked__salt.n.01_1)
+        (future cooked__olive_oil.n.01_1)
         (ontop agent.n.01_1 floor.n.01_1)
     )
     
@@ -65,6 +69,14 @@
             (real ?half__potato.n.01_1)
             (real ?half__potato.n.01_2)
             (real ?cooked__diced__bell_pepper.n.01_1)
+            (or
+                (real ?cooked__olive_oil.n.01_1)
+                (real ?olive_oil.n.01_1)
+            )
+            (or
+                (real ?cooked__salt.n.01_1)
+                (real ?salt.n.02_1)
+            )
             (forpairs 
                 (?egg.n.02 - egg.n.02)
                 (?bowl.n.01 - bowl.n.01)
@@ -77,8 +89,14 @@
                 (?bowl.n.01 - bowl.n.01)
                 (and
                     (contains ?bowl.n.01 ?cooked__diced__bell_pepper.n.01_1)
-                    (contains ?bowl.n.01 ?salt.n.02_1)
-                    (contains ?bowl.n.01 ?olive_oil.n.01_1)
+                    (or
+                        (contains ?bowl.n.01 ?salt.n.02_1)
+                        (contains ?bowl.n.01 ?cooked__salt.n.01_1)
+                    )
+                    (or
+                        (contains ?bowl.n.01 ?olive_oil.n.01_1)
+                        (contains ?bowl.n.01 ?cooked__olive_oil.n.01_1)
+                    )
                 )
             )
             (forpairs 

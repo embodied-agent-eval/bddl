@@ -38,14 +38,13 @@
         (and 
             (ontop ?porkchop.n.01_1 ?plate.n.04_1) 
             (ontop ?porkchop.n.01_2 ?plate.n.04_2) 
-            (hot ?porkchop.n.01_2) 
-            (frozen ?porkchop.n.01_1) 
-            (or
-                (not
-                    (open ?oven.n.01_1)
-                )
-                (not
-                    (open ?oven.n.01_1)
+            (forall
+                (?porkchop.n.01 - porkchop.n.01)
+                (and
+                    (hot ?porkchop.n.01) 
+                    (not
+                        (frozen ?porkchop.n.01)
+                    )
                 )
             )
         )
