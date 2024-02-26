@@ -56,7 +56,7 @@
             ) 
             (forall 
                 (?granola_bar.n.01 - granola_bar.n.01) 
-                (ontop ?granola_bar.n.01 ?cabinet.n.01_1)
+                (inside ?granola_bar.n.01 ?cabinet.n.01_1)
             ) 
             (forall 
                 (?chocolate_biscuit.n.01 - chocolate_biscuit.n.01) 

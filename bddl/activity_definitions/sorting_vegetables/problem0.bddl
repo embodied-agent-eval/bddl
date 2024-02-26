@@ -29,7 +29,7 @@
         (inside sweet_corn.n.02_1 sack.n.01_2)
         (inside sweet_corn.n.02_2 sack.n.01_2)
         (inside sweet_corn.n.02_3 sack.n.01_2)
-        (inside artichoke.n.02_1 sweet_corn.n.02_1) 
+        (inside artichoke.n.02_1 sack.n.01_2) 
         (inside artichoke.n.02_2 sack.n.01_2)
         (inside leek.n.02_1 sack.n.01_1)
         (inside leek.n.02_2 sack.n.01_1)

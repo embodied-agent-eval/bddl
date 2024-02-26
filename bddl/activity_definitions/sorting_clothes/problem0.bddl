@@ -28,13 +28,6 @@
     
     (:goal 
         (and 
-            (exists 
-                (?jean.n.01 - jean.n.01) 
-                (and
-                    (inside ?jean.n.01 ?shelf.n.01_2)
-                    (folded ?jean.n.01)
-                )
-            ) 
             (forn
                 (2)
                 (?jean.n.01 - jean.n.01)

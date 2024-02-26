@@ -21,7 +21,6 @@
         (and 
             (ontop ?train_set.n.01_1 ?floor.n.01_1) 
             (ontop ?carton.n.02_1 ?floor.n.01_1) 
-            (nextto ?carton.n.02_1 ?train_set.n.01_1)
         )
     )
 )

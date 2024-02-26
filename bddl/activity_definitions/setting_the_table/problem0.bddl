@@ -38,7 +38,7 @@
             (forpairs 
                 (?plate.n.04 - plate.n.04) 
                 (?hamburger.n.01 - hamburger.n.01) 
-                (ontop ?hamburger.n.01 ?plate.n.04_1)
+                (ontop ?hamburger.n.01 ?plate.n.04)
             ) 
             (forpairs
                 (?plate.n.04 - plate.n.04)
