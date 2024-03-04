@@ -28,7 +28,7 @@
         (inside broccoli.n.02_3 electric_refrigerator.n.01_1) 
         (inside clove.n.03_1 electric_refrigerator.n.01_1)
         (inside clove.n.03_2 electric_refrigerator.n.01_1)
-        (filled soy_sauce__bottle.n.01_1 soy_sauce.n.01_1) 
+        (insource soy_sauce__bottle.n.01_1 soy_sauce.n.01_1)
         (inside soy_sauce__bottle.n.01_1 electric_refrigerator.n.01_1) 
         (ontop chopping_board.n.01_1 countertop.n.01_1)
         (ontop carving_knife.n.01_1 chopping_board.n.01_1)

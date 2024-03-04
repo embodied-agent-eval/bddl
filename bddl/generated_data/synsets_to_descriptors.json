@@ -7803,6 +7803,10 @@
             "tarnished"
         ],
         [
+            "toggled_on",
+            "toggled_on"
+        ],
+        [
             "wet",
             "wet"
         ],
@@ -19943,6 +19947,60 @@
             "wrinkly"
         ]
     ],
+    "bottle__of__strawberry_juice.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "frozen",
+            "frozen"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "hot",
+            "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
     "bottle__of__sunscreen.n.01": [
         [
             "disinfected",
@@ -31487,6 +31545,10 @@
             "tarnished"
         ],
         [
+            "toggled_on",
+            "toggled_on"
+        ],
+        [
             "wet",
             "wet"
         ],
@@ -35305,6 +35367,10 @@
         [
             "tarnished",
             "tarnished"
+        ],
+        [
+            "toggled_on",
+            "toggled_on"
         ],
         [
             "wet",
@@ -58577,6 +58643,64 @@
             "frozen"
         ]
     ],
+    "espresso_machine.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "frozen",
+            "frozen"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "hot",
+            "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "toggled_on",
+            "toggled_on"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
     "essential_oil.n.01": [
         [
             "boiling",
@@ -66193,6 +66317,10 @@
             "tarnished"
         ],
         [
+            "toggled_on",
+            "toggled_on"
+        ],
+        [
             "wet",
             "wet"
         ],
@@ -68215,6 +68343,10 @@
         [
             "tarnished",
             "tarnished"
+        ],
+        [
+            "toggled_on",
+            "toggled_on"
         ],
         [
             "wet",
@@ -88331,6 +88463,10 @@
             "tarnished"
         ],
         [
+            "toggled_on",
+            "toggled_on"
+        ],
+        [
             "wet",
             "wet"
         ],
@@ -91313,6 +91449,222 @@
             "wrinkly"
         ]
     ],
+    "jar__of__chilli_powder.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "frozen",
+            "frozen"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "hot",
+            "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
+    "jar__of__clove.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "frozen",
+            "frozen"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "hot",
+            "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
+    "jar__of__cocoa.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "frozen",
+            "frozen"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "hot",
+            "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
+    "jar__of__coffee.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "frozen",
+            "frozen"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "hot",
+            "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
     "jar__of__cumin.n.01": [
         [
             "disinfected",
@@ -91761,11 +92113,119 @@
             "wrinkly"
         ]
     ],
+    "jar__of__kidney_beans.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "frozen",
+            "frozen"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "hot",
+            "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
     "jar__of__mayonnaise.n.01": [
         [
             "broken",
             "broken"
         ],
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "frozen",
+            "frozen"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "hot",
+            "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
+    "jar__of__orange_jam.n.01": [
         [
             "disinfected",
             "disinfected"
@@ -91935,11 +92395,173 @@
             "wrinkly"
         ]
     ],
+    "jar__of__pepper_seasoning.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "frozen",
+            "frozen"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "hot",
+            "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
+    "jar__of__peppercorns.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "frozen",
+            "frozen"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "hot",
+            "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
     "jar__of__puree.n.01": [
         [
             "broken",
             "broken"
         ],
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "frozen",
+            "frozen"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "hot",
+            "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
+    "jar__of__sesame_seed.n.01": [
         [
             "disinfected",
             "disinfected"
@@ -92051,11 +92673,119 @@
             "wrinkly"
         ]
     ],
+    "jar__of__strawberry_jam.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "frozen",
+            "frozen"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "hot",
+            "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
     "jar__of__sugar.n.01": [
         [
             "broken",
             "broken"
         ],
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "frozen",
+            "frozen"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "hot",
+            "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
+    "jar__of__tumeric.n.01": [
         [
             "disinfected",
             "disinfected"
@@ -105611,6 +106341,10 @@
             "tarnished"
         ],
         [
+            "toggled_on",
+            "toggled_on"
+        ],
+        [
             "wet",
             "wet"
         ],
@@ -107551,6 +108285,64 @@
             "wrinkly"
         ]
     ],
+    "oden_cooker.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "frozen",
+            "frozen"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "hot",
+            "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "toggled_on",
+            "toggled_on"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
     "oil.n.01": [
         [
             "frozen",
@@ -108545,6 +109337,64 @@
         [
             "on_fire",
             "on_fire"
+        ],
+        [
+            "frozen",
+            "frozen"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "hot",
+            "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
+    "outline_vase.n.01": [
+        [
+            "broken",
+            "broken"
+        ],
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
         ],
         [
             "frozen",
@@ -124061,6 +124911,60 @@
             "frozen"
         ]
     ],
+    "reed_diffuser.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "frozen",
+            "frozen"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "hot",
+            "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
     "reflector.n.01": [
         [
             "broken",
@@ -127419,60 +128323,6 @@
             "wrinkly"
         ]
     ],
-    "salad__bowl.n.01": [
-        [
-            "disinfected",
-            "disinfected"
-        ],
-        [
-            "dusty",
-            "dusty"
-        ],
-        [
-            "frozen",
-            "frozen"
-        ],
-        [
-            "grassy",
-            "grassy"
-        ],
-        [
-            "hot",
-            "hot"
-        ],
-        [
-            "moldy",
-            "moldy"
-        ],
-        [
-            "rusty",
-            "rusty"
-        ],
-        [
-            "scratched",
-            "scratched"
-        ],
-        [
-            "stained",
-            "stained"
-        ],
-        [
-            "sticky",
-            "sticky"
-        ],
-        [
-            "tarnished",
-            "tarnished"
-        ],
-        [
-            "wet",
-            "wet"
-        ],
-        [
-            "wrinkly",
-            "wrinkly"
-        ]
-    ],
     "salad_fork.n.01": [
         [
             "disinfected",
@@ -127657,6 +128507,10 @@
         [
             "tarnished",
             "tarnished"
+        ],
+        [
+            "toggled_on",
+            "toggled_on"
         ],
         [
             "wet",
@@ -137535,6 +138389,10 @@
             "tarnished"
         ],
         [
+            "toggled_on",
+            "toggled_on"
+        ],
+        [
             "wet",
             "wet"
         ],
@@ -142453,6 +143311,10 @@
         [
             "tarnished",
             "tarnished"
+        ],
+        [
+            "toggled_on",
+            "toggled_on"
         ],
         [
             "wet",
@@ -152369,6 +153231,10 @@
             "tarnished"
         ],
         [
+            "toggled_on",
+            "toggled_on"
+        ],
+        [
             "wet",
             "wet"
         ],
@@ -157057,6 +157923,10 @@
             "tarnished"
         ],
         [
+            "toggled_on",
+            "toggled_on"
+        ],
+        [
             "wet",
             "wet"
         ],
@@ -157803,6 +158673,10 @@
         [
             "tarnished",
             "tarnished"
+        ],
+        [
+            "toggled_on",
+            "toggled_on"
         ],
         [
             "wet",
