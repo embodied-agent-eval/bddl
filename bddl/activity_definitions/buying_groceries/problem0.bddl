@@ -68,7 +68,7 @@
             (forall
                 (?sack.n.01 - sack.n.01)
                 (imply 
-                    (inside ?carton__of__milk.n.01_1 ?sack.n.01_1)
+                    (inside ?carton__of__milk.n.01_1 ?sack.n.01)
                     (not 
                         (inside ?banana.n.02_1 ?sack.n.01)
                     )

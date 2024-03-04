@@ -20,8 +20,10 @@
     
     (:goal 
         (and 
-            (ontop ?tortilla.n.01_1 ?plate.n.04_1) 
-            (ontop ?tortilla.n.01_2 ?tortilla.n.01_1)
+            (forall
+                (?tortilla.n.01 - tortilla.n.01)
+                (ontop ?tortilla.n.01 ?plate.n.04_1)
+            )
         )
     )
 )
