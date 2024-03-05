@@ -5,9 +5,11 @@
         tupperware.n.01_1 - tupperware.n.01
         kabob.n.01_1 kabob.n.01_2 kabob.n.01_3 kabob.n.01_4 - kabob.n.01
         cooking_oil.n.01_1 - cooking_oil.n.01
+        cooked__cooking_oil.n.01_1 - cooked__cooking_oil.n.01
         cooking_oil__bottle.n.01_1 - cooking_oil__bottle.n.01
         grill.n.02_1 - grill.n.02
         coriander.n.02_1 - coriander.n.02
+        cooked__coriander.n.01_1 - cooked__coriander.n.01
         coriander__shaker.n.01_1 - coriander__shaker.n.01
         plate.n.04_1 - plate.n.04
         electric_refrigerator.n.01_1 - electric_refrigerator.n.01
@@ -36,6 +38,8 @@
         (not 
             (cooked kabob.n.01_4)
         ) 
+        (future cooked__cooking_oil.n.01_1)
+        (future cooked__coriander.n.01_1)
         (insource coriander__shaker.n.01_1 coriander.n.02_1)
         (inside coriander__shaker.n.01_1 electric_refrigerator.n.01_1)
         (inside plate.n.04_1 cabinet.n.01_1)
@@ -48,12 +52,26 @@
     
     (:goal 
         (and 
+            (or
+                (real ?cooked__cooking_oil.n.01_1)
+                (real ?cooking_oil.n.01_1)
+            )
+            (or
+                (real ?cooked__coriander.n.01_1)
+                (real ?coriander.n.02_1)
+            )
             (forall 
                 (?kabob.n.01 - kabob.n.01) 
                 (and
                     (cooked ?kabob.n.01)
-                    (covered ?kabob.n.01 ?cooking_oil.n.01_1)
-                    (covered ?kabob.n.01 ?coriander.n.02_1)
+                    (or
+                        (covered ?kabob.n.01 ?cooking_oil.n.01_1)
+                        (covered ?kabob.n.01 ?cooked__cooking_oil.n.01_1)
+                    )
+                    (or
+                        (covered ?kabob.n.01 ?coriander.n.02_1)
+                        (covered ?kabob.n.01 ?cooked__coriander.n.01_1)
+                    )
                     (ontop ?kabob.n.01 ?plate.n.04_1)
                 )
             )

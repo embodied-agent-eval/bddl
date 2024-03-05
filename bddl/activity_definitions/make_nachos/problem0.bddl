@@ -6,7 +6,6 @@
         carving_knife.n.01_1 - carving_knife.n.01
         grated_cheese.n.01_1 - grated_cheese.n.01
         melted__grated_cheese.n.01_1 - melted__grated_cheese.n.01
-        cooked__melted__grated_cheese.n.01_1 - cooked__melted__grated_cheese.n.01
         beefsteak_tomato.n.01_1 - beefsteak_tomato.n.01
         diced__beefsteak_tomato.n.01_1 - diced__beefsteak_tomato.n.01
         cooked__diced__beefsteak_tomato.n.01_1 - cooked__diced__beefsteak_tomato.n.01
@@ -64,7 +63,6 @@
         (inroom cabinet.n.01_1 kitchen) 
         (ontop cookie_sheet.n.01_1 countertop.n.01_1) 
         (future melted__grated_cheese.n.01_1) 
-        (future cooked__melted__grated_cheese.n.01_1) 
         (future diced__beefsteak_tomato.n.01_1) 
         (future cooked__diced__beefsteak_tomato.n.01_1) 
         (future diced__green_onion.n.01_1) 
@@ -79,10 +77,7 @@
     
     (:goal 
         (and 
-            (or
-                (real ?cooked__melted__grated_cheese.n.01_1) 
-                (real ?melted__grated_cheese.n.01_1) 
-            )
+            (real ?melted__grated_cheese.n.01_1) 
             (or 
                 (real ?diced__beefsteak_tomato.n.01_1) 
                 (real ?cooked__diced__beefsteak_tomato.n.01_1)
@@ -106,10 +101,7 @@
             (forall 
                 (?tortilla_chip.n.01 - tortilla_chip.n.01) 
                 (and 
-                    (or
-                        (covered ?tortilla_chip.n.01 ?cooked__melted__grated_cheese.n.01_1) 
-                        (covered ?tortilla_chip.n.01 ?melted__grated_cheese.n.01_1) 
-                    )
+                    (covered ?tortilla_chip.n.01 ?melted__grated_cheese.n.01_1) 
                     (or 
                         (covered ?tortilla_chip.n.01 ?diced__beefsteak_tomato.n.01_1) 
                         (covered ?tortilla_chip.n.01 ?cooked__diced__beefsteak_tomato.n.01_1)

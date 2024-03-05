@@ -35,6 +35,7 @@
         (inroom oven.n.01_1 kitchen) 
         (inroom electric_refrigerator.n.01_1 kitchen) 
         (inroom floor.n.01_1 kitchen) 
+        (inroom countertop.n.01_1 kitchen)
         (future cooked__diced__steak.n.01_1)
         (future cooked__diced__broccoli.n.01_1)
         (future cooked__diced__clove.n.01_1)

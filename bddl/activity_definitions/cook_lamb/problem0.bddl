@@ -9,6 +9,7 @@
         bowl.n.01_1 bowl.n.01_2 - bowl.n.01
         clove.n.03_1 clove.n.03_2 - clove.n.03
         salt.n.02_1 - salt.n.02
+        cooked__salt.n.01_1 - cooked__salt.n.01
         salt__shaker.n.01_1 - salt__shaker.n.01
         grill.n.02_1 - grill.n.02
         electric_refrigerator.n.01_1 - electric_refrigerator.n.01
@@ -33,6 +34,7 @@
         (inside clove.n.03_2 bowl.n.01_2)
         (inside bowl.n.01_1 electric_refrigerator.n.01_1)
         (inside bowl.n.01_2 electric_refrigerator.n.01_1)
+        (future cooked__salt.n.01_1)
         (insource salt__shaker.n.01_1 salt.n.02_1)
         (inside salt__shaker.n.01_1 cabinet.n.01_1)
         (inroom grill.n.02_1 kitchen) 
@@ -44,8 +46,15 @@
     
     (:goal 
         (and 
+            (or
+                (real ?salt.n.02_1)
+                (real ?cooked__salt.n.01_1)
+            )
             (cooked ?lamb.n.05_1)
-            (covered ?lamb.n.05_1 ?salt.n.02_1)
+            (or
+                (covered ?lamb.n.05_1 ?salt.n.02_1)
+                (covered ?lamb.n.05_1 ?cooked__salt.n.01_1)
+            )
             (forall 
                 (?mint.n.04 - mint.n.04)
                 (ontop ?mint.n.04 ?lamb.n.05_1)
