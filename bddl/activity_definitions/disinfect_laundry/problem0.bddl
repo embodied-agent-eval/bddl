@@ -31,6 +31,7 @@
                 (?jersey.n.03 - jersey.n.03) 
                 (and
                     (inside ?jersey.n.03 ?washer.n.03_1)
+                    (saturated ?jersey.n.03 ?disinfectant.n.01_1)
                 )
             )
         )
