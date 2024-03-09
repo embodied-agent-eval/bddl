@@ -44,6 +44,7 @@ VALID_ATTACHMENTS = set([
     ("antler.n.01", "wall.n.01"),
     ("skateboard_wheel.n.01", "skateboard.n.01"),
     ("blackberry.n.01", "scrub.n.01"),
+    ("rug.n.01", "wall.n.01"),
     ("raspberry.n.02", "scrub.n.01"),
     ("dip.n.07", "candlestick.n.01"),
     ("sign.n.02", "wall.n.01"),
@@ -309,7 +310,7 @@ def check_synset_predicate_alignment(atom, syns_to_props):
             assert "visualSubstance" in syns_to_props[objects[1]], f"Inapplicable covered: {atom}"
     if pred == "filled":
         assert ("rigidBody" in syns_to_props[objects[0]]) and ("fillable" in syns_to_props[objects[0]]) and ("physicalSubstance" in syns_to_props[objects[1]]), f"Inapplicable filled/empty: {atom}"
-    if pred == "contains" or pred == "empty":
+    if pred == "contains":
         assert ("rigidBody" in syns_to_props[objects[0]]) and ("fillable" in syns_to_props[objects[0]]) and ("substance" in syns_to_props[objects[1]]), f"Inapplicable contains: {atom}"
     if pred == "ontop":
         assert ("nonSubstance" in syns_to_props[objects[0]]) and ("rigidBody" in syns_to_props[objects[1]] or "softBody" in syns_to_props[objects[1]]), f"Inapplicable ontop: {atom}"
