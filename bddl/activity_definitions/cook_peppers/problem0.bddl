@@ -57,7 +57,7 @@
             (real ?cooked__diced__bell_pepper.n.01_1)
             (or
                 (real ?olive_oil.n.01_1)
-                (real ?olive_oil.n.01_1)
+                (real ?cooked__olive_oil.n.01_1)
             )
             (contains ?frying_pan.n.01_1 ?cooked__diced__bell_pepper.n.01_1)
             (or

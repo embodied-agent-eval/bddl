@@ -53,6 +53,10 @@
         (inroom cabinet.n.01_1 kitchen) 
         (inroom floor.n.01_1 kitchen) 
         (future diced__chili.n.01_1)
+        (future cooked__diced__chili.n.01_1)
+        (future cooked__salt.n.01_1)
+        (future cooked__sesame_oil.n.01_1)
+        (future cooked__soy_sauce.n.01_1)
         (ontop agent.n.01_1 floor.n.01_1)
     )
     
