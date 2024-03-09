@@ -2301,6 +2301,23 @@
         "wetable": {},
         "wrinkleable": {}
     },
+    "autograph.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
+        "freezable": {},
+        "grassyable": {},
+        "heatable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
     "avocado.n.01": {
         "cookable": {
             "cook_temperature": 58.0
@@ -33757,6 +33774,23 @@
     "decoration.n.01": {
         "freezable": {}
     },
+    "decorative_sign.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
+        "freezable": {},
+        "grassyable": {},
+        "heatable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
     "deep-freeze.n.02": {
         "coldSource": {
             "requires_toggled_on": 0.0,
@@ -47516,6 +47550,23 @@
         "wetable": {},
         "wrinkleable": {}
     },
+    "glass_lantern.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
+        "freezable": {},
+        "grassyable": {},
+        "heatable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
     "glassware.n.01": {
         "breakable": {},
         "disinfectable": {},
@@ -56370,6 +56421,23 @@
         "wetable": {},
         "wrinkleable": {}
     },
+    "hallstand.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
+        "freezable": {},
+        "grassyable": {},
+        "heatable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
     "halogen.n.01": {
         "boilable": {},
         "freezable": {},
@@ -58512,6 +58580,23 @@
         "wetable": {},
         "wrinkleable": {}
     },
+    "hitch.n.04": {
+        "disinfectable": {},
+        "dustyable": {},
+        "freezable": {},
+        "grassyable": {},
+        "heatable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
     "hockey_stick.n.01": {
         "disinfectable": {},
         "dustyable": {},
@@ -59448,9 +59533,7 @@
         "wrinkleable": {}
     },
     "icicle_lights.n.01": {
-        "deformable": {},
         "disinfectable": {},
-        "drapeable": {},
         "dustyable": {},
         "freezable": {},
         "grassyable": {},
@@ -59459,7 +59542,7 @@
         },
         "moldyable": {},
         "nonSubstance": {},
-        "rope": {},
+        "rigidBody": {},
         "rustable": {},
         "scratchable": {},
         "stainable": {},
@@ -66879,6 +66962,7 @@
         "heatable": {},
         "moldyable": {},
         "nonSubstance": {},
+        "rigidBody": {},
         "rustable": {},
         "scratchable": {},
         "stainable": {},
@@ -71650,6 +71734,23 @@
         "heatable": {
             "heat_temperature": 40.0
         },
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
+    "manuscript.n.02": {
+        "disinfectable": {},
+        "dustyable": {},
+        "freezable": {},
+        "grassyable": {},
+        "heatable": {},
         "moldyable": {},
         "nonSubstance": {},
         "rigidBody": {},
@@ -78321,6 +78422,23 @@
         "wetable": {},
         "wrinkleable": {}
     },
+    "outline_tray.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
+        "freezable": {},
+        "grassyable": {},
+        "heatable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
     "outline_vase.n.01": {
         "breakable": {},
         "disinfectable": {},
@@ -80723,6 +80841,23 @@
         "wrinkleable": {}
     },
     "paper_fastener.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
+        "freezable": {},
+        "grassyable": {},
+        "heatable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
+    "paper_lantern.n.01": {
         "disinfectable": {},
         "dustyable": {},
         "freezable": {},
@@ -92488,6 +92623,7 @@
         "breakable": {},
         "disinfectable": {},
         "dustyable": {},
+        "fillable": {},
         "flammable": {
             "ignition_temperature": 250.0,
             "fire_temperature": 1000.0,
@@ -96018,6 +96154,23 @@
         "heatable": {
             "heat_temperature": 40.0
         },
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
+    "scroll.n.02": {
+        "disinfectable": {},
+        "dustyable": {},
+        "freezable": {},
+        "grassyable": {},
+        "heatable": {},
         "moldyable": {},
         "nonSubstance": {},
         "rigidBody": {},
@@ -101098,6 +101251,23 @@
         "wetable": {},
         "wrinkleable": {}
     },
+    "skateboard_deck.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
+        "freezable": {},
+        "grassyable": {},
+        "heatable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
     "skateboard_wheel.n.01": {
         "disinfectable": {},
         "dustyable": {},
@@ -104642,6 +104812,7 @@
         "heatable": {},
         "moldyable": {},
         "nonSubstance": {},
+        "rigidBody": {},
         "rustable": {},
         "scratchable": {},
         "stainable": {},
@@ -120162,6 +120333,24 @@
         "heatable": {
             "heat_temperature": 40.0
         },
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "sceneObject": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
+    "wall_nail.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
+        "freezable": {},
+        "grassyable": {},
+        "heatable": {},
         "moldyable": {},
         "nonSubstance": {},
         "rigidBody": {},

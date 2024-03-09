@@ -3282,13 +3282,6 @@
                                       ]
                                     },
                                     {
-                                      "name": "lantern.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "lantern"
-                                      ]
-                                    },
-                                    {
                                       "name": "spirit_lamp.n.01",
                                       "hasModel": true,
                                       "categories": [
@@ -3300,6 +3293,26 @@
                                       "hasModel": true,
                                       "categories": [
                                         "spotlight"
+                                      ]
+                                    },
+                                    {
+                                      "name": "lantern.n.01",
+                                      "hasModel": true,
+                                      "children": [
+                                        {
+                                          "name": "glass_lantern.n.01",
+                                          "hasModel": true,
+                                          "categories": [
+                                            "glass_lantern"
+                                          ]
+                                        },
+                                        {
+                                          "name": "paper_lantern.n.01",
+                                          "hasModel": true,
+                                          "categories": [
+                                            "paper_lantern"
+                                          ]
+                                        }
                                       ]
                                     }
                                   ]
@@ -5840,8 +5853,14 @@
                                   "name": "wardrobe.n.01",
                                   "hasModel": true,
                                   "categories": [
-                                    "hall_tree",
                                     "wardrobe"
+                                  ]
+                                },
+                                {
+                                  "name": "hallstand.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "hall_tree"
                                   ]
                                 }
                               ]
@@ -6641,6 +6660,13 @@
                                     }
                                   ]
                                 }
+                              ]
+                            },
+                            {
+                              "name": "hitch.n.04",
+                              "hasModel": true,
+                              "categories": [
+                                "hitch"
                               ]
                             }
                           ]
@@ -11921,6 +11947,13 @@
                           "categories": [
                             "outline_vase"
                           ]
+                        },
+                        {
+                          "name": "outline_tray.n.01",
+                          "hasModel": true,
+                          "categories": [
+                            "outline_tray"
+                          ]
                         }
                       ]
                     },
@@ -12554,6 +12587,13 @@
                           "hasModel": true,
                           "categories": [
                             "soap_dish"
+                          ]
+                        },
+                        {
+                          "name": "wall_nail.n.01",
+                          "hasModel": true,
+                          "categories": [
+                            "wall_nail"
                           ]
                         }
                       ]
@@ -15916,6 +15956,13 @@
                             }
                           ]
                         }
+                      ]
+                    },
+                    {
+                      "name": "skateboard_deck.n.01",
+                      "hasModel": true,
+                      "categories": [
+                        "skateboard_deck"
                       ]
                     }
                   ]
@@ -21277,8 +21324,7 @@
                                   "name": "diced__roll_dough.n.01",
                                   "hasModel": true,
                                   "categories": [
-                                    "diced_roll_dough",
-                                    "half_marshmallow"
+                                    "diced_roll_dough"
                                   ],
                                   "substances": [
                                     "diced__roll_dough"
@@ -23296,7 +23342,10 @@
                                     },
                                     {
                                       "name": "half__marshmallow.n.01",
-                                      "hasModel": true
+                                      "hasModel": true,
+                                      "categories": [
+                                        "half_marshmallow"
+                                      ]
                                     },
                                     {
                                       "name": "diced__marshmallow.n.01",
@@ -34201,6 +34250,13 @@
                   "categories": [
                     "signpost"
                   ]
+                },
+                {
+                  "name": "decorative_sign.n.01",
+                  "hasModel": true,
+                  "categories": [
+                    "decorative_sign"
+                  ]
                 }
               ]
             },
@@ -34474,6 +34530,25 @@
                               "hasModel": true,
                               "categories": [
                                 "letter"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "autograph.n.01",
+                      "hasModel": true,
+                      "children": [
+                        {
+                          "name": "manuscript.n.02",
+                          "hasModel": true,
+                          "children": [
+                            {
+                              "name": "scroll.n.02",
+                              "hasModel": true,
+                              "categories": [
+                                "poster_roll"
                               ]
                             }
                           ]
