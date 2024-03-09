@@ -6,6 +6,7 @@
         cooked__diced__bell_pepper.n.01_1 - cooked__diced__bell_pepper.n.01
         chopping_board.n.01_1 - chopping_board.n.01
         olive_oil.n.01_1 - olive_oil.n.01
+        cooked__olive_oil.n.01_1 - cooked__olive_oil.n.01
         olive_oil__bottle.n.01_1 - olive_oil__bottle.n.01
         carving_knife.n.01_1 - carving_knife.n.01
         frying_pan.n.01_1 - frying_pan.n.01
@@ -47,14 +48,22 @@
         (inroom shelf.n.01_1 kitchen) 
         (inroom floor.n.01_1 kitchen) 
         (future cooked__diced__bell_pepper.n.01_1)
+        (future cooked__olive_oil.n.01_1)
         (ontop agent.n.01_1 floor.n.01_1)
     )
     
     (:goal 
         (and 
             (real ?cooked__diced__bell_pepper.n.01_1)
+            (or
+                (real ?olive_oil.n.01_1)
+                (real ?olive_oil.n.01_1)
+            )
             (contains ?frying_pan.n.01_1 ?cooked__diced__bell_pepper.n.01_1)
-            (contains ?frying_pan.n.01_1 ?olive_oil.n.01_1)
+            (or
+                (contains ?frying_pan.n.01_1 ?olive_oil.n.01_1)
+                (contains ?frying_pan.n.01_1 ?cooked__olive_oil.n.01_1)
+            )
         )
     )
 )

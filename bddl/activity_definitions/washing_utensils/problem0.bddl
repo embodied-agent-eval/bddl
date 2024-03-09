@@ -5,7 +5,7 @@
         teaspoon.n.02_1 teaspoon.n.02_2 teaspoon.n.02_3 - teaspoon.n.02
         floor.n.01_1 - floor.n.01
         soy_sauce.n.01_1 - soy_sauce.n.01
-     cooking_oil.n.01_1 - cooking_oil.n.01
+        cooking_oil.n.01_1 - cooking_oil.n.01
         spatula.n.01_1 - spatula.n.01
         liquid_soap.n.01_1 - liquid_soap.n.01
         liquid_soap__bottle.n.01_1 - liquid_soap__bottle.n.01
@@ -23,9 +23,9 @@
         (ontop teaspoon.n.02_3 sink.n.01_1)
         (covered teaspoon.n.02_1 soy_sauce.n.01_1)
         (covered teaspoon.n.02_1 soy_sauce.n.01_1)
-        (covered teaspoon.n.02_1 cooking_oil.n.01_1)
-        (covered teaspoon.n.02_1 soy_sauce.n.01_1)
-        (covered teaspoon.n.02_1 cooking_oil.n.01_1)
+        (covered teaspoon.n.02_2 cooking_oil.n.01_1)
+        (covered teaspoon.n.02_2 soy_sauce.n.01_1)
+        (covered teaspoon.n.02_3 cooking_oil.n.01_1)
         (ontop spatula.n.01_1 sink.n.01_1)
         (covered spatula.n.01_1 cooking_oil.n.01_1)   
         (ontop sponge.n.01_1 countertop.n.01_1)
