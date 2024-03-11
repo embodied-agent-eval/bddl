@@ -140,6 +140,7 @@ class TrivialSimulator(object):
 
             is_predicate = not(literal[0] == "not")
             predicate, *objects = literal[1] if (literal[0] == "not") else literal
+
             if printing:
                 print(predicate)
                 print(objects)
@@ -158,6 +159,11 @@ class TrivialSimulator(object):
                 for obj in objects:
                     self.predicate_to_setters["real"](tuple([obj]), True)
 
+            # import pprint
+            # print("Inside")
+            # pprint.pprint(self.inside)
+            # print()
+
             # Entailed predicates 
             if is_predicate and (predicate == "filled"):
                 self.predicate_to_setters["contains"](tuple(objects), True)
@@ -165,15 +171,20 @@ class TrivialSimulator(object):
                 self.predicate_to_setters["filled"](tuple(objects), False)
             if is_predicate and (predicate == "ontop"):
                 self.predicate_to_setters["nextto"](tuple(objects), True)
+                self.predicate_to_setters["nextto"](tuple(reversed(objects)), True)
                 self.predicate_to_setters["touching"](tuple(objects), True)
+                self.predicate_to_setters["touching"](tuple(reversed(objects)), True)
             if is_predicate and (predicate == "inside"):
                 self.predicate_to_setters["nextto"](tuple(objects), True)
             if (not is_predicate) and (predicate == "nextto"):
                 self.predicate_to_setters["ontop"](tuple(objects), False)
-            if is_predicate and (predicate == "nextto"):
+            if is_predicate and (predicate in ["nextto", "touching"]):
+                self.predicate_to_setters[predicate](tuple(reversed(objects)), True)
+            if (not is_predicate) and (predicate in ["nextto", "touching"]):
+                self.predicate_to_setters[predicate](tuple(reversed(objects)), False)
+            if is_predicate and (predicate == "touching"):
+                self.predicate_to_setters["nextto"](tuple(objects), True)
                 self.predicate_to_setters["nextto"](tuple(reversed(objects)), True)
-            if (not is_predicate) and (predicate == "nextto"):
-                self.predicate_to_setters["nextto"](tuple(reversed(objects)), False)
             
             if is_predicate and (predicate == "closed"):
                 self.predicate_to_setters["open"](tuple(objects), False)
@@ -185,6 +196,12 @@ class TrivialSimulator(object):
                 self.predicate_to_setters["unfolded"](tuple(objects), False)
             if is_predicate and (predicate == "unfolded"):
                 self.predicate_to_setters["folded"](tuple(objects), False)
+
+            # import pprint
+            # print("Inside")
+            # pprint.pprint(self.inside)
+            # print()
+
             
             # Transitive insides/not-insides + ontop-to-insides
             if predicate == "inside":
@@ -196,8 +213,16 @@ class TrivialSimulator(object):
                 for test_item_ontopof_it, test_item in self.ontop:
                     if test_item == item:
                         self.predicate_to_setters["inside"](tuple([test_item_ontopof_it, item_its_inside]), is_predicate)
+
+            # import pprint
+            # print("Inside")
+            # pprint.pprint(self.inside)
+            # print()
+
             
-            # If A is inside B and B gets filled with or contains C, A is covered in C (if types check)
+            # print("Inside:", self.inside)
+            
+            # If A is inside B and B gets filled with or contains C, A is covered in C (if types check). And other way around.
             if is_predicate and (predicate in ["filled", "contains"]):
                 filled_obj, filling_obj = objects
                 # inside pred --> inside_obj is a nonSubstance.
@@ -209,6 +234,21 @@ class TrivialSimulator(object):
                             self.predicate_to_setters["covered"](tuple([inside_obj, filling_obj]), True)
                         if "particleRemover" in syns_to_props_params[inside_syn]:
                             self.predicate_to_setters["saturated"](tuple([inside_obj, filling_obj]), True)
+            if is_predicate and (predicate == "inside"):
+                inside_obj, outside_obj = objects 
+                for filled_obj, filling_obj in self.filled:
+                    if outside_obj == filled_obj:
+                        inside_syn = re.match(ver.OBJECT_CAT_AND_INST_RE, inside_obj).group()
+                        if ("rigidBody" in syns_to_props_params[inside_syn]) or ("softBody" in syns_to_props_params[inside_syn]):
+                            self.predicate_to_setters["covered"](tuple([inside_obj, filling_obj]), True)
+                        if "particleRemover" in syns_to_props_params[inside_syn]:
+                            self.predicate_to_setters["saturated"](tuple([inside_obj, filling_obj]), True)
+            
+            # print()
+            # from pprint import pprint
+            # pprint(self.covered)
+            # print()
+
 
             if printing:
                 print("line 211", ("french_toast.n.01_1", "maple_syrup.n.01_1") in self.covered)
@@ -279,6 +319,14 @@ class TrivialSimulator(object):
                         self.predicate_to_setters["real"](tuple([cooking_derivative_obj2]), True)
                         self.predicate_to_setters["contains"](tuple([contained_obj1, cooking_derivative_obj2]), True)
                         self.predicate_to_setters["contains"](tuple([contained_obj1, contained_obj2]), False)
+                # If we encounter a frozen, unfreeze it 
+                for touching_obj0, touching_obj1 in self.touching: 
+                    if (touching_obj0 == objects[0]) and (touching_obj1 in self.frozen):
+                        self.predicate_to_setters["frozen"](tuple([touching_obj1]), False)
+                    if (touching_obj1 == objects[0]) and (touching_obj0 in self.frozen):
+                        self.predicate_to_setters["frozen"](tuple([touching_obj0]), False)
+            
+            # print(self.frozen)
 
             if printing:
                 print("line 281", ("french_toast.n.01_1", "maple_syrup.n.01_1") in self.covered)
@@ -296,6 +344,8 @@ class TrivialSimulator(object):
                     if toggled_on_ok and closed_ok and inside_ok: 
                         self.predicate_to_setters["frozen"](tuple([objects[0]]), False)
                         self.predicate_to_setters["hot"](tuple([objects[0]]), True)
+                        if "cookable" in syns_to_props_params[syn0]:
+                            self.predicate_to_setters["cooked"](tuple([objects[0]]), True)
             
             # Freezing for electric refrigerator
             if (not is_predicate) and (predicate == "open"):
@@ -343,31 +393,58 @@ class TrivialSimulator(object):
 
             if printing:
                 print("line 332", ("french_toast.n.01_1", "maple_syrup.n.01_1") in self.covered)
-
+            
             # Washer-dryer
             if is_predicate and (predicate == "toggled_on") and ("washer.n.03" in objects[0]):
                 for inside_obj0, inside_obj1 in self.inside:
                     if "washer.n.03" not in inside_obj1:
                         continue
                     inside_syn0, inside_syn1 = re.match(ver.OBJECT_CAT_AND_INST_RE, inside_obj0).group(), re.match(ver.OBJECT_CAT_AND_INST_RE, inside_obj1).group()
+                                
+                    # import pprint
+                    # print()
+                    # print("Covered")
+                    # pprint.pprint(self.covered)
+                    # print()
+                    # print("Saturated")
+                    # pprint.pprint(self.saturated)
+
+                    # Stain off based on what else is in there
+                    for covered_obj, covering_obj in self.covered.union(self.saturated):
+                        covered_syn, covering_syn = re.match(ver.OBJECT_CAT_AND_INST_RE, covered_obj).group(), re.match(ver.OBJECT_CAT_AND_INST_RE, covering_obj).group()
+                        conditions = syns_to_props_params["rag.n.01"]["particleRemover"]["conditions"]
+                        # print(conditions)
+                        if covering_syn not in conditions:      # Case where it's an "other" covering substance - in which case, it should work for a washer
+                            can_clean = True
+                        elif covering_syn == "water.n.06_1":
+                            can_clean = False
+                        else:
+                            spec_conditions = conditions[covering_syn]
+                            can_clean = False
+                            if not spec_conditions: 
+                                can_clean = True
+                            for __, cleansing_syn in spec_conditions:
+                                if (tuple([inside_obj1, cleansing_syn + "_1"]) in self.contains) or (tuple([inside_obj1, cleansing_syn + "_1"]) in self.filled):
+                                    can_clean = True
+                        if can_clean:
+                            self.predicate_to_setters["covered"](tuple([covered_obj, covering_obj]), False)
+                            if "particleRemover" in syns_to_props_params[covered_syn]:
+                                self.predicate_to_setters["saturated"](tuple([covered_obj, covering_obj]), False)
+
                     # Water on
+                    # print("Inside obj:", inside_obj0)
                     self.predicate_to_setters["covered"](tuple([inside_obj0, "water.n.06_1"]), True)
                     if "particleRemover" in syns_to_props_params[inside_syn0]:
                         self.predicate_to_setters["saturated"](tuple([inside_obj0, "water.n.06_1"]), True)
-                    
-                    # Stain off based on what else is in there
-                    for covered_obj, covering_obj in copy.deepcopy(self.covered):
-                        covered_syn, covering_syn = re.match(ver.OBJECT_CAT_AND_INST_RE, covered_obj).group(), re.match(ver.OBJECT_CAT_AND_INST_RE, covering_obj).group()
-                        conditions = syns_to_props_params["rag.n.01"]["particleRemover"]["conditions"]
-                        spec_conditions = conditions[covering_syn]
-                        can_clean = False
-                        if not spec_conditions: 
-                            can_clean = True
-                        for __, cleansing_syn in spec_conditions:
-                            if (tuple([inside_obj1, cleansing_syn + "_1"]) in self.contains) or (tuple([inside_obj1, cleansing_syn + "_1"]) in self.filled):
-                                self.predicate_to_setters["covered"](tuple([covered_obj, covering_obj]), False)
-                                if "particleRemover" in syns_to_props_params[covered_syn]:
-                                    self.predicate_to_setters["saturated"](tuple([covered_obj, covering_obj]), False)
+                    # print("Set water for it")
+            
+                    # import pprint
+                    # print()
+                    # print("Covered")
+                    # pprint.pprint(self.covered)
+                    # print()
+                    # print("Saturated")
+                    # pprint.pprint(self.saturated)
             
             if is_predicate and (predicate == "toggled_on") and ("clothes_dryer.n.01" in objects[0]):
                 for inside_obj0, inside_obj1 in self.inside:
@@ -477,6 +554,11 @@ class TrivialSimulator(object):
             
             # from pprint import pprint;
             # pprint(self.covered)
+
+    # def check_transition_rules(self, rule):
+    #     input_synsets = rule["input_synsets"].keys()
+    #     if real_
+
         
     def set_cooked(self, objs, is_cooked):
         assert len(objs) == 1, f"`objs` has len other than 1: {objs}"
@@ -1165,6 +1247,7 @@ VALID_ATTACHMENTS = set([
     ("light_bulb.n.01", "table_lamp.n.01"),
     ("lens.n.01", "digital_camera.n.01"),
     ("screen.n.01", "wall.n.01"),
+    ("rug.n.01", "wall.n.01"),
     ("antler.n.01", "wall.n.01"),
     ("skateboard_wheel.n.01", "skateboard.n.01"),
     ("blackberry.n.01", "scrub.n.01"),
