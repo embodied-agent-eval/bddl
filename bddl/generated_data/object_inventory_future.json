@@ -1236,8 +1236,8 @@
         "cigarette-oklfsv": "objects/batch-09",
         "cigarette-slkbfx": "objects/batch-09",
         "cigarette-vgndiy": "objects/batch-09",
-        "clothesline-gkqoro": "objects/batch-09",
         "clothesline_pole-smrqrw": "objects/batch-09",
+        "clothesline_rope-gkqoro": "objects/batch-09",
         "clove-jwhnfc": "objects/batch-09",
         "clove-wyyhmi": "objects/batch-09",
         "croissant-hnbnap": "objects/batch-09",
@@ -1311,15 +1311,7 @@
         "meat_thermometer-idugwc": "objects/batch-09",
         "mousepad-mfrcto": "objects/batch-09",
         "paper_sheet-afdjfk": "objects/batch-09",
-        "paper_towel-hbnzdv": "objects/batch-09",
-        "paper_towel-jdsryb": "objects/batch-09",
-        "paper_towel-jgfsug": "objects/batch-09",
-        "paper_towel-lhjush": "objects/batch-09",
         "paper_towel-mdcnha": "objects/batch-09",
-        "paper_towel-oysrvt": "objects/batch-09",
-        "paper_towel-taedgk": "objects/batch-09",
-        "paper_towel-wjcyoi": "objects/batch-09",
-        "paper_towel-yedsde": "objects/batch-09",
         "parsley_shaker-tgcwtr": "objects/batch-09",
         "quiche-fvhqcu": "objects/batch-09",
         "receipt-hgnbjj": "objects/batch-09",
@@ -1618,6 +1610,8 @@
         "bush-pjhpwk": "objects/batch-12",
         "bush-xsqlhv": "objects/batch-12",
         "bush-yhjhta": "objects/batch-12",
+        "cabinet_base-dcmhhh": "objects/batch-12",
+        "cabinet_door-ertkre": "objects/batch-12",
         "camera_tripod-hnpofr": "objects/batch-12",
         "cap-duwera": "objects/batch-12",
         "carrot-nktmff": "objects/batch-12",
@@ -3703,6 +3697,9 @@
         "cutting_board-jfrbuz": "objects/task_relevant-xy",
         "cutting_board-nsvnai": "objects/task_relevant-xy",
         "daffodil_bulb-ieihld": "objects/task_relevant-xy",
+        "desk_bracket-lwqwre": "objects/task_relevant-xy",
+        "desk_leg-qoerre": "objects/task_relevant-xy",
+        "desk_top-eggere": "objects/task_relevant-xy",
         "dog_collar-dnjpms": "objects/task_relevant-xy",
         "dog_food-gqmvyh": "objects/task_relevant-xy",
         "dog_food-prxfhj": "objects/task_relevant-xy",
@@ -3829,6 +3826,8 @@
         "tofu-uecgbv": "objects/task_relevant-xy",
         "trailer_truck-dnvcsu": "objects/task_relevant-xy",
         "trampoline-utbouk": "objects/task_relevant-xy",
+        "trampoline_leg-qkerde": "objects/task_relevant-xy",
+        "trampoline_top-iemeer": "objects/task_relevant-xy",
         "tray-yqtlhy": "objects/task_relevant-xy",
         "trout-kqpeke": "objects/task_relevant-xy",
         "turkey_leg-bqugmh": "objects/task_relevant-xy",
@@ -3840,13 +3839,11 @@
         "windshield-mdfijk": "objects/task_relevant-xy",
         "wool_coat-jkcugp": "objects/task_relevant-xy",
         "armchair-nibzys": "scenes/Beechwood_0_garden",
-        "background-rgfvbm": "scenes/Beechwood_0_garden",
         "bottle-mjpyvh": "scenes/Beechwood_0_garden",
         "car-qesxhu": "scenes/Beechwood_0_garden",
         "ceilings-bfkphv": "scenes/Beechwood_0_garden",
         "ceilings-bretyq": "scenes/Beechwood_0_garden",
         "ceilings-dbgwtz": "scenes/Beechwood_0_garden",
-        "ceilings-flecvu": "scenes/Beechwood_0_garden",
         "ceilings-hrnwiz": "scenes/Beechwood_0_garden",
         "ceilings-ozrhsf": "scenes/Beechwood_0_garden",
         "ceilings-usxywu": "scenes/Beechwood_0_garden",
@@ -3867,14 +3864,18 @@
         "door-xdcuws": "scenes/Beechwood_0_garden",
         "driveway-ywqsrg": "scenes/Beechwood_0_garden",
         "fairy_light-waitum": "scenes/Beechwood_0_garden",
+        "fence-akeroe": "scenes/Beechwood_0_garden",
+        "fence-alekre": "scenes/Beechwood_0_garden",
+        "fence-eoeeeo": "scenes/Beechwood_0_garden",
         "fence-qgpjhr": "scenes/Beechwood_0_garden",
+        "fence-qksssk": "scenes/Beechwood_0_garden",
         "floors-ciodcg": "scenes/Beechwood_0_garden",
         "floors-ctewvi": "scenes/Beechwood_0_garden",
         "floors-hoxmcm": "scenes/Beechwood_0_garden",
         "floors-jymrik": "scenes/Beechwood_0_garden",
+        "floors-jywnee": "scenes/Beechwood_0_garden",
         "floors-kkdimd": "scenes/Beechwood_0_garden",
         "floors-knpkwh": "scenes/Beechwood_0_garden",
-        "floors-prkgjl": "scenes/Beechwood_0_garden",
         "floors-rfathr": "scenes/Beechwood_0_garden",
         "floors-tzoowa": "scenes/Beechwood_0_garden",
         "floors-umakgq": "scenes/Beechwood_0_garden",
@@ -3887,13 +3888,16 @@
         "lantern-engbrg": "scenes/Beechwood_0_garden",
         "lantern-onfjnh": "scenes/Beechwood_0_garden",
         "lantern-zjuwnf": "scenes/Beechwood_0_garden",
+        "lawn-djekse": "scenes/Beechwood_0_garden",
         "lawn-fjlcsj": "scenes/Beechwood_0_garden",
+        "lawn-tewkte": "scenes/Beechwood_0_garden",
         "pillow-gvfumz": "scenes/Beechwood_0_garden",
         "pillow-njused": "scenes/Beechwood_0_garden",
         "pillow-tlcxuw": "scenes/Beechwood_0_garden",
         "pot_plant-ibvdwh": "scenes/Beechwood_0_garden",
         "pot_plant-liqyem": "scenes/Beechwood_0_garden",
         "pot_plant-mkhbtk": "scenes/Beechwood_0_garden",
+        "roof-flecvu": "scenes/Beechwood_0_garden",
         "sofa-ahgkci": "scenes/Beechwood_0_garden",
         "sofa-rqipbs": "scenes/Beechwood_0_garden",
         "sofa-tlsxpc": "scenes/Beechwood_0_garden",
@@ -4228,10 +4232,7 @@
         "walls-ywzpuk": "scenes/Ihlen_1_int",
         "walls-zrhulr": "scenes/Ihlen_1_int",
         "armchair-thfelc": "scenes/Merom_0_garden",
-        "background-hvnjrs": "scenes/Merom_0_garden",
         "bathtub-uqmgtw": "scenes/Merom_0_garden",
-        "cap-pnrncu": "scenes/Merom_0_garden",
-        "cap-xhahkv": "scenes/Merom_0_garden",
         "ceilings-aghvud": "scenes/Merom_0_garden",
         "ceilings-einoiz": "scenes/Merom_0_garden",
         "ceilings-hcukpe": "scenes/Merom_0_garden",
@@ -4239,14 +4240,16 @@
         "ceilings-pcavmp": "scenes/Merom_0_garden",
         "ceilings-tnrxdt": "scenes/Merom_0_garden",
         "ceilings-ugpmqg": "scenes/Merom_0_garden",
-        "ceilings-whdldt": "scenes/Merom_0_garden",
         "ceilings-yewrrl": "scenes/Merom_0_garden",
         "ceilings-ygtcuq": "scenes/Merom_0_garden",
         "ceilings-yzmaku": "scenes/Merom_0_garden",
-        "door-itxmhl": "scenes/Merom_0_garden",
         "door-vngpad": "scenes/Merom_0_garden",
         "driveway-ulegfe": "scenes/Merom_0_garden",
+        "fence-friakc": "scenes/Merom_0_garden",
+        "fence-lamwbr": "scenes/Merom_0_garden",
+        "fence-lqwler": "scenes/Merom_0_garden",
         "fence-shqfvd": "scenes/Merom_0_garden",
+        "fence-yyyoer": "scenes/Merom_0_garden",
         "floor_lamp-smfygn": "scenes/Merom_0_garden",
         "floors-cdzqdq": "scenes/Merom_0_garden",
         "floors-jrdgxz": "scenes/Merom_0_garden",
@@ -4263,44 +4266,44 @@
         "gate-bzotkq": "scenes/Merom_0_garden",
         "gate-jnzgyw": "scenes/Merom_0_garden",
         "grill-tusmtd": "scenes/Merom_0_garden",
-        "hand_towel-wmefmo": "scenes/Merom_0_garden",
         "hook-wmvozo": "scenes/Merom_0_garden",
         "lawn-mgxskp": "scenes/Merom_0_garden",
         "mug-jgethp": "scenes/Merom_0_garden",
+        "pillar-etiret": "scenes/Merom_0_garden",
+        "pillar-iertyj": "scenes/Merom_0_garden",
+        "pillar-jwkwer": "scenes/Merom_0_garden",
         "pillar-lhruoz": "scenes/Merom_0_garden",
+        "pillar-poetje": "scenes/Merom_0_garden",
         "pillow-bgqjtg": "scenes/Merom_0_garden",
         "pillow-cosbis": "scenes/Merom_0_garden",
         "pillow-hegzyu": "scenes/Merom_0_garden",
         "pillow-iwvzrt": "scenes/Merom_0_garden",
         "plate-ypdfrp": "scenes/Merom_0_garden",
         "pot_plant-irdjit": "scenes/Merom_0_garden",
+        "roof-whdldt": "scenes/Merom_0_garden",
         "sauna_bench-umcfkh": "scenes/Merom_0_garden",
-        "shampoo-cfedgq": "scenes/Merom_0_garden",
-        "shampoo-dbpefd": "scenes/Merom_0_garden",
-        "shower-lpocnm": "scenes/Merom_0_garden",
         "showerhead-psscka": "scenes/Merom_0_garden",
-        "showerhead-vzzosk": "scenes/Merom_0_garden",
         "sofa-llsxsg": "scenes/Merom_0_garden",
         "wall_mounted_light-trxlgu": "scenes/Merom_0_garden",
-        "wall_mounted_shelf-heenmw": "scenes/Merom_0_garden",
         "walls-dfktez": "scenes/Merom_0_garden",
         "walls-dnelov": "scenes/Merom_0_garden",
         "walls-dyicpd": "scenes/Merom_0_garden",
         "walls-eiobkz": "scenes/Merom_0_garden",
-        "walls-friakc": "scenes/Merom_0_garden",
         "walls-gimcls": "scenes/Merom_0_garden",
         "walls-hggpqm": "scenes/Merom_0_garden",
         "walls-jwjnmx": "scenes/Merom_0_garden",
+        "walls-llpoke": "scenes/Merom_0_garden",
         "walls-lvnabe": "scenes/Merom_0_garden",
         "walls-mtgkak": "scenes/Merom_0_garden",
         "walls-nmxjuw": "scenes/Merom_0_garden",
         "walls-oxvsja": "scenes/Merom_0_garden",
         "walls-peolfu": "scenes/Merom_0_garden",
+        "walls-twoerk": "scenes/Merom_0_garden",
         "walls-vlszsu": "scenes/Merom_0_garden",
+        "walls-woetpe": "scenes/Merom_0_garden",
         "walls-wqvhai": "scenes/Merom_0_garden",
         "walls-yfnrqw": "scenes/Merom_0_garden",
         "walls-yvalht": "scenes/Merom_0_garden",
-        "window-qodvoq": "scenes/Merom_0_garden",
         "window-surlxy": "scenes/Merom_0_garden",
         "wineglass-exasdr": "scenes/Merom_0_garden",
         "ceilings-gatymy": "scenes/Merom_0_int",
@@ -6818,6 +6821,7 @@
         "door-hkxqfh": "scenes/house_single_floor",
         "door-iuuykr": "scenes/house_single_floor",
         "door-jpubcg": "scenes/house_single_floor",
+        "door-kwbnhy": "scenes/house_single_floor",
         "door-lrvyvc": "scenes/house_single_floor",
         "door-mqlbnj": "scenes/house_single_floor",
         "door-mtufto": "scenes/house_single_floor",
@@ -6847,17 +6851,18 @@
         "floor_lamp-disyzd": "scenes/house_single_floor",
         "floors-fpnxmg": "scenes/house_single_floor",
         "floors-glwobe": "scenes/house_single_floor",
+        "floors-hkdmte": "scenes/house_single_floor",
         "floors-htolat": "scenes/house_single_floor",
+        "floors-khjmrr": "scenes/house_single_floor",
         "floors-kxcpgy": "scenes/house_single_floor",
         "floors-lltizc": "scenes/house_single_floor",
         "floors-mawnss": "scenes/house_single_floor",
         "floors-mdozod": "scenes/house_single_floor",
+        "floors-pyoemr": "scenes/house_single_floor",
         "floors-qgmjvd": "scenes/house_single_floor",
         "floors-qnvzkr": "scenes/house_single_floor",
-        "floors-sbuods": "scenes/house_single_floor",
         "floors-shuuqu": "scenes/house_single_floor",
         "floors-sirgua": "scenes/house_single_floor",
-        "floors-sxpouu": "scenes/house_single_floor",
         "floors-uftgek": "scenes/house_single_floor",
         "floors-uzsntg": "scenes/house_single_floor",
         "floors-vcsslq": "scenes/house_single_floor",
@@ -6866,7 +6871,6 @@
         "floors-yfyxxu": "scenes/house_single_floor",
         "floors-yibjol": "scenes/house_single_floor",
         "floors-yrqspn": "scenes/house_single_floor",
-        "floors-yztodo": "scenes/house_single_floor",
         "folder-wauyns": "scenes/house_single_floor",
         "garden_light-umyzpg": "scenes/house_single_floor",
         "glass-bbpraa": "scenes/house_single_floor",
@@ -7475,7 +7479,6 @@
         "window-iggzsd": "scenes/house_single_floor",
         "window-ijpvgf": "scenes/house_single_floor",
         "window-jrnfkt": "scenes/house_single_floor",
-        "window-kwbnhy": "scenes/house_single_floor",
         "window-nruots": "scenes/house_single_floor",
         "window-nszybf": "scenes/house_single_floor",
         "window-ovzepp": "scenes/house_single_floor",
@@ -7841,8 +7844,6 @@
         "armchair-wkmkvd": "scenes/office_large",
         "armchair-zrgdsz": "scenes/office_large",
         "armchair-zxhcxt": "scenes/office_large",
-        "bottom_cabinet-todoa3": "scenes/office_large",
-        "bottom_cabinet-todoa4": "scenes/office_large",
         "breakfast_table-yclkbw": "scenes/office_large",
         "ceilings-gksmdr": "scenes/office_large",
         "ceilings-umzpae": "scenes/office_large",
@@ -9451,7 +9452,8 @@
             "objects/batch-00"
         ],
         "charcoal_grill-crdaeu": [
-            "objects/batch-00"
+            "objects/batch-00",
+            "scenes/house_single_floor"
         ],
         "cherry_tomato-dqjuub": [
             "objects/batch-00"
@@ -13054,10 +13056,11 @@
         "cigarette-vgndiy": [
             "objects/batch-09"
         ],
-        "clothesline-gkqoro": [
-            "objects/batch-09"
-        ],
         "clothesline_pole-smrqrw": [
+            "objects/batch-09",
+            "scenes/house_single_floor"
+        ],
+        "clothesline_rope-gkqoro": [
             "objects/batch-09"
         ],
         "clove-jwhnfc": [
@@ -13279,31 +13282,7 @@
         "paper_sheet-afdjfk": [
             "objects/batch-09"
         ],
-        "paper_towel-hbnzdv": [
-            "objects/batch-09"
-        ],
-        "paper_towel-jdsryb": [
-            "objects/batch-09"
-        ],
-        "paper_towel-jgfsug": [
-            "objects/batch-09"
-        ],
-        "paper_towel-lhjush": [
-            "objects/batch-09"
-        ],
         "paper_towel-mdcnha": [
-            "objects/batch-09"
-        ],
-        "paper_towel-oysrvt": [
-            "objects/batch-09"
-        ],
-        "paper_towel-taedgk": [
-            "objects/batch-09"
-        ],
-        "paper_towel-wjcyoi": [
-            "objects/batch-09"
-        ],
-        "paper_towel-yedsde": [
             "objects/batch-09"
         ],
         "parsley_shaker-tgcwtr": [
@@ -14255,6 +14234,12 @@
             "scenes/house_double_floor_lower",
             "scenes/house_single_floor"
         ],
+        "cabinet_base-dcmhhh": [
+            "objects/batch-12"
+        ],
+        "cabinet_door-ertkre": [
+            "objects/batch-12"
+        ],
         "camera_tripod-hnpofr": [
             "objects/batch-12"
         ],
@@ -14468,7 +14453,6 @@
         ],
         "low_resolution_tree-djpxqx": [
             "objects/batch-12",
-            "scenes/Beechwood_0_garden",
             "scenes/Pomaria_0_garden",
             "scenes/Rs_garden",
             "scenes/Wainscott_0_garden"
@@ -15107,8 +15091,7 @@
         ],
         "bottom_cabinet-kubcdk": [
             "objects/legacy_batch-00",
-            "scenes/Beechwood_1_int",
-            "scenes/office_large"
+            "scenes/Beechwood_1_int"
         ],
         "bottom_cabinet-kxushk": [
             "objects/legacy_batch-00"
@@ -21390,6 +21373,15 @@
         "daffodil_bulb-ieihld": [
             "objects/task_relevant-xy"
         ],
+        "desk_bracket-lwqwre": [
+            "objects/task_relevant-xy"
+        ],
+        "desk_leg-qoerre": [
+            "objects/task_relevant-xy"
+        ],
+        "desk_top-eggere": [
+            "objects/task_relevant-xy"
+        ],
         "dog_collar-dnjpms": [
             "objects/task_relevant-xy"
         ],
@@ -21768,6 +21760,12 @@
         "trampoline-utbouk": [
             "objects/task_relevant-xy"
         ],
+        "trampoline_leg-qkerde": [
+            "objects/task_relevant-xy"
+        ],
+        "trampoline_top-iemeer": [
+            "objects/task_relevant-xy"
+        ],
         "tray-yqtlhy": [
             "objects/task_relevant-xy"
         ],
@@ -21812,9 +21810,6 @@
         "armchair-nibzys": [
             "scenes/Beechwood_0_garden"
         ],
-        "background-rgfvbm": [
-            "scenes/Beechwood_0_garden"
-        ],
         "bottle-mjpyvh": [
             "scenes/Beechwood_0_garden"
         ],
@@ -21828,9 +21823,6 @@
             "scenes/Beechwood_0_garden"
         ],
         "ceilings-dbgwtz": [
-            "scenes/Beechwood_0_garden"
-        ],
-        "ceilings-flecvu": [
             "scenes/Beechwood_0_garden"
         ],
         "ceilings-hrnwiz": [
@@ -21920,7 +21912,19 @@
         "fairy_light-waitum": [
             "scenes/Beechwood_0_garden"
         ],
+        "fence-akeroe": [
+            "scenes/Beechwood_0_garden"
+        ],
+        "fence-alekre": [
+            "scenes/Beechwood_0_garden"
+        ],
+        "fence-eoeeeo": [
+            "scenes/Beechwood_0_garden"
+        ],
         "fence-qgpjhr": [
+            "scenes/Beechwood_0_garden"
+        ],
+        "fence-qksssk": [
             "scenes/Beechwood_0_garden"
         ],
         "floors-ciodcg": [
@@ -21935,13 +21939,13 @@
         "floors-jymrik": [
             "scenes/Beechwood_0_garden"
         ],
+        "floors-jywnee": [
+            "scenes/Beechwood_0_garden"
+        ],
         "floors-kkdimd": [
             "scenes/Beechwood_0_garden"
         ],
         "floors-knpkwh": [
-            "scenes/Beechwood_0_garden"
-        ],
-        "floors-prkgjl": [
             "scenes/Beechwood_0_garden"
         ],
         "floors-rfathr": [
@@ -21980,7 +21984,13 @@
         "lantern-zjuwnf": [
             "scenes/Beechwood_0_garden"
         ],
+        "lawn-djekse": [
+            "scenes/Beechwood_0_garden"
+        ],
         "lawn-fjlcsj": [
+            "scenes/Beechwood_0_garden"
+        ],
+        "lawn-tewkte": [
             "scenes/Beechwood_0_garden"
         ],
         "pillow-gvfumz": [
@@ -21999,6 +22009,9 @@
             "scenes/Beechwood_0_garden"
         ],
         "pot_plant-mkhbtk": [
+            "scenes/Beechwood_0_garden"
+        ],
+        "roof-flecvu": [
             "scenes/Beechwood_0_garden"
         ],
         "sofa-ahgkci": [
@@ -23027,16 +23040,7 @@
         "armchair-thfelc": [
             "scenes/Merom_0_garden"
         ],
-        "background-hvnjrs": [
-            "scenes/Merom_0_garden"
-        ],
         "bathtub-uqmgtw": [
-            "scenes/Merom_0_garden"
-        ],
-        "cap-pnrncu": [
-            "scenes/Merom_0_garden"
-        ],
-        "cap-xhahkv": [
             "scenes/Merom_0_garden"
         ],
         "ceilings-aghvud": [
@@ -23060,9 +23064,6 @@
         "ceilings-ugpmqg": [
             "scenes/Merom_0_garden"
         ],
-        "ceilings-whdldt": [
-            "scenes/Merom_0_garden"
-        ],
         "ceilings-yewrrl": [
             "scenes/Merom_0_garden"
         ],
@@ -23072,16 +23073,25 @@
         "ceilings-yzmaku": [
             "scenes/Merom_0_garden"
         ],
-        "door-itxmhl": [
-            "scenes/Merom_0_garden"
-        ],
         "door-vngpad": [
             "scenes/Merom_0_garden"
         ],
         "driveway-ulegfe": [
             "scenes/Merom_0_garden"
         ],
+        "fence-friakc": [
+            "scenes/Merom_0_garden"
+        ],
+        "fence-lamwbr": [
+            "scenes/Merom_0_garden"
+        ],
+        "fence-lqwler": [
+            "scenes/Merom_0_garden"
+        ],
         "fence-shqfvd": [
+            "scenes/Merom_0_garden"
+        ],
+        "fence-yyyoer": [
             "scenes/Merom_0_garden"
         ],
         "floor_lamp-smfygn": [
@@ -23132,9 +23142,6 @@
         "grill-tusmtd": [
             "scenes/Merom_0_garden"
         ],
-        "hand_towel-wmefmo": [
-            "scenes/Merom_0_garden"
-        ],
         "hook-wmvozo": [
             "scenes/Merom_0_garden"
         ],
@@ -23144,7 +23151,19 @@
         "mug-jgethp": [
             "scenes/Merom_0_garden"
         ],
+        "pillar-etiret": [
+            "scenes/Merom_0_garden"
+        ],
+        "pillar-iertyj": [
+            "scenes/Merom_0_garden"
+        ],
+        "pillar-jwkwer": [
+            "scenes/Merom_0_garden"
+        ],
         "pillar-lhruoz": [
+            "scenes/Merom_0_garden"
+        ],
+        "pillar-poetje": [
             "scenes/Merom_0_garden"
         ],
         "pillow-bgqjtg": [
@@ -23165,22 +23184,13 @@
         "pot_plant-irdjit": [
             "scenes/Merom_0_garden"
         ],
+        "roof-whdldt": [
+            "scenes/Merom_0_garden"
+        ],
         "sauna_bench-umcfkh": [
             "scenes/Merom_0_garden"
         ],
-        "shampoo-cfedgq": [
-            "scenes/Merom_0_garden"
-        ],
-        "shampoo-dbpefd": [
-            "scenes/Merom_0_garden"
-        ],
-        "shower-lpocnm": [
-            "scenes/Merom_0_garden"
-        ],
         "showerhead-psscka": [
-            "scenes/Merom_0_garden"
-        ],
-        "showerhead-vzzosk": [
             "scenes/Merom_0_garden"
         ],
         "sofa-llsxsg": [
@@ -23195,9 +23205,6 @@
         "wall_mounted_light-trxlgu": [
             "scenes/Merom_0_garden"
         ],
-        "wall_mounted_shelf-heenmw": [
-            "scenes/Merom_0_garden"
-        ],
         "walls-dfktez": [
             "scenes/Merom_0_garden"
         ],
@@ -23210,9 +23217,6 @@
         "walls-eiobkz": [
             "scenes/Merom_0_garden"
         ],
-        "walls-friakc": [
-            "scenes/Merom_0_garden"
-        ],
         "walls-gimcls": [
             "scenes/Merom_0_garden"
         ],
@@ -23220,6 +23224,9 @@
             "scenes/Merom_0_garden"
         ],
         "walls-jwjnmx": [
+            "scenes/Merom_0_garden"
+        ],
+        "walls-llpoke": [
             "scenes/Merom_0_garden"
         ],
         "walls-lvnabe": [
@@ -23237,7 +23244,13 @@
         "walls-peolfu": [
             "scenes/Merom_0_garden"
         ],
+        "walls-twoerk": [
+            "scenes/Merom_0_garden"
+        ],
         "walls-vlszsu": [
+            "scenes/Merom_0_garden"
+        ],
+        "walls-woetpe": [
             "scenes/Merom_0_garden"
         ],
         "walls-wqvhai": [
@@ -23247,9 +23260,6 @@
             "scenes/Merom_0_garden"
         ],
         "walls-yvalht": [
-            "scenes/Merom_0_garden"
-        ],
-        "window-qodvoq": [
             "scenes/Merom_0_garden"
         ],
         "window-surlxy": [
@@ -30833,6 +30843,9 @@
         "door-jpubcg": [
             "scenes/house_single_floor"
         ],
+        "door-kwbnhy": [
+            "scenes/house_single_floor"
+        ],
         "door-lrvyvc": [
             "scenes/house_single_floor"
         ],
@@ -30920,7 +30933,13 @@
         "floors-glwobe": [
             "scenes/house_single_floor"
         ],
+        "floors-hkdmte": [
+            "scenes/house_single_floor"
+        ],
         "floors-htolat": [
+            "scenes/house_single_floor"
+        ],
+        "floors-khjmrr": [
             "scenes/house_single_floor"
         ],
         "floors-kxcpgy": [
@@ -30935,22 +30954,19 @@
         "floors-mdozod": [
             "scenes/house_single_floor"
         ],
+        "floors-pyoemr": [
+            "scenes/house_single_floor"
+        ],
         "floors-qgmjvd": [
             "scenes/house_single_floor"
         ],
         "floors-qnvzkr": [
             "scenes/house_single_floor"
         ],
-        "floors-sbuods": [
-            "scenes/house_single_floor"
-        ],
         "floors-shuuqu": [
             "scenes/house_single_floor"
         ],
         "floors-sirgua": [
-            "scenes/house_single_floor"
-        ],
-        "floors-sxpouu": [
             "scenes/house_single_floor"
         ],
         "floors-uftgek": [
@@ -30975,9 +30991,6 @@
             "scenes/house_single_floor"
         ],
         "floors-yrqspn": [
-            "scenes/house_single_floor"
-        ],
-        "floors-yztodo": [
             "scenes/house_single_floor"
         ],
         "folder-wauyns": [
@@ -32801,9 +32814,6 @@
         "window-jrnfkt": [
             "scenes/house_single_floor"
         ],
-        "window-kwbnhy": [
-            "scenes/house_single_floor"
-        ],
         "window-nruots": [
             "scenes/house_single_floor"
         ],
@@ -33924,12 +33934,6 @@
             "scenes/office_large"
         ],
         "armchair-zxhcxt": [
-            "scenes/office_large"
-        ],
-        "bottom_cabinet-todoa3": [
-            "scenes/office_large"
-        ],
-        "bottom_cabinet-todoa4": [
             "scenes/office_large"
         ],
         "breakfast_table-yclkbw": [
@@ -39226,6 +39230,12 @@
             "particleapplier",
             "togglebutton"
         ],
+        "clothesline_pole-smrqrw": [
+            "attachment"
+        ],
+        "clothesline_rope-gkqoro": [
+            "attachment"
+        ],
         "holly_decoration-shmkir": [
             "attachment"
         ],
@@ -39420,6 +39430,14 @@
             "collision",
             "particleapplier",
             "togglebutton"
+        ],
+        "cabinet_base-dcmhhh": [
+            "attachment",
+            "collision"
+        ],
+        "cabinet_door-ertkre": [
+            "attachment",
+            "collision"
         ],
         "camera_tripod-hnpofr": [
             "attachment"
@@ -41469,6 +41487,15 @@
             "connectedpart",
             "fillable"
         ],
+        "desk_bracket-lwqwre": [
+            "attachment"
+        ],
+        "desk_leg-qoerre": [
+            "attachment"
+        ],
+        "desk_top-eggere": [
+            "attachment"
+        ],
         "dog_food_can-vxxcvg": [
             "connectedpart",
             "fillable"
@@ -41495,6 +41522,12 @@
             "heatsource",
             "particleremover",
             "togglebutton"
+        ],
+        "trampoline_leg-qkerde": [
+            "attachment"
+        ],
+        "trampoline_top-iemeer": [
+            "attachment"
         ],
         "trout-kqpeke": [
             "attachment"
@@ -41559,9 +41592,6 @@
         ],
         "potato-lgupkq": [
             "subpart"
-        ],
-        "background-rgfvbm": [
-            "collision"
         ],
         "ceilings-bfkphv": [
             "collision"
@@ -42634,13 +42664,13 @@
         "walls-zrhulr": [
             "collision"
         ],
-        "background-hvnjrs": [
-            "collision"
-        ],
         "ceilings-aghvud": [
             "collision"
         ],
         "ceilings-einoiz": [
+            "collision"
+        ],
+        "ceilings-hcukpe": [
             "collision"
         ],
         "ceilings-ootyyo": [
@@ -42670,10 +42700,16 @@
         "floors-jrdgxz": [
             "collision"
         ],
+        "floors-kbfhfa": [
+            "collision"
+        ],
         "floors-kzcgnc": [
             "collision"
         ],
         "floors-syipub": [
+            "collision"
+        ],
+        "floors-tvyugz": [
             "collision"
         ],
         "floors-utuiok": [
@@ -42683,6 +42719,9 @@
             "collision"
         ],
         "floors-vyfrfo": [
+            "collision"
+        ],
+        "floors-wotyle": [
             "collision"
         ],
         "garden_light-xqmqmi": [
@@ -42700,13 +42739,7 @@
         "lawn-mgxskp": [
             "collision"
         ],
-        "shower-lpocnm": [
-            "fluidsink"
-        ],
         "showerhead-psscka": [
-            "togglebutton"
-        ],
-        "showerhead-vzzosk": [
             "togglebutton"
         ],
         "wall_mounted_light-trxlgu": [
@@ -42756,12 +42789,6 @@
         ],
         "walls-yvalht": [
             "collision"
-        ],
-        "shampoo-dbpefd": [
-            "connectedpart"
-        ],
-        "shampoo-cfedgq": [
-            "connectedpart"
         ],
         "ceilings-gatymy": [
             "collision"
@@ -44295,7 +44322,6 @@
             "collision"
         ],
         "electric_mixer-ceaeqf": [
-            "attachment",
             "connectedpart",
             "togglebutton"
         ],
@@ -44380,10 +44406,6 @@
         ],
         "metal_bottom_cabinet-bbjuqu": [
             "collision"
-        ],
-        "mixing_bowl-rgnjdt": [
-            "attachment",
-            "fillable"
         ],
         "oven-cgtaer": [
             "collision",
@@ -46291,9 +46313,6 @@
         ],
         "cup-uzgibd": [
             "fillable"
-        ],
-        "door-dlncrt": [
-            "collision"
         ],
         "door-pxhbim": [
             "collision"

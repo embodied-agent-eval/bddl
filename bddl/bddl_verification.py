@@ -80,6 +80,15 @@ VALID_ATTACHMENTS = set([
     ("bicycle_rack.n.01", "recreational_vehicle.n.01"),
     ("window_blind.n.01", "wall_nail.n.01"),
     ("skateboard_wheel.n.01", "skateboard_deck.n.01"),
+    ("shelf_shelf.n.01", "shelf_back.n.01"),
+    ("shelf_side.n.01", "shelf_back.n.01"),
+    ("shelf_baseboard.n.01", "shelf_side.n.01"),
+    ("shelf_top.n.01", "shelf_back.n.01"),
+    ("desk_leg.n.01", "desk_bracket.n.01"),
+    ("desk_bracket.n.01", "desk_top.n.01"),
+    ("trampoline_leg.n.01", "trampoline_top.n.01"),
+    ("clothesline_rope.n.01", "pole.n.01"),
+    ("cabinet_door.n.01", "cabinet_base.n.01"),
 ])
 
 VALID_ROOMS = set()
@@ -293,9 +302,6 @@ def check_synset_predicate_alignment(atom, syns_to_props):
     if pred == "on_fire":
         assert "nonSubstance" in syns_to_props[objects[0]], f"Inapplicable on_fire: {atom}"
         assert "flammable" in syns_to_props[objects[0]], f"Inapplicable on_fire: {atom}"
-    if pred == "assembled":
-        assert "rigidBody" in syns_to_props[objects[0]], f"Inapplicable assembled: {atom}"
-        assert "assembleable" in syns_to_props[objects[0]], f"Inapplicable assembled: {atom}"
     if pred == "broken":
         assert "rigidBody" in syns_to_props[objects[0]], f"Inapplicable broken: {atom}"
         assert "breakable" in syns_to_props[objects[0]], f"Inapplicable broken: {atom}"
@@ -494,6 +500,7 @@ def all_objects_placed(init):
         for literal in init:
             # Skip not literals
             if literal[0] == "not":
+                assert literal[1][0] not in {'attached', 'draped', 'inside', 'nextto', 'ontop', 'overlaid', 'touching', 'under'}, f"Negative kinematic state in initial states: {literal}"
                 continue
             formula = literal
             # Skip future literals

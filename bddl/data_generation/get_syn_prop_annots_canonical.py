@@ -47,7 +47,7 @@ PROP_TO_DESC = { #added by hand from B1K Object States Google Doc found here htt
     "soakable": None,
     "wetable": "wet",
     "flammable": "on_fire",
-    "assembleable": "assembled",
+    "assembleable": None,
     "heatable" : "hot",
     "boilable": "boiling",
     "meltable" : "melted",
@@ -126,6 +126,9 @@ def add_programmatic_properties(synset_content): # runs programmatic addition ov
             synset_content[synset]["deformable"] = {}
         if ("cloth" in synset_content[synset]) or ("rope" in synset_content[synset]):
             synset_content[synset]["drapeable"] = {}
+        if ("nonSubstance" in synset_content[synset]) and ("cookable" in synset_content[synset] or "fillable" in synset_content[synset]):
+            # cookables and fillables are both heatable
+            synset_content[synset]["heatable"] = {}
         if "nonSubstance" in synset_content[synset]: # non-substances are both wetable and mixable
                 synset_content[synset].update({
                     "wetable": {},
@@ -139,7 +142,6 @@ def add_programmatic_properties(synset_content): # runs programmatic addition ov
                     "rustable": {},
                     "wrinkleable": {},
                     "disinfectable": {},
-                    "heatable": {}          # All nonsubstances are heatable. Substances are not heatable.
                 })
         synset_content[synset]["freezable"] = {}    # all synsets are freezable
 

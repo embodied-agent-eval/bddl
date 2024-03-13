@@ -607,7 +607,7 @@
         "timesteps": null
     },
     {
-        "rule_name": "tomato sauce",
+        "rule_name": "tomato_sauce",
         "input_synsets": {
             "beefsteak_tomato.n.01": 1,
             "tomato_paste.n.01": 1,

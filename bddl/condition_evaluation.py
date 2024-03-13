@@ -17,6 +17,8 @@ from bddl.utils import (
 
 
 class Conjunction(Expression):
+    TOKEN = "and"
+
     def __init__(self, scope, backend, body, object_map, generate_ground_options=True):
         super().__init__(scope, backend, body, object_map)
 
@@ -39,6 +41,17 @@ class Conjunction(Expression):
     def evaluate(self):
         self.child_values = [child.evaluate() for child in self.children]
         assert all([val is not None for val in self.child_values]), "child_values has NoneTypes"
+
+        # for child, child_value in zip(self.children, self.child_values):
+        #     if not child_value:
+        #         try:
+        #             print(child.STATE_NAME, child.body, child_value)
+        #         except AttributeError:
+        #             print(child.TOKEN, child.body, child_value)
+        #         if "log.n.01" in child.scope: 
+        #             print(child.scope["log.n.01"])
+        #         print()
+
         return all(self.child_values)
 
     def get_ground_options(self):
@@ -49,6 +62,8 @@ class Conjunction(Expression):
 
 
 class Disjunction(Expression):
+    TOKEN = "or"
+
     def __init__(self, scope, backend, body, object_map, generate_ground_options=True):
         super().__init__(scope, backend, body, object_map)
 
@@ -72,6 +87,15 @@ class Disjunction(Expression):
     def evaluate(self):
         self.child_values = [child.evaluate() for child in self.children]
         assert all([val is not None for val in self.child_values]), "child_values has NoneTypes"
+
+        # for child, child_value in zip(self.children, self.child_values):
+        #     print(child.body, child_value)
+        #     if "newspaper.n.03" in child.scope: 
+        #         print(child.scope["newspaper.n.03"])
+        #     if "envelope.n.01" in child.scope: 
+        #         print(child.scope["envelope.n.01"])
+        #     print()
+
         return any(self.child_values)
 
     def get_ground_options(self):
@@ -82,6 +106,8 @@ class Disjunction(Expression):
 
 # QUANTIFIERS
 class Universal(Expression):
+    TOKEN = "forall"
+
     def __init__(self, scope, backend, body, object_map, generate_ground_options=True):
         super().__init__(scope, backend, body, object_map)
         iterable, subexpression = body
@@ -108,6 +134,16 @@ class Universal(Expression):
     def evaluate(self):
         self.child_values = [child.evaluate() for child in self.children]
         assert all([val is not None for val in self.child_values]), "child_values has NoneTypes"
+
+        # for child, child_value in zip(self.children, self.child_values):
+        #     try:
+        #         print(child.STATE_NAME, child.body, child_value)
+        #     except AttributeError:
+        #         print(child.TOKEN, child.body, child_value)
+        #     if "log.n.01" in child.scope: 
+        #         print(child.scope["log.n.01"])
+        #     print()
+
         return all(self.child_values)
 
     def get_ground_options(self):
@@ -119,6 +155,8 @@ class Universal(Expression):
 
 
 class Existential(Expression):
+    TOKEN = "exists"
+
     def __init__(self, scope, backend, body, object_map, generate_ground_options=True):
         super().__init__(scope, backend, body, object_map)
         iterable, subexpression = body
@@ -155,6 +193,8 @@ class Existential(Expression):
 
 
 class NQuantifier(Expression):
+    TOKEN = "forn"
+
     def __init__(self, scope, backend, body, object_map, generate_ground_options=True):
         super().__init__(scope, backend, body, object_map)
 
@@ -183,6 +223,16 @@ class NQuantifier(Expression):
     def evaluate(self):
         self.child_values = [child.evaluate() for child in self.children]
         assert all([val is not None for val in self.child_values]), "child_values has NoneTypes"
+    
+        # for child, child_value in zip(self.children, self.child_values):
+        #     try:
+        #         print(child.STATE_NAME, child.body, child_value)
+        #     except AttributeError:
+        #         print(child.TOKEN, child.body, child_value)
+        #     if "bowl.n.01" in child.scope: 
+        #         print(child.scope["bowl.n.01"])
+        #     print()
+
         return sum(self.child_values) >= self.N
 
     def get_ground_options(self):
@@ -197,6 +247,8 @@ class NQuantifier(Expression):
 
 
 class ForPairs(Expression):
+    TOKEN = "forpairs"
+
     def __init__(self, scope, backend, body, object_map, generate_ground_options=True):
         super().__init__(scope, backend, body, object_map)
 
@@ -259,6 +311,8 @@ class ForPairs(Expression):
 
 
 class ForNPairs(Expression):
+    TOKEN = "fornpairs"
+
     def __init__(self, scope, backend, body, object_map, generate_ground_options=True):
         super().__init__(scope, backend, body, object_map)
 
@@ -317,6 +371,8 @@ class ForNPairs(Expression):
 
 # NEGATION
 class Negation(Expression):
+    TOKEN = "not"
+
     def __init__(self, scope, backend, body, object_map, generate_ground_options=True):
         super().__init__(scope, backend, body, object_map)
 
@@ -359,6 +415,8 @@ class Negation(Expression):
 
 # IMPLICATION
 class Implication(Expression):
+    TOKEN = "imply"
+
     def __init__(self, scope, backend, body, object_map, generate_ground_options=True):
         super().__init__(scope, backend, body, object_map)
 
@@ -390,6 +448,16 @@ class Implication(Expression):
         self.child_values = [child.evaluate() for child in self.children]
         assert all([val is not None for val in self.child_values]), "child_values has NoneTypes"
         ante, cons = self.child_values
+
+        # for child, child_value in zip(self.children, self.child_values):
+        #     try:
+        #         print(child.STATE_NAME, child.body, child_value)
+        #     except AttributeError:
+        #         print(child.TOKEN, child.body, child_value)
+        #     if "sack.n.01" in child.scope: 
+        #         print(child.scope["sack.n.01"])
+        #     print()
+
         return (not ante) or cons
 
     def get_ground_options(self):
