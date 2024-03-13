@@ -115,6 +115,38 @@ class TrivialSimulator(object):
             "insource": self.set_insource,
             "grasped": self.set_grasped,
         }
+    
+    def create_predicate_to_bank(self):
+        self.predicate_to_bank = {
+            "cooked": self.cooked,
+            "frozen": self.frozen,
+            "open": self.open,
+            "folded": self.folded,
+            "unfolded": self.unfolded,
+            "toggled_on": self.toggled_on,
+            "hot": self.hot,
+            "on_fire": self.on_fire,
+            "empty": self.empty,
+            "broken": self.broken,
+            "assembled": self.assembled,
+            "closed": self.closed,
+            "future": self.future,
+            "real": self.real,
+            "inside": self.inside,
+            "ontop": self.ontop,
+            "covered": self.covered,
+            "filled": self.filled,
+            "saturated": self.saturated,
+            "nextto": self.nextto,
+            "contains": self.contains,
+            "under": self.under,
+            "touching": self.touching,
+            "overlaid": self.overlaid,
+            "attached": self.attached,
+            "draped": self.draped,
+            "insource": self.insource,
+            "grasped": self.grasped, 
+        }
 
     def set_state(self, literals): 
         """
@@ -555,10 +587,27 @@ class TrivialSimulator(object):
             # from pprint import pprint;
             # pprint(self.covered)
 
-    # def check_transition_rules(self, rule):
-    #     input_synsets = rule["input_synsets"].keys()
-    #     if real_
+    def check_transition_rules(self, rule):
+        input_synsets = rule["input_synsets"].keys()
+        real_synsets = set([re.match(ver.OBJECT_CAT_AND_INST_RE, real_obj).group() for real_obj in self.real])
+        satisfied = True 
 
+        # Are input synsets a subset of real synsets?
+        missing_input_objects = set()
+        if not real_synsets.issuperset(input_synsets):
+            missing_input_objects.append(input_synsets.difference(real_synsets))
+            satisfied = False
+
+        # Are input states satisfied?
+        input_states = rule["input_states"]
+        unsatisfied_input_states = []
+        for objs, [pred, bool_val] in input_states.items():
+            objs = objs.split(",")
+            # If the tuple object's membership in the predicate's set doesn't agree with the bool_val, input_states not satisfied
+            if bool_val ^ (tuple(objs) in self.predicate_to_bank[pred]):
+                unsatisfied_input_states.append([pred] + objs)
+                satisfied = False 
+        return satisfied, missing_input_objects, unsatisfied_input_states
         
     def set_cooked(self, objs, is_cooked):
         assert len(objs) == 1, f"`objs` has len other than 1: {objs}"
