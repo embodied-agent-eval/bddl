@@ -17150,8 +17150,11 @@
         "disinfectable": {}
     },
     "kayak.n.01": {
+        "fillable": {},
         "rigidBody": {},
         "nonSubstance": {},
+        "heatable": {},
+        "freezable": {},
         "attachable": {},
         "wetable": {},
         "stickyable": {},

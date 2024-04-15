@@ -170,7 +170,7 @@ blouse.n.01,top.n.10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,cloth
 blueberry_compote.n.01,compote.n.01,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,liquid
 blueberry_mousse.n.01,mousse.n.01,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,liquid
 blueberry.n.02,berry.n.01,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,macroPhysicalSubstance
-board_game.n.01,parlor_game.n.01,0,0,0,0,0,0,0,0,0,0,0,0,,0,0,0,0,0,0,0,0,0,rigidBody
+board_game.n.01,parlor_game.n.01,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
 board.n.02,lumber.n.01,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
 bobby_pin.n.01,hairpin.n.01,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
 bok_choy.n.02,cabbage.n.01,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
@@ -481,7 +481,7 @@ carton__of__pineapple_juice.n.01,grocery.n.02,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 carton__of__soy_milk.n.01,grocery.n.02,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
 carton.n.02,box.n.01,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
 carving_knife.n.01,knife.n.01,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,rigidBody
-case__of__eyeshadow.n.01,grocery.n.02,1,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
+case__of__eyeshadow.n.01,grocery.n.02,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
 case__of__pop.n.01,grocery.n.02,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
 case_shot.n.01,ammunition.n.01,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
 case.n.19,bed_linen.n.01,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,cloth
@@ -1148,7 +1148,7 @@ isopropanol__dispenser.n.01,container.n.01,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0
 isopropyl_alcohol.n.01,alcohol.n.02,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,liquid
 ivy.n.01,vine.n.01,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
 jacket.n.01,coat.n.01,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,cloth
-jacket.n.05,shell.n.08,0,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
+jacket.n.05,shell.n.08,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
 jade_roller.n.01,roller.n.04,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
 jade.n.01,opaque_gem.n.01,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
 jam__jar.n.01,vessel.n.03,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
@@ -1190,7 +1190,7 @@ jump_suit.n.01,garment.n.01,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,cloth
 kabob.n.01,dish.n.02,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
 kale.n.03,cabbage.n.01,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
 kayak_rack.n.01,rack.n.01,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
-kayak.n.01,canoe.n.01,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
+kayak.n.01,canoe.n.01,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
 electric_kettle.n.01,pot.n.01,1,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
 key.n.01,device.n.01,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
 key.n.15,lever.n.01,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
@@ -1366,7 +1366,7 @@ mushroom_sauce.n.01,sauce.n.01,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,liqui
 mushroom.n.05,vegetable.n.01,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
 mussel.n.01,shellfish.n.01,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,rigidBody
 mustard__bottle.n.01,vessel.n.03,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,rigidBody
-mustard_seasoning.n.01,flavorer.n.01,1,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,microPhysicalSubstance
+mustard_seasoning.n.01,flavorer.n.01,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,microPhysicalSubstance
 mustard_seed__shaker.n.01,container.n.01,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,rigidBody
 mustard_seed.n.01,flavorer.n.01,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,microPhysicalSubstance
 mustard.n.02,condiment.n.01,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,liquid
