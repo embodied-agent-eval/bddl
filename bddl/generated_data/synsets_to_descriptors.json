@@ -5838,20 +5838,8 @@
             "dusty"
         ],
         [
-            "on_fire",
-            "on_fire"
-        ],
-        [
-            "frozen",
-            "frozen"
-        ],
-        [
             "grassy",
             "grassy"
-        ],
-        [
-            "hot",
-            "hot"
         ],
         [
             "moldy",
@@ -6776,6 +6764,52 @@
         ]
     ],
     "bar_soap.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
+    "bar_stool.n.01": [
         [
             "disinfected",
             "disinfected"
@@ -17697,6 +17731,52 @@
             "wrinkly"
         ]
     ],
+    "bottle__of__tomato_juice.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
     "bottle__of__tomato_paste.n.01": [
         [
             "disinfected",
@@ -20613,6 +20693,52 @@
         [
             "on_fire",
             "on_fire"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
+    "box__of__wagashi.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
         ],
         [
             "grassy",
@@ -24425,16 +24551,8 @@
             "dusty"
         ],
         [
-            "frozen",
-            "frozen"
-        ],
-        [
             "grassy",
             "grassy"
-        ],
-        [
-            "hot",
-            "hot"
         ],
         [
             "moldy",
@@ -25264,10 +25382,6 @@
     ],
     "canister.n.02": [
         [
-            "broken",
-            "broken"
-        ],
-        [
             "disinfected",
             "disinfected"
         ],
@@ -25276,8 +25390,16 @@
             "dusty"
         ],
         [
+            "frozen",
+            "frozen"
+        ],
+        [
             "grassy",
             "grassy"
+        ],
+        [
+            "hot",
+            "hot"
         ],
         [
             "moldy",
@@ -28135,6 +28257,52 @@
         ]
     ],
     "cellulose_tape.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
+    "cellulose_tape_dispenser.n.01": [
         [
             "disinfected",
             "disinfected"
@@ -31444,6 +31612,52 @@
         [
             "boiling",
             "boiling"
+        ]
+    ],
+    "christmas_stocking.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
         ]
     ],
     "christmas_tree.n.05": [
@@ -37828,6 +38042,56 @@
         [
             "cooked",
             "cooked"
+        ]
+    ],
+    "cooking_oil__atomizer.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "toggled_on",
+            "toggled_on"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
         ]
     ],
     "cooking_oil__bottle.n.01": [
@@ -54065,6 +54329,56 @@
         ]
     ],
     "fresh_bean.n.01": [],
+    "fried_chicken.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "sliced",
+            "sliced"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
     "friedcake.n.01": [
         [
             "on_fire",
@@ -54729,6 +55043,52 @@
         ]
     ],
     "game_equipment.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
+    "gaming_controller.n.01": [
         [
             "disinfected",
             "disinfected"
@@ -56667,6 +57027,52 @@
         ]
     ],
     "goggles.n.02": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
+    "gold.n.01": [
         [
             "disinfected",
             "disinfected"
@@ -65068,6 +65474,52 @@
         [
             "hot",
             "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
+    "half__fried_chicken.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "grassy",
+            "grassy"
         ],
         [
             "moldy",
@@ -77155,6 +77607,52 @@
             "wrinkly"
         ]
     ],
+    "hook_rack.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
     "hoop.n.02": [
         [
             "disinfected",
@@ -81344,6 +81842,52 @@
         ]
     ],
     "jar__of__tumeric.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
+    "jar__of__vegetable.n.01": [
         [
             "disinfected",
             "disinfected"
@@ -98673,6 +99217,64 @@
             "wrinkly"
         ]
     ],
+    "pattypan_squash.n.02": [
+        [
+            "cooked",
+            "cooked"
+        ],
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "frozen",
+            "frozen"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "hot",
+            "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
     "paving.n.01": [],
     "paving_stone.n.01": [
         [
@@ -112872,6 +113474,52 @@
             "boiling"
         ]
     ],
+    "satchel.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
     "sauce.n.01": [
         [
             "boiling",
@@ -119520,6 +120168,64 @@
         [
             "diced",
             "diced"
+        ],
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "frozen",
+            "frozen"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "hot",
+            "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
+    "sliced__watermelon.n.01": [
+        [
+            "cooked",
+            "cooked"
         ],
         [
             "disinfected",

@@ -3365,11 +3365,7 @@
     "baggage.n.01": {
         "disinfectable": {},
         "dustyable": {},
-        "fillable": {},
-        "flammable": {},
-        "freezable": {},
         "grassyable": {},
-        "heatable": {},
         "moldyable": {},
         "nonSubstance": {},
         "rigidBody": {},
@@ -4824,6 +4820,21 @@
         "wrinkleable": {}
     },
     "bar_soap.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
+        "grassyable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
+    "bar_stool.n.01": {
         "disinfectable": {},
         "dustyable": {},
         "grassyable": {},
@@ -12540,6 +12551,21 @@
         "wetable": {},
         "wrinkleable": {}
     },
+    "bottle__of__tomato_juice.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
+        "grassyable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
     "bottle__of__tomato_paste.n.01": {
         "disinfectable": {},
         "dustyable": {},
@@ -13691,6 +13717,21 @@
             "heating_rate": 0.04,
             "distance_threshold": 0.2
         },
+        "grassyable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
+    "box__of__wagashi.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
         "grassyable": {},
         "moldyable": {},
         "nonSubstance": {},
@@ -16847,10 +16888,7 @@
     "can.n.01": {
         "disinfectable": {},
         "dustyable": {},
-        "fillable": {},
-        "freezable": {},
         "grassyable": {},
-        "heatable": {},
         "moldyable": {},
         "nonSubstance": {},
         "rigidBody": {},
@@ -17128,10 +17166,12 @@
         "substance": {}
     },
     "canister.n.02": {
-        "breakable": {},
         "disinfectable": {},
         "dustyable": {},
+        "fillable": {},
+        "freezable": {},
         "grassyable": {},
+        "heatable": {},
         "moldyable": {},
         "nonSubstance": {},
         "rigidBody": {},
@@ -19394,6 +19434,21 @@
         "wetable": {},
         "wrinkleable": {}
     },
+    "cellulose_tape_dispenser.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
+        "grassyable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
     "cement.n.01": {
         "disinfectable": {},
         "dustyable": {},
@@ -21265,6 +21320,581 @@
         "liquid": {},
         "physicalSubstance": {},
         "substance": {}
+    },
+    "christmas_stocking.n.01": {
+        "cloth": {},
+        "deformable": {},
+        "disinfectable": {},
+        "drapeable": {},
+        "dustyable": {},
+        "grassyable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "particleRemover": {
+            "conditions": {
+                "water.n.06": [],
+                "dust.n.01": null,
+                "dirt.n.02": null,
+                "debris.n.01": null,
+                "bunchgrass.n.01": null,
+                "mud.n.03": [
+                    [
+                        "saturated",
+                        "water.n.06"
+                    ]
+                ],
+                "mold.n.05": [
+                    [
+                        "saturated",
+                        "water.n.06"
+                    ]
+                ],
+                "mildew.n.02": [
+                    [
+                        "saturated",
+                        "water.n.06"
+                    ]
+                ],
+                "baby_oil.n.01": [
+                    [
+                        "saturated",
+                        "sodium_carbonate.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "vinegar.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "detergent.n.02"
+                    ],
+                    [
+                        "saturated",
+                        "lemon_juice.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "rubbing_alcohol.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "liquid_soap.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "chlorine.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "borax.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "shampoo.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "toothpaste.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "ammonia_water.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "disinfectant.n.01"
+                    ]
+                ],
+                "coconut_oil.n.01": [
+                    [
+                        "saturated",
+                        "sodium_carbonate.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "vinegar.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "detergent.n.02"
+                    ],
+                    [
+                        "saturated",
+                        "lemon_juice.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "rubbing_alcohol.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "liquid_soap.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "chlorine.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "borax.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "shampoo.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "toothpaste.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "ammonia_water.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "disinfectant.n.01"
+                    ]
+                ],
+                "cooking_oil.n.01": [
+                    [
+                        "saturated",
+                        "sodium_carbonate.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "vinegar.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "detergent.n.02"
+                    ],
+                    [
+                        "saturated",
+                        "lemon_juice.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "rubbing_alcohol.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "liquid_soap.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "chlorine.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "borax.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "shampoo.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "toothpaste.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "ammonia_water.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "disinfectant.n.01"
+                    ]
+                ],
+                "essential_oil.n.01": [
+                    [
+                        "saturated",
+                        "sodium_carbonate.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "vinegar.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "detergent.n.02"
+                    ],
+                    [
+                        "saturated",
+                        "lemon_juice.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "rubbing_alcohol.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "liquid_soap.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "chlorine.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "borax.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "shampoo.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "toothpaste.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "ammonia_water.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "disinfectant.n.01"
+                    ]
+                ],
+                "linseed_oil.n.01": [
+                    [
+                        "saturated",
+                        "sodium_carbonate.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "vinegar.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "detergent.n.02"
+                    ],
+                    [
+                        "saturated",
+                        "lemon_juice.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "rubbing_alcohol.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "liquid_soap.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "chlorine.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "borax.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "shampoo.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "toothpaste.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "ammonia_water.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "disinfectant.n.01"
+                    ]
+                ],
+                "olive_oil.n.01": [
+                    [
+                        "saturated",
+                        "sodium_carbonate.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "vinegar.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "detergent.n.02"
+                    ],
+                    [
+                        "saturated",
+                        "lemon_juice.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "rubbing_alcohol.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "liquid_soap.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "chlorine.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "borax.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "shampoo.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "toothpaste.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "ammonia_water.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "disinfectant.n.01"
+                    ]
+                ],
+                "sesame_oil.n.01": [
+                    [
+                        "saturated",
+                        "sodium_carbonate.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "vinegar.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "detergent.n.02"
+                    ],
+                    [
+                        "saturated",
+                        "lemon_juice.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "rubbing_alcohol.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "liquid_soap.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "chlorine.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "borax.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "shampoo.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "toothpaste.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "ammonia_water.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "disinfectant.n.01"
+                    ]
+                ],
+                "stain.n.01": [
+                    [
+                        "saturated",
+                        "sodium_carbonate.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "vinegar.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "detergent.n.02"
+                    ],
+                    [
+                        "saturated",
+                        "lemon_juice.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "rubbing_alcohol.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "liquid_soap.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "chlorine.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "borax.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "shampoo.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "toothpaste.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "ammonia_water.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "disinfectant.n.01"
+                    ]
+                ],
+                "ink.n.01": [
+                    [
+                        "saturated",
+                        "sodium_carbonate.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "vinegar.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "detergent.n.02"
+                    ],
+                    [
+                        "saturated",
+                        "lemon_juice.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "rubbing_alcohol.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "liquid_soap.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "chlorine.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "borax.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "shampoo.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "toothpaste.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "ammonia_water.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "disinfectant.n.01"
+                    ]
+                ],
+                "alga.n.01": [
+                    [
+                        "saturated",
+                        "sodium_carbonate.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "vinegar.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "detergent.n.02"
+                    ],
+                    [
+                        "saturated",
+                        "lemon_juice.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "rubbing_alcohol.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "liquid_soap.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "chlorine.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "borax.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "shampoo.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "toothpaste.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "ammonia_water.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "disinfectant.n.01"
+                    ]
+                ],
+                "spray_paint.n.01": [
+                    [
+                        "saturated",
+                        "acetone.n.01"
+                    ]
+                ],
+                "house_paint.n.01": [
+                    [
+                        "saturated",
+                        "acetone.n.01"
+                    ]
+                ],
+                "rust.n.01": null,
+                "patina.n.01": null,
+                "incision.n.01": null,
+                "tarnish.n.02": null,
+                "calcium_carbonate.n.01": [
+                    [
+                        "saturated",
+                        "lemon_juice.n.01"
+                    ],
+                    [
+                        "saturated",
+                        "vinegar.n.01"
+                    ]
+                ],
+                "wrinkle.n.01": null
+            },
+            "default_visual_conditions": null,
+            "default_non_fluid_conditions": null,
+            "default_fluid_conditions": [],
+            "method": "adjacency"
+        },
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
     },
     "christmas_tree.n.05": {
         "disinfectable": {},
@@ -26413,6 +27043,33 @@
         "liquid": {},
         "physicalSubstance": {},
         "substance": {}
+    },
+    "cooking_oil__atomizer.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
+        "grassyable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "particleApplier": {
+            "method": "projection",
+            "conditions": {
+                "cooking_oil.n.01": [
+                    [
+                        "toggled_on",
+                        true
+                    ]
+                ]
+            }
+        },
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "toggleable": {},
+        "wetable": {},
+        "wrinkleable": {}
     },
     "cooking_oil__bottle.n.01": {
         "breakable": {},
@@ -42177,6 +42834,24 @@
         "wrinkleable": {}
     },
     "fresh_bean.n.01": {},
+    "fried_chicken.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
+        "grassyable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "sliceable": {
+            "sliceable_derivative_synset": "half__fried_chicken.n.01"
+        },
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
     "friedcake.n.01": {
         "flammable": {}
     },
@@ -42998,6 +43673,21 @@
         "grassyable": {},
         "moldyable": {},
         "nonSubstance": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
+    "gaming_controller.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
+        "grassyable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
         "rustable": {},
         "scratchable": {},
         "stainable": {},
@@ -44301,6 +44991,21 @@
         "wrinkleable": {}
     },
     "goggles.n.02": {
+        "disinfectable": {},
+        "dustyable": {},
+        "grassyable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
+    "gold.n.01": {
         "disinfectable": {},
         "dustyable": {},
         "grassyable": {},
@@ -48276,6 +48981,21 @@
         "freezable": {},
         "grassyable": {},
         "heatable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
+    "half__fried_chicken.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
+        "grassyable": {},
         "moldyable": {},
         "nonSubstance": {},
         "rigidBody": {},
@@ -53994,6 +54714,21 @@
         "wetable": {},
         "wrinkleable": {}
     },
+    "hook_rack.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
+        "grassyable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
     "hoop.n.02": {
         "disinfectable": {},
         "dustyable": {},
@@ -56138,6 +56873,21 @@
         "wrinkleable": {}
     },
     "jar__of__tumeric.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
+        "grassyable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
+    "jar__of__vegetable.n.01": {
         "disinfectable": {},
         "dustyable": {},
         "grassyable": {},
@@ -75727,6 +76477,24 @@
         "wetable": {},
         "wrinkleable": {}
     },
+    "pattypan_squash.n.02": {
+        "cookable": {},
+        "disinfectable": {},
+        "dustyable": {},
+        "freezable": {},
+        "grassyable": {},
+        "heatable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
     "paving.n.01": {},
     "paving_stone.n.01": {
         "disinfectable": {},
@@ -87891,6 +88659,21 @@
         "physicalSubstance": {},
         "substance": {}
     },
+    "satchel.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
+        "grassyable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
     "sauce.n.01": {
         "boilable": {},
         "liquid": {},
@@ -95366,6 +96149,24 @@
             "uncooked_diceable_derivative_synset": "diced__tomato.n.01",
             "cooked_diceable_derivative_synset": "cooked__diced__tomato.n.01"
         },
+        "disinfectable": {},
+        "dustyable": {},
+        "freezable": {},
+        "grassyable": {},
+        "heatable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
+    "sliced__watermelon.n.01": {
+        "cookable": {},
         "disinfectable": {},
         "dustyable": {},
         "freezable": {},

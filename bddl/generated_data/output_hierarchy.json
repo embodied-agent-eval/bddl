@@ -194,6 +194,20 @@
                                 {
                                   "name": "whipped_cream__can.n.01",
                                   "hasModel": true
+                                },
+                                {
+                                  "name": "cooking_oil__atomizer.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "cooking_oil_atomizer"
+                                  ]
+                                },
+                                {
+                                  "name": "cellulose_tape_dispenser.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "cellulose_tape_dispenser"
+                                  ]
                                 }
                               ]
                             },
@@ -1413,6 +1427,13 @@
                                       "categories": [
                                         "suitcase"
                                       ]
+                                    },
+                                    {
+                                      "name": "satchel.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "satchel"
+                                      ]
                                     }
                                   ]
                                 },
@@ -1910,7 +1931,10 @@
                                 },
                                 {
                                   "name": "soupspoon.n.01",
-                                  "hasModel": true
+                                  "hasModel": true,
+                                  "categories": [
+                                    "soupspoon"
+                                  ]
                                 },
                                 {
                                   "name": "tablespoon.n.02",
@@ -2447,7 +2471,8 @@
                                               "name": "skateboard_wheel.n.01",
                                               "hasModel": true,
                                               "categories": [
-                                                "skateboard_wheel"
+                                                "skateboard_wheel",
+                                                "skateboard_wheel_assembly"
                                               ]
                                             }
                                           ]
@@ -5517,6 +5542,13 @@
                               "categories": [
                                 "magnetic_stirrer"
                               ]
+                            },
+                            {
+                              "name": "hook_rack.n.01",
+                              "hasModel": true,
+                              "categories": [
+                                "hook_rack"
+                              ]
                             }
                           ]
                         },
@@ -5633,6 +5665,13 @@
                                           "hasModel": true,
                                           "categories": [
                                             "music_stool"
+                                          ]
+                                        },
+                                        {
+                                          "name": "bar_stool.n.01",
+                                          "hasModel": true,
+                                          "categories": [
+                                            "bar_stool"
                                           ]
                                         }
                                       ]
@@ -6280,6 +6319,13 @@
                                         "volleyball_net"
                                       ]
                                     }
+                                  ]
+                                },
+                                {
+                                  "name": "gaming_controller.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "gaming_controller"
                                   ]
                                 }
                               ]
@@ -7497,6 +7543,13 @@
                                           "hasModel": true,
                                           "categories": [
                                             "tights"
+                                          ]
+                                        },
+                                        {
+                                          "name": "christmas_stocking.n.01",
+                                          "hasModel": true,
+                                          "categories": [
+                                            "christmas_stocking"
                                           ]
                                         }
                                       ]
@@ -9293,6 +9346,27 @@
                                   "categories": [
                                     "jar_of_cocoa"
                                   ]
+                                },
+                                {
+                                  "name": "box__of__wagashi.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "box_of_wagashi"
+                                  ]
+                                },
+                                {
+                                  "name": "bottle__of__tomato_juice.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "bottle_of_tomato_juice"
+                                  ]
+                                },
+                                {
+                                  "name": "jar__of__vegetable.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "jar_of_vegetable"
+                                  ]
                                 }
                               ]
                             },
@@ -10168,6 +10242,13 @@
                                       "hasModel": true,
                                       "categories": [
                                         "tights"
+                                      ]
+                                    },
+                                    {
+                                      "name": "christmas_stocking.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "christmas_stocking"
                                       ]
                                     }
                                   ]
@@ -12304,7 +12385,10 @@
                                         },
                                         {
                                           "name": "soupspoon.n.01",
-                                          "hasModel": true
+                                          "hasModel": true,
+                                          "categories": [
+                                            "soupspoon"
+                                          ]
                                         },
                                         {
                                           "name": "tablespoon.n.02",
@@ -13917,6 +14001,13 @@
                                               "hasModel": true,
                                               "substances": [
                                                 "cooked__diced__melon"
+                                              ]
+                                            },
+                                            {
+                                              "name": "sliced__watermelon.n.01",
+                                              "hasModel": true,
+                                              "categories": [
+                                                "sliced_watermelon"
                                               ]
                                             }
                                           ]
@@ -26428,6 +26519,13 @@
                                   "substances": [
                                     "cooked__diced__melon"
                                   ]
+                                },
+                                {
+                                  "name": "sliced__watermelon.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "sliced_watermelon"
+                                  ]
                                 }
                               ]
                             },
@@ -28452,6 +28550,13 @@
                                       "categories": [
                                         "zucchini"
                                       ]
+                                    },
+                                    {
+                                      "name": "pattypan_squash.n.02",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "pattypan_squash"
+                                      ]
                                     }
                                   ]
                                 }
@@ -29339,6 +29444,20 @@
                                   "hasModel": true,
                                   "substances": [
                                     "cooked__diced__duck"
+                                  ]
+                                },
+                                {
+                                  "name": "fried_chicken.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "fried_chicken"
+                                  ]
+                                },
+                                {
+                                  "name": "half__fried_chicken.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "half_fried_chicken"
                                   ]
                                 }
                               ]
@@ -34201,6 +34320,13 @@
                                           "hasModel": true,
                                           "categories": [
                                             "silver_coins"
+                                          ]
+                                        },
+                                        {
+                                          "name": "gold.n.01",
+                                          "hasModel": true,
+                                          "categories": [
+                                            "gold_coin"
                                           ]
                                         }
                                       ]
