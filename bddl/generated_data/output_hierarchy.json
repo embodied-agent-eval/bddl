@@ -4303,7 +4303,8 @@
                                   "name": "mirror.n.01",
                                   "hasModel": true,
                                   "categories": [
-                                    "mirror"
+                                    "mirror",
+                                    "standing_mirror"
                                   ]
                                 }
                               ]
