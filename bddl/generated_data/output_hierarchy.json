@@ -12641,7 +12641,15 @@
                               "hasModel": true,
                               "categories": [
                                 "commercial_kitchen_sink",
-                                "sink"
+                                "drop_in_sink",
+                                "furniture_sink",
+                                "multi_station_furniture_sink",
+                                "multi_station_tabletop_sink",
+                                "multi_station_wall_mounted_sink",
+                                "pedestal_sink",
+                                "sink",
+                                "tabletop_sink",
+                                "wall_mounted_sink"
                               ]
                             },
                             {
