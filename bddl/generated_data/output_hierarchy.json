@@ -1117,6 +1117,7 @@
                                   "name": "ashcan.n.01",
                                   "hasModel": true,
                                   "categories": [
+                                    "public_trash_can",
                                     "trash_can"
                                   ]
                                 },
@@ -2516,7 +2517,8 @@
                                       "name": "swing.n.02",
                                       "hasModel": true,
                                       "categories": [
-                                        "swing"
+                                        "swing",
+                                        "swing_set"
                                       ]
                                     }
                                   ]
@@ -3365,8 +3367,10 @@
                                       "hasModel": true,
                                       "categories": [
                                         "downlight",
+                                        "rectangular_light",
                                         "room_light",
                                         "square_light",
+                                        "track_light",
                                         "wall_mounted_light"
                                       ]
                                     }
@@ -5159,7 +5163,8 @@
                                           "name": "griddle.n.01",
                                           "hasModel": true,
                                           "categories": [
-                                            "griddle"
+                                            "griddle",
+                                            "griddle_pan"
                                           ]
                                         },
                                         {
@@ -10903,6 +10908,7 @@
                                   "hasModel": true,
                                   "categories": [
                                     "charcoal_grill",
+                                    "flat_top_grill",
                                     "grill",
                                     "smoker"
                                   ]
@@ -12862,7 +12868,8 @@
                           "name": "swing.n.02",
                           "hasModel": true,
                           "categories": [
-                            "swing"
+                            "swing",
+                            "swing_set"
                           ]
                         },
                         {
