@@ -43730,6 +43730,22 @@
         "wetable": {},
         "wrinkleable": {}
     },
+    "game_console.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
+        "grassyable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "toggleable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
     "game_equipment.n.01": {
         "disinfectable": {},
         "dustyable": {},
@@ -63855,10 +63871,7 @@
         "wrinkleable": {}
     },
     "lining.n.01": {
-        "cloth": {},
-        "deformable": {},
         "disinfectable": {},
-        "drapeable": {},
         "dustyable": {},
         "grassyable": {},
         "moldyable": {},
@@ -64421,6 +64434,7 @@
             "default_fluid_conditions": [],
             "method": "adjacency"
         },
+        "rigidBody": {},
         "rustable": {},
         "scratchable": {},
         "stainable": {},
@@ -97744,6 +97758,7 @@
         "cookable": {
             "cook_temperature": 180.0
         },
+        "deformable": {},
         "disinfectable": {},
         "dustyable": {},
         "flammable": {
@@ -97757,9 +97772,9 @@
         "heatable": {},
         "moldyable": {},
         "nonSubstance": {},
-        "rigidBody": {},
         "rustable": {},
         "scratchable": {},
+        "softBody": {},
         "stainable": {},
         "stickyable": {},
         "tarnishable": {},
@@ -116030,10 +116045,8 @@
         "wrinkleable": {}
     },
     "yoga_mat.n.01": {
-        "cloth": {},
         "deformable": {},
         "disinfectable": {},
-        "drapeable": {},
         "dustyable": {},
         "grassyable": {},
         "moldyable": {},
@@ -116598,6 +116611,7 @@
         },
         "rustable": {},
         "scratchable": {},
+        "softBody": {},
         "stainable": {},
         "stickyable": {},
         "tarnishable": {},

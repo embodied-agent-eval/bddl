@@ -7340,6 +7340,16 @@
         }
     },
     {
+        "rule_name": "game_console.n.01-washer-cover",
+        "input_synsets": {},
+        "washed_item": {
+            "game_console.n.01": 1
+        },
+        "output_synsets": {
+            "water.n.06": 1
+        }
+    },
+    {
         "rule_name": "gaming_controller.n.01-washer-cover",
         "input_synsets": {},
         "washed_item": {
