@@ -1106,6 +1106,13 @@
                                   "categories": [
                                     "cleansing_bottle"
                                   ]
+                                },
+                                {
+                                  "name": "cream_pitcher.n.02",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "cream_pitcher"
+                                  ]
                                 }
                               ]
                             },
@@ -1205,6 +1212,13 @@
                                       "hasModel": true,
                                       "categories": [
                                         "shopping_cart"
+                                      ]
+                                    },
+                                    {
+                                      "name": "dish_rack_cart.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "dish_rack_cart"
                                       ]
                                     }
                                   ]
@@ -3000,6 +3014,7 @@
                                           "categories": [
                                             "loudspeaker",
                                             "speaker_system",
+                                            "standing_loudspeaker",
                                             "wall_mounted_loudspeaker"
                                           ]
                                         },
@@ -4232,6 +4247,7 @@
                                   "name": "yoga_mat.n.01",
                                   "hasModel": true,
                                   "categories": [
+                                    "rolled_yoga_mat",
                                     "yoga_mat"
                                   ]
                                 }
@@ -4307,6 +4323,7 @@
                                   "name": "mirror.n.01",
                                   "hasModel": true,
                                   "categories": [
+                                    "makeup_mirror",
                                     "mirror",
                                     "standing_mirror"
                                   ]
@@ -5679,6 +5696,13 @@
                                           "categories": [
                                             "bar_stool"
                                           ]
+                                        },
+                                        {
+                                          "name": "footstool.n.02",
+                                          "hasModel": true,
+                                          "categories": [
+                                            "footstool"
+                                          ]
                                         }
                                       ]
                                     },
@@ -5816,6 +5840,7 @@
                                       "hasModel": true,
                                       "categories": [
                                         "bed",
+                                        "bunk_bed",
                                         "massage_bed"
                                       ]
                                     },
@@ -6497,6 +6522,13 @@
                                           "hasModel": true,
                                           "categories": [
                                             "shopping_cart"
+                                          ]
+                                        },
+                                        {
+                                          "name": "dish_rack_cart.n.01",
+                                          "hasModel": true,
+                                          "categories": [
+                                            "dish_rack_cart"
                                           ]
                                         }
                                       ]
@@ -10927,6 +10959,13 @@
                                     "arched_window",
                                     "window"
                                   ]
+                                },
+                                {
+                                  "name": "bed_frame.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "bed_frame"
+                                  ]
                                 }
                               ]
                             },
@@ -13538,7 +13577,8 @@
                                                   "name": "walnut.n.01",
                                                   "hasModel": true,
                                                   "categories": [
-                                                    "walnut"
+                                                    "walnut",
+                                                    "walnut_meat"
                                                   ]
                                                 },
                                                 {
@@ -15456,6 +15496,9 @@
                                         "diced__ivy"
                                       ]
                                     }
+                                  ],
+                                  "categories": [
+                                    "vine"
                                   ]
                                 },
                                 {
@@ -28478,7 +28521,8 @@
                                   "name": "green_onion.n.01",
                                   "hasModel": true,
                                   "categories": [
-                                    "green_onion"
+                                    "green_onion",
+                                    "green_onion_stalk"
                                   ]
                                 },
                                 {
@@ -28828,6 +28872,13 @@
                               "hasModel": true,
                               "categories": [
                                 "half_rhubarb"
+                              ]
+                            },
+                            {
+                              "name": "sliced__mushroom.n.01",
+                              "hasModel": true,
+                              "categories": [
+                                "sliced_mushroom"
                               ]
                             }
                           ]
@@ -34335,6 +34386,7 @@
                                           "name": "silver.n.02",
                                           "hasModel": true,
                                           "categories": [
+                                            "silver_coin",
                                             "silver_coins"
                                           ]
                                         },

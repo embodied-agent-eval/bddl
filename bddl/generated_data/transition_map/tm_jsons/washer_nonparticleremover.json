@@ -1010,6 +1010,16 @@
         }
     },
     {
+        "rule_name": "bed_frame.n.01-washer-cover",
+        "input_synsets": {},
+        "washed_item": {
+            "bed_frame.n.01": 1
+        },
+        "output_synsets": {
+            "water.n.06": 1
+        }
+    },
+    {
         "rule_name": "beef_broth__carton.n.01-washer-cover",
         "input_synsets": {},
         "washed_item": {
@@ -5710,6 +5720,16 @@
         }
     },
     {
+        "rule_name": "cream_pitcher.n.02-washer-cover",
+        "input_synsets": {},
+        "washed_item": {
+            "cream_pitcher.n.02": 1
+        },
+        "output_synsets": {
+            "water.n.06": 1
+        }
+    },
+    {
         "rule_name": "credit_card.n.01-washer-cover",
         "input_synsets": {},
         "washed_item": {
@@ -6214,6 +6234,16 @@
         "input_synsets": {},
         "washed_item": {
             "dish_rack.n.01": 1
+        },
+        "output_synsets": {
+            "water.n.06": 1
+        }
+    },
+    {
+        "rule_name": "dish_rack_cart.n.01-washer-cover",
+        "input_synsets": {},
+        "washed_item": {
+            "dish_rack_cart.n.01": 1
         },
         "output_synsets": {
             "water.n.06": 1
@@ -7124,6 +7154,16 @@
         "input_synsets": {},
         "washed_item": {
             "footstool.n.01": 1
+        },
+        "output_synsets": {
+            "water.n.06": 1
+        }
+    },
+    {
+        "rule_name": "footstool.n.02-washer-cover",
+        "input_synsets": {},
+        "washed_item": {
+            "footstool.n.02": 1
         },
         "output_synsets": {
             "water.n.06": 1
@@ -16114,6 +16154,16 @@
         "input_synsets": {},
         "washed_item": {
             "sliced__melon.n.01": 1
+        },
+        "output_synsets": {
+            "water.n.06": 1
+        }
+    },
+    {
+        "rule_name": "sliced__mushroom.n.01-washer-cover",
+        "input_synsets": {},
+        "washed_item": {
+            "sliced__mushroom.n.01": 1
         },
         "output_synsets": {
             "water.n.06": 1

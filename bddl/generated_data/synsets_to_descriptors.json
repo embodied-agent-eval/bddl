@@ -8587,6 +8587,52 @@
             "wrinkly"
         ]
     ],
+    "bed_frame.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
     "bed_linen.n.01": [
         [
             "disinfected",
@@ -39693,6 +39739,60 @@
             "wrinkly"
         ]
     ],
+    "cream_pitcher.n.02": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "frozen",
+            "frozen"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "hot",
+            "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
     "cream_soda.n.01": [
         [
             "boiling",
@@ -45207,6 +45307,52 @@
     ],
     "dish.n.02": [],
     "dish_rack.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
+    "dish_rack_cart.n.01": [
         [
             "disinfected",
             "disinfected"
@@ -53495,6 +53641,52 @@
     ],
     "foodstuff.n.02": [],
     "footstool.n.01": [
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
+    "footstool.n.02": [
         [
             "disinfected",
             "disinfected"
@@ -119916,6 +120108,64 @@
         [
             "diced",
             "diced"
+        ],
+        [
+            "disinfected",
+            "disinfected"
+        ],
+        [
+            "dusty",
+            "dusty"
+        ],
+        [
+            "frozen",
+            "frozen"
+        ],
+        [
+            "grassy",
+            "grassy"
+        ],
+        [
+            "hot",
+            "hot"
+        ],
+        [
+            "moldy",
+            "moldy"
+        ],
+        [
+            "rusty",
+            "rusty"
+        ],
+        [
+            "scratched",
+            "scratched"
+        ],
+        [
+            "stained",
+            "stained"
+        ],
+        [
+            "sticky",
+            "sticky"
+        ],
+        [
+            "tarnished",
+            "tarnished"
+        ],
+        [
+            "wet",
+            "wet"
+        ],
+        [
+            "wrinkly",
+            "wrinkly"
+        ]
+    ],
+    "sliced__mushroom.n.01": [
+        [
+            "cooked",
+            "cooked"
         ],
         [
             "disinfected",
