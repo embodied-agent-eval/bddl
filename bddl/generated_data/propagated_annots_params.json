@@ -112767,6 +112767,24 @@
         "wetable": {},
         "wrinkleable": {}
     },
+    "walnut_meat.n.01": {
+        "cookable": {},
+        "disinfectable": {},
+        "dustyable": {},
+        "freezable": {},
+        "grassyable": {},
+        "heatable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
     "wardrobe.n.01": {
         "attachable": {},
         "disinfectable": {},

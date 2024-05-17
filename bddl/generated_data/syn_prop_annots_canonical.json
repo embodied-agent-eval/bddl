@@ -39961,5 +39961,23 @@
         "rustable": {},
         "wrinkleable": {},
         "disinfectable": {}
+    },
+    "walnut_meat.n.01": {
+        "cookable": {},
+        "rigidBody": {},
+        "nonSubstance": {},
+        "heatable": {},
+        "freezable": {},
+        "wetable": {},
+        "stickyable": {},
+        "dustyable": {},
+        "grassyable": {},
+        "scratchable": {},
+        "stainable": {},
+        "tarnishable": {},
+        "moldyable": {},
+        "rustable": {},
+        "wrinkleable": {},
+        "disinfectable": {}
     }
 }

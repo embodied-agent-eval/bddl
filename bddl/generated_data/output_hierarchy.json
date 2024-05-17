@@ -13585,8 +13585,7 @@
                                                   "name": "walnut.n.01",
                                                   "hasModel": true,
                                                   "categories": [
-                                                    "walnut",
-                                                    "walnut_meat"
+                                                    "walnut"
                                                   ]
                                                 },
                                                 {
@@ -13699,6 +13698,13 @@
                                                   "hasModel": true,
                                                   "substances": [
                                                     "cooked__cashew"
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "walnut_meat.n.01",
+                                                  "hasModel": true,
+                                                  "categories": [
+                                                    "walnut_meat"
                                                   ]
                                                 }
                                               ]
