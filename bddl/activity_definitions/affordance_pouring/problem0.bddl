@@ -1,0 +1,26 @@
+(define (problem affordance_pouring-0)
+    (:domain omnigibson)
+    (:objects
+        water.n.06_1 - water.n.06
+        pitcher.n.02_1 - pitcher.n.02
+        cup.n.01_1 - cup.n.01
+        countertop.n.01_1 - countertop.n.01
+        agent.n.01_1 - agent.n.01
+        floor.n.01_1 - floor.n.01
+    )
+    
+    (:init 
+        (ontop pitcher.n.02_1 countertop.n.01_1)
+        (ontop cup.n.01_1 countertop.n.01_1)
+        (filled pitcher.n.02_1 water.n.06_1)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom countertop.n.01_1 kitchen)
+        (inroom floor.n.01_1 kitchen)
+    )
+    
+    (:goal 
+        (and 
+            (filled cup.n.01_1 water.n.06_1)
+        )
+    )
+)
