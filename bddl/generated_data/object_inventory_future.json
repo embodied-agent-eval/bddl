@@ -382,6 +382,9 @@
         "license_plate-nwfbxn": "objects/batch-02",
         "license_plate-yepdrj": "objects/batch-02",
         "lid-gerjlh": "objects/batch-02",
+        "lid-jzwezh": "objects/batch-02",
+        "lid-mloxso": "objects/batch-02",
+        "lid-stukvk": "objects/batch-02",
         "loudspeaker-fsyioq": "objects/batch-02",
         "marker-ablbdc": "objects/batch-02",
         "marker-bwwkmb": "objects/batch-02",
@@ -1660,7 +1663,9 @@
         "keys-olymng": "objects/batch-12",
         "lid-kbuqww": "objects/batch-12",
         "lid-wjrwer": "objects/batch-12",
+        "lily_pad-kglgih": "objects/batch-12",
         "lily_pad-lnnxee": "objects/batch-12",
+        "lily_pad-phusby": "objects/batch-12",
         "lingerie-efmfdf": "objects/batch-12",
         "lingerie-uaidmc": "objects/batch-12",
         "log-ehkwjg": "objects/batch-12",
@@ -1811,6 +1816,8 @@
         "vase-nodcpg": "objects/batch-13",
         "wallet-lagjae": "objects/batch-13",
         "water_filter-bloifm": "objects/batch-13",
+        "bottom_cabinet-songes": "objects/custom-aa",
+        "wardrobe-brimns": "objects/custom-aa",
         "apple-agveuv": "objects/legacy_batch-00",
         "apple-omzprq": "objects/legacy_batch-00",
         "bottle_of_pop-bqretx": "objects/legacy_batch-00",
@@ -2274,6 +2281,7 @@
         "folderal-zwhewa": "objects/legacy_batch-04",
         "green_bean-dyjvwv": "objects/legacy_batch-04",
         "green_bean-lvbjws": "objects/legacy_batch-04",
+        "lid-xdyddo": "objects/legacy_batch-04",
         "pop_case-dufbnv": "objects/legacy_batch-04",
         "pop_case-gwgaqb": "objects/legacy_batch-04",
         "pop_case-noiyxv": "objects/legacy_batch-04",
@@ -2392,6 +2400,7 @@
         "oven-tllnvs": "objects/legacy_batch-05",
         "oven-wuinhm": "objects/legacy_batch-05",
         "pillow-cfqdde": "objects/legacy_batch-05",
+        "pillow-dbmico": "objects/legacy_batch-05",
         "pillow-eynvbz": "objects/legacy_batch-05",
         "pillow-jsdeew": "objects/legacy_batch-05",
         "pillow-libtpu": "objects/legacy_batch-05",
@@ -2526,7 +2535,6 @@
         "stove-dusebh": "objects/legacy_batch-06",
         "stove-dwhqap": "objects/legacy_batch-06",
         "stove-igwqpj": "objects/legacy_batch-06",
-        "stove-jhyhag": "objects/legacy_batch-06",
         "stove-kfhkqp": "objects/legacy_batch-06",
         "stove-qbjiva": "objects/legacy_batch-06",
         "stove-rgpphy": "objects/legacy_batch-06",
@@ -2907,6 +2915,7 @@
         "colander-ambnzk": "objects/legacy_batch-10",
         "comb-lqnwhb": "objects/legacy_batch-10",
         "countertop-tpuwys": "objects/legacy_batch-10",
+        "crab-bkkzhf": "objects/legacy_batch-10",
         "crab-tjkiva": "objects/legacy_batch-10",
         "crib-oimydv": "objects/legacy_batch-10",
         "cruet-njqmqv": "objects/legacy_batch-10",
@@ -2922,7 +2931,6 @@
         "diced_green_onion-iwoaoo": "objects/legacy_batch-10",
         "diced_green_onion-lwuaas": "objects/legacy_batch-10",
         "digital_scale-ccphiu": "objects/legacy_batch-10",
-        "dinner_napkin-rpccls": "objects/legacy_batch-10",
         "dipper-hqqjfo": "objects/legacy_batch-10",
         "dish_rack-kxuutl": "objects/legacy_batch-10",
         "dress-gtghon": "objects/legacy_batch-10",
@@ -10494,6 +10502,15 @@
         "lid-gerjlh": [
             "objects/batch-02"
         ],
+        "lid-jzwezh": [
+            "objects/batch-02"
+        ],
+        "lid-mloxso": [
+            "objects/batch-02"
+        ],
+        "lid-stukvk": [
+            "objects/batch-02"
+        ],
         "loudspeaker-fsyioq": [
             "objects/batch-02"
         ],
@@ -14405,7 +14422,13 @@
         "lid-wjrwer": [
             "objects/batch-12"
         ],
+        "lily_pad-kglgih": [
+            "objects/batch-12"
+        ],
         "lily_pad-lnnxee": [
+            "objects/batch-12"
+        ],
+        "lily_pad-phusby": [
             "objects/batch-12"
         ],
         "lingerie-efmfdf": [
@@ -14893,6 +14916,12 @@
         ],
         "water_filter-bloifm": [
             "objects/batch-13"
+        ],
+        "bottom_cabinet-songes": [
+            "objects/custom-aa"
+        ],
+        "wardrobe-brimns": [
+            "objects/custom-aa"
         ],
         "apple-agveuv": [
             "objects/legacy_batch-00"
@@ -16706,6 +16735,9 @@
         "green_bean-lvbjws": [
             "objects/legacy_batch-04"
         ],
+        "lid-xdyddo": [
+            "objects/legacy_batch-04"
+        ],
         "pop_case-dufbnv": [
             "objects/legacy_batch-04"
         ],
@@ -17181,6 +17213,9 @@
             "scenes/Rs_int"
         ],
         "pillow-cfqdde": [
+            "objects/legacy_batch-05"
+        ],
+        "pillow-dbmico": [
             "objects/legacy_batch-05"
         ],
         "pillow-eynvbz": [
@@ -17750,9 +17785,6 @@
             "objects/legacy_batch-06",
             "scenes/Wainscott_0_garden",
             "scenes/Wainscott_0_int"
-        ],
-        "stove-jhyhag": [
-            "objects/legacy_batch-06"
         ],
         "stove-kfhkqp": [
             "objects/legacy_batch-06"
@@ -18984,6 +19016,9 @@
             "scenes/Wainscott_0_int",
             "scenes/Wainscott_1_int"
         ],
+        "crab-bkkzhf": [
+            "objects/legacy_batch-10"
+        ],
         "crab-tjkiva": [
             "objects/legacy_batch-10"
         ],
@@ -19028,9 +19063,6 @@
             "objects/legacy_batch-10"
         ],
         "digital_scale-ccphiu": [
-            "objects/legacy_batch-10"
-        ],
-        "dinner_napkin-rpccls": [
             "objects/legacy_batch-10"
         ],
         "dipper-hqqjfo": [
@@ -38828,6 +38860,7 @@
             "togglebutton"
         ],
         "table_lamp-ajrzlq": [
+            "com",
             "togglebutton"
         ],
         "cupcake-mbhweg": [
@@ -38862,6 +38895,15 @@
         ],
         "hamburger_bun-fqxumh": [
             "subpart"
+        ],
+        "storage_box-izcglf": [
+            "connectedpart"
+        ],
+        "storage_box-twvgzf": [
+            "connectedpart"
+        ],
+        "storage_box-qsaoni": [
+            "connectedpart"
         ],
         "asparagus-npggjn": [
             "subpart"
@@ -39012,6 +39054,7 @@
             "fillable"
         ],
         "table_lamp-fhsorf": [
+            "com",
             "togglebutton"
         ],
         "branch-ijgexf": [
@@ -39039,7 +39082,8 @@
             "collision"
         ],
         "bush-hqlggp": [
-            "collision"
+            "collision",
+            "com"
         ],
         "curtain_rod-pburmj": [
             "attachment"
@@ -39383,6 +39427,9 @@
             "particleremover",
             "togglebutton"
         ],
+        "mailbox-bktljr": [
+            "com"
+        ],
         "pitcher-ankfvi": [
             "fillable"
         ],
@@ -39443,6 +39490,42 @@
             "particleapplier",
             "togglebutton"
         ],
+        "bush-cwsigt": [
+            "com"
+        ],
+        "bush-ebuvur": [
+            "com"
+        ],
+        "bush-frqici": [
+            "com"
+        ],
+        "bush-hnzfgt": [
+            "com"
+        ],
+        "bush-kjakgd": [
+            "com"
+        ],
+        "bush-knspbi": [
+            "com"
+        ],
+        "bush-kyghri": [
+            "com"
+        ],
+        "bush-lfyqkj": [
+            "com"
+        ],
+        "bush-oedeqi": [
+            "com"
+        ],
+        "bush-pjhpwk": [
+            "com"
+        ],
+        "bush-xsqlhv": [
+            "com"
+        ],
+        "bush-yhjhta": [
+            "com"
+        ],
         "cabinet_base-dcmhhh": [
             "attachment",
             "collision"
@@ -39469,6 +39552,27 @@
         ],
         "projector-spedyw": [
             "togglebutton"
+        ],
+        "tree-dyymaq": [
+            "com"
+        ],
+        "tree-flkzbo": [
+            "com"
+        ],
+        "tree-gmzozb": [
+            "com"
+        ],
+        "tree-hvdcql": [
+            "com"
+        ],
+        "tree-rrhqpw": [
+            "com"
+        ],
+        "tree-stbfpu": [
+            "com"
+        ],
+        "tree-wtyipq": [
+            "com"
         ],
         "tupperware-mkstwr": [
             "connectedpart",
@@ -39601,63 +39705,82 @@
             "togglebutton"
         ],
         "table_lamp-awfehr": [
+            "com",
             "togglebutton"
         ],
         "table_lamp-bhdxug": [
+            "com",
             "togglebutton"
         ],
         "table_lamp-dkfwyb": [
+            "com",
             "togglebutton"
         ],
         "table_lamp-eosezn": [
+            "com",
             "togglebutton"
         ],
         "table_lamp-htinka": [
+            "com",
             "togglebutton"
         ],
         "table_lamp-jiuwwn": [
+            "com",
             "togglebutton"
         ],
         "table_lamp-kwkqot": [
+            "com",
             "togglebutton"
         ],
         "table_lamp-lyjkje": [
+            "com",
             "togglebutton"
         ],
         "table_lamp-midfvh": [
+            "com",
             "togglebutton"
         ],
         "table_lamp-ncgcgo": [
+            "com",
             "togglebutton"
         ],
         "table_lamp-pmekkr": [
+            "com",
             "togglebutton"
         ],
         "table_lamp-pxdhzm": [
+            "com",
             "togglebutton"
         ],
         "table_lamp-tggobp": [
+            "com",
             "togglebutton"
         ],
         "table_lamp-tnbwvj": [
+            "com",
             "togglebutton"
         ],
         "table_lamp-utsqrs": [
+            "com",
             "togglebutton"
         ],
         "table_lamp-wdqvjl": [
+            "com",
             "togglebutton"
         ],
         "table_lamp-wslomg": [
+            "com",
             "togglebutton"
         ],
         "table_lamp-wvysoe": [
+            "com",
             "togglebutton"
         ],
         "table_lamp-xbfgjc": [
             "togglebutton"
         ],
         "table_lamp-zpqejt": [
+            "com",
             "togglebutton"
         ],
         "armchair-xpcheg": [
@@ -39865,6 +39988,7 @@
             "fillable"
         ],
         "trash_can-wklill": [
+            "connectedpart",
             "fillable"
         ],
         "trash_can-xkqkbf": [
@@ -39872,6 +39996,12 @@
         ],
         "trash_can-zotrbg": [
             "fillable"
+        ],
+        "bench-svnyht": [
+            "com"
+        ],
+        "bench-zfpjkj": [
+            "com"
         ],
         "door-ohagsq": [
             "collision"
@@ -39948,6 +40078,9 @@
         "sofa-qnnwfx": [
             "extrapart"
         ],
+        "sofa-rxtscm": [
+            "connectedpart"
+        ],
         "sofa-uixwiv": [
             "extrapart"
         ],
@@ -39973,21 +40106,26 @@
             "togglebutton"
         ],
         "floor_lamp-fanocp": [
+            "com",
             "togglebutton"
         ],
         "floor_lamp-imgsrd": [
+            "com",
             "togglebutton"
         ],
         "floor_lamp-jcbvfi": [
             "togglebutton"
         ],
         "floor_lamp-jqsuky": [
+            "com",
             "togglebutton"
         ],
         "floor_lamp-lqdmym": [
+            "com",
             "togglebutton"
         ],
         "floor_lamp-pfuqec": [
+            "com",
             "togglebutton"
         ],
         "floor_lamp-vdxlda": [
@@ -40097,10 +40235,6 @@
             "togglebutton"
         ],
         "stove-igwqpj": [
-            "heatsource",
-            "togglebutton"
-        ],
-        "stove-jhyhag": [
             "heatsource",
             "togglebutton"
         ],
@@ -40398,6 +40532,9 @@
         "chili-xhbpqh": [
             "subpart"
         ],
+        "basil-bebpnf": [
+            "com"
+        ],
         "bottle_of_conditioner-njqnuo": [
             "fluidsource",
             "togglebutton"
@@ -40425,6 +40562,12 @@
         ],
         "cauldron-zndohl": [
             "fillable"
+        ],
+        "christmas_tree-eadukw": [
+            "com"
+        ],
+        "christmas_tree_decorated-wakmhn": [
+            "com"
         ],
         "coatrack-qyjssf": [
             "attachment"
