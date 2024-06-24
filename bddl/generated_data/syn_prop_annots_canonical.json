@@ -39979,5 +39979,20 @@
         "rustable": {},
         "wrinkleable": {},
         "disinfectable": {}
+    },
+    "firewood_chopping_block.n.01": {
+        "rigidBody": {},
+        "nonSubstance": {},
+        "wetable": {},
+        "stickyable": {},
+        "dustyable": {},
+        "grassyable": {},
+        "scratchable": {},
+        "stainable": {},
+        "tarnishable": {},
+        "moldyable": {},
+        "rustable": {},
+        "wrinkleable": {},
+        "disinfectable": {}
     }
 }

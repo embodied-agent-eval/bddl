@@ -12788,6 +12788,13 @@
                               ]
                             }
                           ]
+                        },
+                        {
+                          "name": "firewood_chopping_block.n.01",
+                          "hasModel": true,
+                          "categories": [
+                            "firewood_chopping_block"
+                          ]
                         }
                       ]
                     },

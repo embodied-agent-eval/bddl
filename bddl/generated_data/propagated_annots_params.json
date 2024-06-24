@@ -42024,6 +42024,21 @@
         "wetable": {},
         "wrinkleable": {}
     },
+    "firewood_chopping_block.n.01": {
+        "disinfectable": {},
+        "dustyable": {},
+        "grassyable": {},
+        "moldyable": {},
+        "nonSubstance": {},
+        "rigidBody": {},
+        "rustable": {},
+        "scratchable": {},
+        "stainable": {},
+        "stickyable": {},
+        "tarnishable": {},
+        "wetable": {},
+        "wrinkleable": {}
+    },
     "firework.n.01": {
         "disinfectable": {},
         "dustyable": {},

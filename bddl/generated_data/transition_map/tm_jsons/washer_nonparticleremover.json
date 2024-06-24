@@ -6990,6 +6990,16 @@
         }
     },
     {
+        "rule_name": "firewood_chopping_block.n.01-washer-cover",
+        "input_synsets": {},
+        "washed_item": {
+            "firewood_chopping_block.n.01": 1
+        },
+        "output_synsets": {
+            "water.n.06": 1
+        }
+    },
+    {
         "rule_name": "first-aid_kit.n.01-washer-cover",
         "input_synsets": {},
         "washed_item": {
