@@ -27,6 +27,7 @@
         (and 
             (nextto ?lamp.n.02_1 ?door.n.01_1) 
             (nextto ?lamp.n.02_2 ?window.n.01_1) 
+            (touching ?seat.n.03_1 ?bed.n.01_1) 
             (nextto ?seat.n.03_2 ?window.n.01_1)
         )
     )

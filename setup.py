@@ -6,8 +6,8 @@ with open('README.md', 'r') as fh:
     long_description = fh.read()
 
 setup(
-    name='bddl',
-    version='1.0.2',
+    name='bddl-eval',
+    version='1.0.1',
     author='Stanford University',
     long_description_content_type='text/markdown',
     long_description=long_description,

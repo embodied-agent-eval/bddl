@@ -32,6 +32,7 @@
     (:goal 
         (and 
             (and 
+                (nextto ?folder.n.02_1 ?book.n.02_1) 
                 (nextto ?folder.n.02_1 ?backpack.n.01_1) 
                 (nextto ?book.n.02_1 ?backpack.n.01_1)
             ) 

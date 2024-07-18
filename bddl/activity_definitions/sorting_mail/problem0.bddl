@@ -28,19 +28,19 @@
             (forall 
                 (?envelope.n.01 - envelope.n.01) 
                 (or 
-                    (touching ?envelope.n.01 ?envelope.n.01_1) 
-                    (touching ?envelope.n.01 ?envelope.n.01_2) 
-                    (touching ?envelope.n.01 ?envelope.n.01_3) 
-                    (touching ?envelope.n.01 ?envelope.n.01_4)
+                    (nextto ?envelope.n.01 ?envelope.n.01_1) 
+                    (nextto ?envelope.n.01 ?envelope.n.01_2) 
+                    (nextto ?envelope.n.01 ?envelope.n.01_3) 
+                    (nextto ?envelope.n.01 ?envelope.n.01_4)
                 )
             ) 
             (forall 
                 (?newspaper.n.03 - newspaper.n.03) 
                 (or 
-                    (touching ?newspaper.n.03 ?newspaper.n.03_1) 
-                    (touching ?newspaper.n.03 ?newspaper.n.03_2) 
-                    (touching ?newspaper.n.03 ?newspaper.n.03_3) 
-                    (touching ?newspaper.n.03 ?newspaper.n.03_4)
+                    (nextto ?newspaper.n.03 ?newspaper.n.03_1) 
+                    (nextto ?newspaper.n.03 ?newspaper.n.03_2) 
+                    (nextto ?newspaper.n.03 ?newspaper.n.03_3) 
+                    (nextto ?newspaper.n.03 ?newspaper.n.03_4)
                 )
             )
         )
